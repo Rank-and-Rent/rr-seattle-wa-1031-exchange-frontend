@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Taxonomy Rationale
+
+The site taxonomy is designed to support nationwide replacement property identification for 1031 exchange transactions. Services are organized into seven categories (Timelines, Structures, Execution, Tax, Reporting, Property Paths, Education) covering the full exchange lifecycle from initial consultation through Form 8824 preparation. Property types focus on single tenant retail and NNN properties that are commonly available nationwide and suitable for 1031 exchanges, including convenience stores, drive thru QSR, pharmacies, dollar stores, and other net lease properties. Locations include the primary Seattle metropolitan area plus nearby cities within 30-45 miles, plus a remote option to support nationwide property identification. This structure enables investors to find replacement properties anywhere in the United States while maintaining local market expertise and compliance with IRS exchange requirements.
+
 ## Getting Started
 
 First, run the development server:

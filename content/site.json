@@ -1,0 +1,53 @@
+{
+  "company": "1031 Exchange Seattle",
+  "phone": "206-737-0634",
+  "phoneDigits": "2067370634",
+  "email": "info@1031exchangeseattle.com",
+  "address": "425 Pike St, Seattle, WA 98101",
+  "website": "1031exchangeseattle.com",
+  "mainCity": "Seattle",
+  "state": "WA",
+  "services": [
+    "seattle-replacement-property-identification",
+    "puget-sound-nnn-property-search",
+    "seattle-multifamily-exchange-targeting",
+    "seattle-industrial-1031-acquisition",
+    "seattle-dst-placement-advisory",
+    "seattle-45-day-identification-strategy",
+    "seattle-rent-roll-and-t12-verification",
+    "seattle-lender-preflight-coordination"
+  ],
+  "servicesNav": [
+    "seattle-replacement-property-identification",
+    "puget-sound-nnn-property-search",
+    "seattle-multifamily-exchange-targeting",
+    "seattle-industrial-1031-acquisition",
+    "seattle-medical-office-exchange-advisory",
+    "seattle-retail-pad-redeployment",
+    "seattle-mixed-use-exchange-planning",
+    "seattle-dst-placement-advisory",
+    "seattle-reverse-exchange-execution",
+    "seattle-improvement-exchange-oversight",
+    "seattle-45-day-identification-strategy",
+    "seattle-180-day-closing-control",
+    "seattle-rent-roll-and-t12-verification",
+    "seattle-market-comp-and-cap-rate-review",
+    "seattle-lender-preflight-coordination"
+  ],
+  "locationsNav": [
+    "downtown-seattle",
+    "south-lake-union",
+    "bellevue-core",
+    "kirkland-waterfront",
+    "redmond-tech-corridor",
+    "ballard-maritime-district",
+    "capitol-hill-pike-pine",
+    "fremont-innovation-hub"
+  ],
+  "extraLinks": [
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ]
+}

@@ -131,15 +131,12 @@ export async function POST(request: NextRequest) {
       phone: body.phone ? String(body.phone) : undefined,
       phone_plain: body.phone ? String(body.phone).replace(/\D/g, "") : undefined,
       projectType: String(body.projectType || body.service || "1031 Exchange Project"),
-      address: body.company ? String(body.company) : undefined,
-      city: PRIMARY_MARKET.city,
+      property: body.property ? String(body.property) : undefined,
+      estimatedCloseDate: body.estimatedCloseDate ? String(body.estimatedCloseDate) : undefined,
+      city: body.city ? String(body.city) : undefined,
+      company: body.company ? String(body.company) : undefined,
       timeline: body.timeline ? String(body.timeline) : undefined,
-      projectDescription:
-        body.details ||
-        body.projectDetails ||
-        body.message ||
-        body.info ||
-        undefined,
+      message: body.message ? String(body.message) : (body.details ? String(body.details) : undefined),
       source: body.source ? String(body.source) : SOURCE_LABEL,
     };
 

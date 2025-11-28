@@ -40,6 +40,9 @@ type FieldKey =
   | "email"
   | "phone"
   | "projectType"
+  | "property"
+  | "estimatedCloseDate"
+  | "city"
   | "timeline"
   | "details";
 
@@ -53,6 +56,9 @@ const initialFormState: FormState = {
   email: "",
   phone: "",
   projectType: "",
+  property: "",
+  estimatedCloseDate: "",
+  city: "",
   timeline: "",
   details: "",
 };
@@ -283,7 +289,7 @@ export const ContactForm = ({
       setStatus("success");
       setFormState({
         ...initialFormState,
-        projectType: defaultProjectType,
+        projectType: defaultProjectType || "",
       });
       setErrors({});
       captchaTokenRef.current = null;
@@ -387,6 +393,27 @@ export const ContactForm = ({
           value={formState.timeline}
           onChange={onTimelineChange}
           options={timelineOptions}
+        />
+        <Field
+          id={`${formId}-property`}
+          label="Property Being Sold"
+          value={formState.property}
+          onChange={onFieldChange("property")}
+          placeholder="Include property type, location, and estimated value (optional)"
+        />
+        <Field
+          id={`${formId}-estimated-close-date`}
+          label="Estimated Close Date"
+          type="date"
+          value={formState.estimatedCloseDate}
+          onChange={onFieldChange("estimatedCloseDate")}
+        />
+        <Field
+          id={`${formId}-city`}
+          label="City"
+          value={formState.city}
+          onChange={onFieldChange("city")}
+          placeholder="Primary metro or submarket (optional)"
         />
       </div>
       <div className="space-y-2">

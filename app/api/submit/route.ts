@@ -140,17 +140,22 @@ export async function POST(request: NextRequest) {
       source: body.source ? String(body.source) : SOURCE_LABEL,
     };
 
-    const brandWithContext = {
+    const brandWithDate = {
       ...brand,
       COMPANY_NAME,
       PHONE,
       PHONE_DIGITS,
+      submitted_date: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
     };
 
     try {
       await Promise.all([
-        sendCustomerConfirmation(brandWithContext, lead),
-        sendInternalNotifications(brandWithContext, lead),
+        sendCustomerConfirmation(brandWithDate, lead),
+        sendInternalNotifications(brandWithDate, lead),
       ]);
     } catch (error) {
       console.error("SendGrid email failed", error);

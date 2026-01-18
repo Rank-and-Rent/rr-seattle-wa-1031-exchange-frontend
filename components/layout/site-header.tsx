@@ -10,28 +10,10 @@ import { servicesData, locationsData, toolsData } from "@/data";
 
 type MenuKey = "services" | "locations" | "tools";
 
-type DropdownConfig = {
-  key: MenuKey;
-  label: string;
-  description: string;
-};
-
-const DROPDOWNS: DropdownConfig[] = [
-  {
-    key: "services",
-    label: "Services",
-    description: "Seattle replacement property expertise",
-  },
-  {
-    key: "locations",
-    label: "Locations",
-    description: "Trusted markets across the Puget Sound",
-  },
-  {
-    key: "tools",
-    label: "Tools",
-    description: "Interactive 1031 exchange calculators",
-  },
+const DROPDOWNS: { key: MenuKey; label: string }[] = [
+  { key: "services", label: "Services" },
+  { key: "locations", label: "Locations" },
+  { key: "tools", label: "Tools" },
 ];
 
 const staticNav = [
@@ -40,289 +22,161 @@ const staticNav = [
   { label: "Blog", href: "/blog" },
 ];
 
-// Top 6 services by name (not grouped by category)
-const topServices = servicesData.slice(0, 6);
-const totalServicesCount = servicesData.length;
-
-const locationList = locationsData.slice(0, 8);
-// Count actual locations based on public folder (20 location images)
-const totalLocationsCount = 20;
+const topServices = servicesData.slice(0, 8);
+const locationList = locationsData.slice(0, 10);
 
 export const SiteHeader = () => {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const dropdownRefs = useRef<Record<MenuKey, HTMLDivElement | null>>({
     services: null,
     locations: null,
     tools: null,
   });
-  const hoverTimeouts = useRef<Record<MenuKey, NodeJS.Timeout | null>>({
-    services: null,
-    locations: null,
-    tools: null,
-  });
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
         setOpenMenu(null);
         setMobileOpen(false);
       }
     };
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (openMenu) {
-        const target = event.target as Node;
-        const dropdownElement = dropdownRefs.current[openMenu];
-        const button = document.querySelector(
-          `[aria-controls="${openMenu}-dropdown"]`
-        );
-        const parentContainer = button?.closest(".relative");
-        
-        if (
-          dropdownElement &&
-          !dropdownElement.contains(target) &&
-          parentContainer &&
-          !parentContainer.contains(target)
-        ) {
-          setOpenMenu(null);
-        }
-      }
-    };
-
     window.addEventListener("keydown", handleEsc);
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      window.removeEventListener("keydown", handleEsc);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [openMenu]);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
     setOpenMenu(null);
-    // Clear any pending hover timeouts when route changes
-    Object.values(hoverTimeouts.current).forEach((timeout) => {
-      if (timeout) {
-        clearTimeout(timeout);
-      }
-    });
   }, [pathname]);
 
-  useEffect(() => {
-    // Cleanup timeouts on unmount
-    return () => {
-      Object.values(hoverTimeouts.current).forEach((timeout) => {
-        if (timeout) {
-          clearTimeout(timeout);
-        }
-      });
-    };
-  }, []);
-
-  const serviceMenu = useMemo(
-    () => (
-      <div className="space-y-3">
-        <ul className="space-y-2">
-          {topServices.map((service) => (
-            <li key={service.slug}>
-              <Link
-                href={service.route}
-                className="block rounded-lg px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:bg-white/10"
-              >
-                {service.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Link
-          href="/services"
-          className="flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-white transition hover:border-white/60 hover:bg-white/20"
-        >
-          View All {totalServicesCount} Services
-        </Link>
-      </div>
-    ),
-    []
-  );
-
-  const locationMenu = useMemo(
-    () => (
-      <div className="grid gap-3 sm:grid-cols-2">
-        {locationList.map((location) => (
-          <Link
-            key={location.slug}
-            href={location.route}
-            className="flex flex-col rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-left text-sm text-[#F5F7FA]/90 transition hover:border-white/60 hover:bg-white/10 focus-visible:border-white/60"
-          >
-            <span className="font-semibold text-white">{location.name}</span>
-            <span className="text-xs text-[#F5F7FA]/70">
-              1031 replacement paths, FAQs, and lender alignment
-            </span>
-          </Link>
-        ))}
-        <Link
-          href="/locations"
-          className="flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-white transition hover:border-white/60 hover:bg-white/20"
-        >
-          View All {totalLocationsCount} Locations
-        </Link>
-      </div>
-    ),
-    []
-  );
-
-  const toolsMenu = useMemo(
-    () => (
-      <div className="grid gap-3 sm:grid-cols-2">
-        {toolsData.map((tool) => (
-          <Link
-            key={tool.slug}
-            href={`/tools/${tool.slug}`}
-            className="flex flex-col rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-left text-sm text-[#F5F7FA]/90 transition hover:border-white/60 hover:bg-white/10 focus-visible:border-white/60"
-          >
-            <span className="font-semibold text-white">{tool.name}</span>
-            <span className="text-xs text-[#F5F7FA]/70">
-              {tool.summary}
-            </span>
-          </Link>
-        ))}
-        <Link
-          href="/tools"
-          className="flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-white transition hover:border-white/60 hover:bg-white/20"
-        >
-          View All Tools
-        </Link>
-      </div>
-    ),
-    []
-  );
-
-  const renderMenuContent = (menuKey: MenuKey) => {
-    if (menuKey === "services") {
-      return serviceMenu;
-    }
-    if (menuKey === "tools") {
-      return toolsMenu;
-    }
-
-    return locationMenu;
+  const handleMouseEnter = (key: MenuKey) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenMenu(key);
   };
 
-  const toggleMenu = (key: MenuKey, isHover = false) => {
-    setOpenMenu((current) => {
-      if (isHover) {
-        return key;
-      }
-      return current === key ? null : key;
-    });
-  };
-
-  const closeMenu = () => {
-    setOpenMenu(null);
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpenMenu(null), 150);
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-black/95 text-white backdrop-blur-sm border-b border-white/5">
-      <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6">
+    <header
+      className={clsx(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled ? "bg-white shadow-sm" : "bg-transparent"
+      )}
+    >
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-8 py-5">
+        {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/1031-exchange-seattle-wa-logo.png"
-            alt={`${site.company} Logo`}
+            alt={site.company}
             width={120}
-            height={65}
-            className="h-16 w-auto object-contain"
+            height={60}
+            className="h-14 w-auto"
             priority
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-10">
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8">
           {DROPDOWNS.map((dropdown) => (
             <div
               key={dropdown.key}
               className="relative"
-              onMouseEnter={() => {
-                // Clear any pending close timeout
-                if (hoverTimeouts.current[dropdown.key]) {
-                  clearTimeout(hoverTimeouts.current[dropdown.key]!);
-                  hoverTimeouts.current[dropdown.key] = null;
-                }
-                toggleMenu(dropdown.key, true);
-              }}
-              onMouseLeave={() => {
-                // Set a delay before closing to allow movement to dropdown
-                hoverTimeouts.current[dropdown.key] = setTimeout(() => {
-                  if (openMenu === dropdown.key) {
-                    closeMenu();
-                  }
-                  hoverTimeouts.current[dropdown.key] = null;
-                }, 200);
-              }}
+              onMouseEnter={() => handleMouseEnter(dropdown.key)}
+              onMouseLeave={handleMouseLeave}
             >
               <button
                 type="button"
                 className={clsx(
-                  "flex items-center gap-1.5 text-sm font-light tracking-wide transition-colors",
-                  openMenu === dropdown.key
-                    ? "text-white"
-                    : "text-white/80 hover:text-white"
+                  "flex items-center gap-1 text-xs tracking-[0.15em] uppercase transition-colors",
+                  scrolled
+                    ? "text-[#2c3e50] hover:text-[#b8a074]"
+                    : "text-white hover:text-[#b8a074]",
+                  openMenu === dropdown.key && "text-[#b8a074]"
                 )}
-                aria-expanded={openMenu === dropdown.key}
-                aria-controls={`${dropdown.key}-dropdown`}
-                onClick={() => toggleMenu(dropdown.key)}
-                onFocus={() => toggleMenu(dropdown.key, true)}
-                onMouseEnter={() => {
-                  // Clear any pending close timeout
-                  if (hoverTimeouts.current[dropdown.key]) {
-                    clearTimeout(hoverTimeouts.current[dropdown.key]!);
-                    hoverTimeouts.current[dropdown.key] = null;
-                  }
-                  toggleMenu(dropdown.key, true);
-                }}
               >
-                <span className="uppercase">{dropdown.label}</span>
-                <span className={clsx(
-                  "text-[10px] transition-transform",
-                  openMenu === dropdown.key ? "rotate-180" : ""
-                )}>▼</span>
+                {dropdown.label}
+                <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
+
               {openMenu === dropdown.key && (
                 <div
-                  ref={(node) => {
-                    dropdownRefs.current[dropdown.key] = node;
-                  }}
-                  id={`${dropdown.key}-dropdown`}
-                  role="menu"
-                  className={clsx(
-                    "absolute top-full mt-4 z-[100] rounded-lg border border-white/10 bg-black backdrop-blur-xl p-8 shadow-2xl w-[min(36rem,90vw)] lg:w-[min(54rem,70vw)]",
-                    dropdown.key === "services" 
-                      ? "left-0" 
-                      : "left-1/2 -translate-x-1/2"
-                  )}
-                  style={{ backgroundColor: '#000000' }}
-                  onMouseEnter={() => {
-                    // Clear any pending close timeout when entering dropdown
-                    if (hoverTimeouts.current[dropdown.key]) {
-                      clearTimeout(hoverTimeouts.current[dropdown.key]!);
-                      hoverTimeouts.current[dropdown.key] = null;
-                    }
-                    toggleMenu(dropdown.key, true);
-                  }}
-                  onMouseLeave={() => {
-                    // Close when leaving dropdown
-                    hoverTimeouts.current[dropdown.key] = setTimeout(() => {
-                      closeMenu();
-                      hoverTimeouts.current[dropdown.key] = null;
-                    }, 150);
-                  }}
+                  ref={(el) => { dropdownRefs.current[dropdown.key] = el; }}
+                  className="absolute top-full left-0 mt-4 min-w-[280px] bg-white shadow-xl border border-gray-100 py-4"
+                  onMouseEnter={() => handleMouseEnter(dropdown.key)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#4DA49B]">
-                    {dropdown.description}
-                  </p>
-                  <div className="mt-5 space-y-5 text-sm">
-                    {renderMenuContent(dropdown.key)}
-                  </div>
+                  {dropdown.key === "services" && (
+                    <div className="px-6">
+                      {topServices.map((s) => (
+                        <Link
+                          key={s.slug}
+                          href={s.route}
+                          className="block py-2 text-sm text-[#2c3e50] hover:text-[#b8a074] transition-colors"
+                        >
+                          {s.name}
+                        </Link>
+                      ))}
+                      <Link
+                        href="/services"
+                        className="block pt-4 mt-4 border-t border-gray-100 text-xs tracking-[0.15em] uppercase text-[#b8a074] hover:text-[#2c3e50]"
+                      >
+                        View All Services
+                      </Link>
+                    </div>
+                  )}
+                  {dropdown.key === "locations" && (
+                    <div className="px-6">
+                      {locationList.map((l) => (
+                        <Link
+                          key={l.slug}
+                          href={l.route}
+                          className="block py-2 text-sm text-[#2c3e50] hover:text-[#b8a074] transition-colors"
+                        >
+                          {l.name}
+                        </Link>
+                      ))}
+                      <Link
+                        href="/locations"
+                        className="block pt-4 mt-4 border-t border-gray-100 text-xs tracking-[0.15em] uppercase text-[#b8a074] hover:text-[#2c3e50]"
+                      >
+                        View All Locations
+                      </Link>
+                    </div>
+                  )}
+                  {dropdown.key === "tools" && (
+                    <div className="px-6">
+                      {toolsData.map((t) => (
+                        <Link
+                          key={t.slug}
+                          href={`/tools/${t.slug}`}
+                          className="block py-2 text-sm text-[#2c3e50] hover:text-[#b8a074] transition-colors"
+                        >
+                          {t.name}
+                        </Link>
+                      ))}
+                      <Link
+                        href="/tools"
+                        className="block pt-4 mt-4 border-t border-gray-100 text-xs tracking-[0.15em] uppercase text-[#b8a074] hover:text-[#2c3e50]"
+                      >
+                        View All Tools
+                      </Link>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -333,149 +187,85 @@ export const SiteHeader = () => {
               key={item.href}
               href={item.href}
               className={clsx(
-                "text-sm font-light tracking-wide uppercase transition-colors whitespace-nowrap",
-                pathname === item.href
-                  ? "text-white"
-                  : "text-white/80 hover:text-white"
+                "text-xs tracking-[0.15em] uppercase transition-colors",
+                scrolled
+                  ? "text-[#2c3e50] hover:text-[#b8a074]"
+                  : "text-white hover:text-[#b8a074]",
+                pathname === item.href && "text-[#b8a074]"
               )}
             >
               {item.label}
             </Link>
           ))}
 
+          <span className={clsx("text-sm", scrolled ? "text-[#2c3e50]" : "text-white")}>
+            {site.phone}
+          </span>
+
           <Link
             href="/contact"
-            className="ml-4 rounded-full bg-gradient-to-r from-[#4DA49B] to-[#7BC5BD] px-6 py-2.5 text-sm font-medium uppercase tracking-wide text-[#0E2536] transition-opacity hover:opacity-90 whitespace-nowrap"
+            className={clsx(
+              "px-6 py-2 text-xs tracking-[0.15em] uppercase transition-all",
+              scrolled
+                ? "border border-[#2c3e50] text-[#2c3e50] hover:bg-[#2c3e50] hover:text-white"
+                : "border border-white text-white hover:bg-white hover:text-[#2c3e50]"
+            )}
           >
-            Contact Team
+            Contact
           </Link>
         </nav>
 
+        {/* Mobile Menu Button */}
         <button
           type="button"
-          className="lg:hidden text-white/80 hover:text-white"
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-label="Toggle navigation"
+          className="lg:hidden w-10 h-10 flex items-center justify-center"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
         >
-          <span className="flex h-10 w-10 items-center justify-center">
-            <span className="h-3 w-4">
-              <span className="block h-0.5 w-full bg-white transition-all" />
-              <span className="mt-1 block h-0.5 w-full bg-white transition-all" />
-              <span className="mt-1 block h-0.5 w-full bg-white transition-all" />
-            </span>
-          </span>
+          <div className="space-y-1.5">
+            <span className={clsx("block w-6 h-0.5 transition-all", scrolled ? "bg-[#2c3e50]" : "bg-white", mobileOpen && "rotate-45 translate-y-2")} />
+            <span className={clsx("block w-6 h-0.5 transition-all", scrolled ? "bg-[#2c3e50]" : "bg-white", mobileOpen && "opacity-0")} />
+            <span className={clsx("block w-6 h-0.5 transition-all", scrolled ? "bg-[#2c3e50]" : "bg-white", mobileOpen && "-rotate-45 -translate-y-2")} />
+          </div>
         </button>
       </div>
 
-      <div
-        className={clsx(
-          "lg:hidden",
-          mobileOpen ? "block" : "hidden"
-        )}
-      >
-        <div className="space-y-6 border-t border-white/5 bg-black/98 px-6 py-6">
+      {/* Mobile Menu */}
+      <div className={clsx("lg:hidden bg-white border-t border-gray-100 overflow-hidden transition-all duration-300", mobileOpen ? "max-h-screen" : "max-h-0")}>
+        <div className="px-8 py-6 space-y-6">
           {DROPDOWNS.map((dropdown) => (
             <div key={dropdown.key}>
               <button
                 type="button"
-                className="flex w-full items-center justify-between rounded-xl bg-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.24em]"
-                aria-expanded={openMenu === dropdown.key}
-                onClick={() => toggleMenu(dropdown.key)}
+                className="w-full flex items-center justify-between text-xs tracking-[0.15em] uppercase text-[#2c3e50] py-2"
+                onClick={() => setOpenMenu(openMenu === dropdown.key ? null : dropdown.key)}
               >
-                <span>{dropdown.label}</span>
-                <span>{openMenu === dropdown.key ? "−" : "+"}</span>
+                {dropdown.label}
+                <span className="text-[#b8a074]">{openMenu === dropdown.key ? "−" : "+"}</span>
               </button>
               {openMenu === dropdown.key && (
-                <div className="mt-4 space-y-3 rounded-2xl border border-white/15 bg-white/5 p-4 text-sm text-white">
-                  {dropdown.key === "services" ? (
-                    <div className="space-y-3">
-                      <ul className="space-y-2">
-                        {topServices.map((service) => (
-                          <li key={service.slug}>
-                            <Link
-                              href={service.route}
-                              className="block rounded-lg px-3 py-2 font-semibold hover:bg-white/10"
-                            >
-                              {service.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                      <Link
-                        href="/services"
-                        className="flex items-center justify-center rounded-lg border border-white/20 px-3 py-2 text-xs font-semibold uppercase tracking-[0.28em]"
-                      >
-                        View All {totalServicesCount} Services
-                      </Link>
-                    </div>
-                  ) : dropdown.key === "locations" ? (
-                    <ul className="space-y-2">
-                      {locationList.map((location) => (
-                        <li key={location.slug}>
-                          <Link
-                            href={location.route}
-                            className="flex flex-col rounded-lg px-3 py-2 hover:bg-white/10"
-                          >
-                            <span className="font-semibold">{location.name}</span>
-                            <span className="text-xs text-[#E8EDEF]/70">
-                              Replacement property coverage and FAQs
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                      <li>
-                        <Link
-                          href="/locations"
-                          className="flex items-center justify-center rounded-lg border border-white/20 px-3 py-2 text-xs font-semibold uppercase tracking-[0.28em]"
-                        >
-                          View All {totalLocationsCount} Locations
-                        </Link>
-                      </li>
-                    </ul>
-                  ) : (
-                    <ul className="space-y-2">
-                      {toolsData.map((tool) => (
-                        <li key={tool.slug}>
-                          <Link
-                            href={`/tools/${tool.slug}`}
-                            className="flex flex-col rounded-lg px-3 py-2 hover:bg-white/10"
-                          >
-                            <span className="font-semibold">{tool.name}</span>
-                            <span className="text-xs text-[#E8EDEF]/70">
-                              {tool.summary}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                      <li>
-                        <Link
-                          href="/tools"
-                          className="flex items-center justify-center rounded-lg border border-white/20 px-3 py-2 text-xs font-semibold uppercase tracking-[0.28em]"
-                        >
-                          View All Tools
-                        </Link>
-                      </li>
-                    </ul>
-                  )}
+                <div className="pl-4 pt-2 space-y-2">
+                  {dropdown.key === "services" && topServices.map((s) => (
+                    <Link key={s.slug} href={s.route} className="block text-sm text-[#6b7c8a] py-1">{s.name}</Link>
+                  ))}
+                  {dropdown.key === "locations" && locationList.map((l) => (
+                    <Link key={l.slug} href={l.route} className="block text-sm text-[#6b7c8a] py-1">{l.name}</Link>
+                  ))}
+                  {dropdown.key === "tools" && toolsData.map((t) => (
+                    <Link key={t.slug} href={`/tools/${t.slug}`} className="block text-sm text-[#6b7c8a] py-1">{t.name}</Link>
+                  ))}
                 </div>
               )}
             </div>
           ))}
-
           {staticNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block rounded-xl bg-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.24em] text-white"
-            >
+            <Link key={item.href} href={item.href} className="block text-xs tracking-[0.15em] uppercase text-[#2c3e50] py-2">
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="block rounded-full bg-gradient-to-r from-[#4DA49B] to-[#7BC5BD] px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.24em] text-[#0E2536]"
-          >
-            Contact Team
+          <a href={`tel:${site.phoneDigits}`} className="block text-sm text-[#2c3e50] py-2">{site.phone}</a>
+          <Link href="/contact" className="block w-full text-center py-3 border border-[#2c3e50] text-xs tracking-[0.15em] uppercase text-[#2c3e50]">
+            Contact
           </Link>
         </div>
       </div>

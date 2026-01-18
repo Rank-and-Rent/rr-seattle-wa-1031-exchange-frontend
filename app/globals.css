@@ -4,33 +4,57 @@
 
 :root {
   color-scheme: light;
-  --header-height: 4.5rem;
+  --header-height: 5rem;
+  
+  /* Elegant color palette matching Douglas Elliman aesthetic */
+  --color-navy: #1a3a52;
+  --color-navy-dark: #0f2738;
+  --color-champagne: #b8a074;
+  --color-cream: #f7f6f4;
+  --color-white: #ffffff;
+  --color-charcoal: #2c3e50;
+  --color-text: #3d4f5f;
+  --color-text-light: #6b7c8a;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
 body {
   min-height: 100%;
-  background-color: #f5f7fa;
-  color: #1b1b1b;
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
 }
 
 body {
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-body), "Helvetica Neue", Arial, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  letter-spacing: 0.01em;
 }
 
 main {
   width: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+}
+
+/* Elegant focus states */
 :where(a, button, [role="button"], input, select, textarea) {
   outline: none;
 }
 
 :where(a, button, [role="button"], input, select, textarea):focus-visible {
-  outline: 2px solid rgba(77, 164, 155, 0.85);
-  outline-offset: 3px;
+  outline: 1px solid var(--color-champagne);
+  outline-offset: 2px;
 }
 
 .visually-hidden {
@@ -45,36 +69,100 @@ main {
   border: 0;
 }
 
-/* Ensure select dropdowns have solid white background */
+/* Form styling */
 select {
   background-color: #ffffff !important;
-  background-image: none !important;
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
 }
 
-select::-ms-expand {
-  display: none !important;
-}
-
 select option {
   background-color: #ffffff !important;
-  color: #0E2536 !important;
+  color: var(--color-charcoal) !important;
 }
 
-select:focus option {
-  background-color: #ffffff !important;
-  color: #0E2536 !important;
+/* Details/summary elegant styling */
+details summary {
+  list-style: none;
 }
 
-select:focus option:checked {
-  background-color: #4DA49B !important;
-  color: #ffffff !important;
+details summary::-webkit-details-marker {
+  display: none;
 }
 
-/* Header dropdown menus - solid black background */
-header [role="menu"] {
-  background-color: #000000 !important;
-  background: #000000 !important;
+/* Smooth video playback */
+video {
+  object-fit: cover;
+}
+
+/* Elegant scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne);
+}
+
+/* Section label styling - matching the Douglas Elliman "IN THE PRESS" style */
+.section-label {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+}
+
+/* Section title styling - matching the elegant serif headers */
+.section-title {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-charcoal);
+}
+
+/* Link hover effects */
+a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Button base styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-charcoal);
+  background: transparent;
+  color: var(--color-charcoal);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.btn-champagne {
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+}
+
+.btn-champagne:hover {
+  background: var(--color-champagne);
+  color: var(--color-white);
 }

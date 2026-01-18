@@ -1,18 +1,12 @@
 "use client";
 
 import type { JSX } from "react";
-import React, { useMemo, useState, useRef, useEffect } from "react";
+import React, { useMemo, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import site from "@/content/site.json";
 import { ContactForm } from "@/components/forms/contact-form";
-import { SearchInput } from "@/components/ui/search-input";
-import { DeadlineCalculator } from "@/components/widgets/deadline-calculator";
-import { IdentificationRules } from "@/components/widgets/identification-rules";
-import { IdentificationLetterHelper } from "@/components/widgets/identification-letter-helper";
-import { TimelineTracker } from "@/components/widgets/timeline-tracker";
-import { getPrimaryMarket } from "@/lib/market";
 
 import type { FAQItem, PropertyTypeItem, ServiceItem } from "@/data";
 import type { ToolInfo } from "@/data/tools";
@@ -27,102 +21,20 @@ interface HomeContentProps {
   tools: ToolInfo[];
 }
 
-const { city: PRIMARY_CITY, state: PRIMARY_STATE_ABBR } = getPrimaryMarket();
-
-const heroImages = [
-  "/homepage-hero/seattle-washington-1031-exchange-1.jpg",
-  "/homepage-hero/seattle-washington-1031-exchange-2.jpg",
-  "/homepage-hero/seattle-washington-1031-exchange-3.jpg",
-  "/homepage-hero/seattle-washington-1031-exchange-4.jpg",
-  "/homepage-hero/seattle-washington-1031-exchange-5.jpg",
-];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-};
-
-const fadeScale = {
-  hidden: { opacity: 0, scale: 0.96 },
-  show: { opacity: 1, scale: 1 },
-};
-
-const iconClasses = "h-10 w-10 text-[#C9A227]";
-
-const CalculatorIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.5}
-    className={iconClasses}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M7.5 6h9m-9 3h9m-9 3h9m-9 3h3M6 4.5h12A1.5 1.5 0 0 1 19.5 6v12A1.5 1.5 0 0 1 18 19.5H6A1.5 1.5 0 0 1 4.5 18V6A1.5 1.5 0 0 1 6 4.5Z"
-    />
-  </svg>
-);
-
-const ScaleIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.5}
-    className={iconClasses}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M12 3v18m0-18 3 3m-3-3-3 3m-6 7.5c0 .828.895 1.5 2 1.5s2-.672 2-1.5S7.105 12 6 12s-2 .672-2 1.5Zm12 0c0 .828.895 1.5 2 1.5s2-.672 2-1.5-.895-1.5-2-1.5-2 .672-2 1.5Z"
-    />
-  </svg>
-);
-
-const FlagIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.5}
-    className={iconClasses}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M3.75 21V4.5A1.5 1.5 0 0 1 5.25 3h13.5a1.5 1.5 0 0 1 1.5 1.5v7.002a1.5 1.5 0 0 1-1.5 1.5H9m0 0L12 15m-3-2.998L12 9"
-    />
-  </svg>
-);
-
-const toolIconMap: Record<ToolInfo["icon"], JSX.Element> = {
-  calculator: <CalculatorIcon />,
-  scale: <ScaleIcon />,
-  identification: <FlagIcon />,
-};
-
-const Reveal: React.FC<{ delay?: number; variant?: "fade" | "scale"; className?: string; children: React.ReactNode }> = ({
-  delay = 0,
-  variant = "fade",
-  className,
-  children,
-}) => {
+const Reveal: React.FC<{
+  delay?: number;
+  className?: string;
+  children: React.ReactNode;
+}> = ({ delay = 0, className, children }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px 0px" });
-  const variants = variant === "scale" ? fadeScale : fadeUp;
+  const isInView = useInView(ref, { once: true, margin: "-50px 0px" });
 
   return (
     <motion.div
       ref={ref}
-      variants={variants}
-      initial="hidden"
-      animate={isInView ? "show" : "hidden"}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay }}
       className={className}
     >
       {children}
@@ -130,296 +42,188 @@ const Reveal: React.FC<{ delay?: number; variant?: "fade" | "scale"; className?:
   );
 };
 
+// Tool icons
+const CalculatorIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} className="h-10 w-10">
+    <rect x="4" y="2" width="16" height="20" rx="1" />
+    <line x1="8" y1="6" x2="16" y2="6" />
+    <line x1="8" y1="10" x2="10" y2="10" />
+    <line x1="14" y1="10" x2="16" y2="10" />
+    <line x1="8" y1="14" x2="10" y2="14" />
+    <line x1="14" y1="14" x2="16" y2="14" />
+    <line x1="8" y1="18" x2="10" y2="18" />
+    <line x1="14" y1="18" x2="16" y2="18" />
+  </svg>
+);
+
+const ScaleIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} className="h-10 w-10">
+    <path d="M12 3v18M3 12h18M7 7l10 10M17 7L7 17" />
+  </svg>
+);
+
+const ChecklistIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} className="h-10 w-10">
+    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" />
+    <rect x="9" y="3" width="6" height="4" rx="1" />
+    <path d="M9 12l2 2 4-4" />
+  </svg>
+);
+
+const toolIconMap: Record<ToolInfo["icon"], JSX.Element> = {
+  calculator: <CalculatorIcon />,
+  scale: <ScaleIcon />,
+  identification: <ChecklistIcon />,
+};
+
+// Exchange types data
+const exchangeTypes = [
+  {
+    name: "Delayed Exchange",
+    description: "The most common 1031 structure. Sell first, then identify and acquire replacement property within IRS deadlines.",
+    route: "/services/seattle-45-day-identification-strategy",
+    image: "/homepage-hero/seattle-washington-1031-exchange-1.jpg",
+  },
+  {
+    name: "Reverse Exchange",
+    description: "Acquire replacement property before selling. Requires an exchange accommodation titleholder.",
+    route: "/services/seattle-reverse-exchange-execution",
+    image: "/homepage-hero/seattle-washington-1031-exchange-2.jpg",
+  },
+  {
+    name: "Improvement Exchange",
+    description: "Build equity through construction or improvements on replacement property during the exchange period.",
+    route: "/services/seattle-improvement-exchange-oversight",
+    image: "/homepage-hero/seattle-washington-1031-exchange-3.jpg",
+  },
+  {
+    name: "DST Exchange",
+    description: "Fractional ownership in institutional-quality real estate through Delaware Statutory Trusts.",
+    route: "/services/seattle-dst-placement-advisory",
+    image: "/homepage-hero/seattle-washington-1031-exchange-4.jpg",
+  },
+];
+
 export const HomeContent = ({
   services,
   propertyTypes,
   serviceAreaCards,
   faqItems,
-  timelineLinks,
-  waTaxHref,
   tools,
 }: HomeContentProps) => {
-  const [serviceQuery, setServiceQuery] = useState("");
-  const [locationQuery, setLocationQuery] = useState("");
-  const [heroFormSubmitted, setHeroFormSubmitted] = useState(false);
-
-  const filteredServices = useMemo(() => {
-    if (!serviceQuery.trim()) {
-      return services.slice(0, 9);
-    }
-
-    const query = serviceQuery.trim().toLowerCase();
-    const exactMatch = services.find(
-      (service) => service.name.toLowerCase() === query
-    );
-
-    if (exactMatch) {
-      return [exactMatch];
-    }
-
-    const matches = services.filter((service) => {
-      const haystack = [service.name, service.short, ...service.keywords].join(" ").toLowerCase();
-      return haystack.includes(query);
-    });
-
-    if (matches.length === 0) {
-      return [];
-    }
-
-    return matches.slice(0, 9);
-  }, [serviceQuery, services]);
-
-  const filteredLocations = useMemo(() => {
-    if (!locationQuery.trim()) {
-      return serviceAreaCards.slice(0, 8);
-    }
-    const query = locationQuery.trim().toLowerCase();
-    const results = serviceAreaCards.filter((location) =>
-      location.name.toLowerCase().includes(query)
-    );
-    return results;
-  }, [locationQuery, serviceAreaCards]);
-
-  const noServiceResults = serviceQuery && filteredServices.length === 0;
-  const noLocationResults = locationQuery && filteredLocations.length === 0;
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const neighborhoods = useMemo(() => serviceAreaCards.slice(0, 15), [serviceAreaCards]);
 
   return (
-    <div className="bg-[#F5F7FA]">
-      <section className="relative overflow-hidden text-[#F5F7FA]">
-        {/* Rotating background images */}
-        <div className="absolute inset-0">
-          {heroImages.map((src, index) => (
-            <div
-              key={src}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentImageIndex ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <Image
-                src={src}
-                alt={`Seattle, Washington skyline ${index + 1}`}
-                fill
-                className="object-cover"
-                priority={index === 0}
-                quality={90}
-                sizes="100vw"
-              />
-            </div>
-          ))}
+    <div className="bg-white">
+      {/* Hero Section - Full viewport with video background */}
+      <section className="relative h-screen min-h-[700px] flex items-center justify-center">
+        {/* Video Background */}
+        <div className="absolute inset-0 overflow-hidden bg-black">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/homepage-hero/seattle-washington-1031-exchange-1.jpg"
+            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <source src="/seattle-hero.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1F3C58]/85 via-[#234a6d]/80 to-[#4DA49B]/85" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.16),_transparent_60%)]" />
-        <div className="relative mx-auto grid max-w-wrapper items-start gap-12 px-6 py-24 md:px-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,420px)] lg:py-32">
-          <Reveal className="space-y-8">
-            <h1 className="font-heading text-4xl font-semibold leading-tight text-[#F5F7FA] sm:text-5xl lg:text-6xl">
-              Seattle, WA 1031 Exchange Experts.
-            </h1>
-            <p className="max-w-2xl text-lg leading-8 text-[#E8EDEF]/90">
-              Modern 1031 coordination for Washington investors. We identify compliant replacement property, produce underwriting that withstands scrutiny, and manage every deadline with transparent reporting.
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center text-white px-6 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <p className="text-xs tracking-[0.4em] uppercase mb-8 text-white/80">
+              Trusted 1031 Exchange Guidance
             </p>
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-white/20 bg-white/5 p-6 backdrop-blur">
-                <p className="font-heading text-sm font-semibold uppercase tracking-[0.28em] text-[#E8EDEF]">
-                  Replacement Property Intelligence
-                </p>
-                <p className="mt-3 text-sm text-[#E8EDEF]/75">
-                  Curated single tenant NNN, multifamily, logistics, healthcare, and DST opportunities in all fifty states with lender-ready data.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/20 bg-white/5 p-6 backdrop-blur">
-                <p className="font-heading text-sm font-semibold uppercase tracking-[0.28em] text-[#E8EDEF]">
-                  Timeline and Compliance Control
-                </p>
-                <p className="mt-3 text-sm text-[#E8EDEF]/75">
-                  Project plans, automated reminders, and intermediary coordination so 45-day and 180-day milestones stay on schedule.
-                </p>
-              </div>
+            <h1 className="font-heading text-5xl md:text-7xl tracking-[0.2em] mb-4">
+              1031 EXCHANGE
+            </h1>
+            <div className="flex items-center justify-center gap-8 my-6">
+              <span className="h-px w-16 bg-[#b8a074]" />
+              <span className="font-heading text-3xl md:text-4xl tracking-[0.25em]">SEATTLE</span>
+              <span className="h-px w-16 bg-[#b8a074]" />
             </div>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <p className="text-lg md:text-xl font-light tracking-wide mt-8 text-white/90 max-w-2xl mx-auto">
+              Expert coordination for tax-deferred exchanges across Washington State
+            </p>
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#contact-intake"
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#4DA49B] to-[#7BC5BD] px-6 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-[#0E2536] shadow-[0_20px_46px_-24px_rgba(77,164,155,0.8)] transition hover:shadow-[0_24px_56px_-22px_rgba(77,164,155,0.85)]"
+                href="#contact"
+                className="px-10 py-4 bg-white text-[#2c3e50] text-xs tracking-[0.25em] uppercase hover:bg-[#b8a074] hover:text-white transition-all"
               >
-                Start My Exchange
+                Start Your Exchange
               </a>
               <a
                 href={`tel:${site.phoneDigits}`}
-                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-[#F5F7FA] hover:bg-white/10"
+                className="px-10 py-4 border border-white/60 text-white text-xs tracking-[0.25em] uppercase hover:bg-white hover:text-[#2c3e50] transition-all"
               >
-                Call {site.phone}
+                {site.phone}
               </a>
             </div>
-          </Reveal>
-
-          <Reveal variant="scale" delay={0.1}>
-            <div
-              id="contact-intake"
-              className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl shadow-[0_30px_60px_-28px_rgba(10,19,28,0.6)]"
-            >
-              <h2 className="font-heading text-xl font-semibold text-[#F5F7FA]">
-                Share Your 1031 Requirements
-              </h2>
-              <p className="mt-2 text-sm text-[#E8EDEF]/75">
-                Secure intake protects your information. A senior advisor responds within one business day.
-              </p>
-              <div className="mt-6">
-                {heroFormSubmitted ? (
-                  <div className="space-y-5 rounded-2xl border border-white/20 bg-white/15 p-6 text-center text-sm text-[#F5F7FA]">
-                    <p className="text-lg font-semibold text-white">
-                      Thank you. We received your request.
-                    </p>
-                    <p className="text-white/80">
-                      Expect a call or email within one business day with replacement property options and timeline guidance.
-                    </p>
-                    <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                      <a
-                        href={`tel:${site.phoneDigits}`}
-                        className="inline-flex items-center justify-center rounded-full border border-white/60 px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition hover:bg-white hover:text-[#1F3C58]"
-                      >
-                        Call {site.phone}
-                      </a>
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white/90 transition hover:bg-white/10"
-                      >
-                        View Contact Details
-                      </Link>
-                    </div>
-                  </div>
-                ) : (
-                  <ContactForm
-                    source="Homepage hero form"
-                    onSuccess={() => setHeroFormSubmitted(true)}
-                  />
-                )}
-              </div>
-            </div>
-          </Reveal>
+          </motion.div>
         </div>
       </section>
 
-      <section className="bg-[#F5F7FA] py-12">
-        <div className="mx-auto max-w-wrapper px-6 md:px-10">
-          <div className="grid gap-6 md:grid-cols-4">
-            {["Qualified Intermediary Network", "CPA and Legal Alignment", "Timeline Precision", "Transparent Documentation"].map((title) => (
-              <div
-                key={title}
-                className="rounded-2xl border border-[#1F3C58]/10 bg-white px-5 py-6 shadow-[0_18px_32px_-26px_rgba(17,40,60,0.25)]"
-              >
-                <p className="font-heading text-sm font-semibold uppercase tracking-[0.26em] text-[#4DA49B]">
-                  {title}
-                </p>
-                <p className="mt-3 text-sm text-[#1B1B1B]/75">
-                  We coordinate transparent workflows with your advisors, deliver secure documentation, and monitor every milestone across the exchange lifecycle.
-                </p>
-              </div>
-            ))}
+      {/* Accolades Section */}
+      <section className="py-20 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <Reveal className="text-center">
+            <h2 className="font-heading text-4xl md:text-5xl tracking-[0.12em] text-[#2c3e50]">
+              Key Deadlines
+            </h2>
+          </Reveal>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <Reveal delay={0.1}>
+              <p className="font-heading text-6xl md:text-7xl text-[#2c3e50] tracking-wide">45</p>
+              <p className="mt-4 text-sm tracking-[0.2em] uppercase text-[#6b7c8a]">Day Identification</p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="font-heading text-6xl md:text-7xl text-[#2c3e50] tracking-wide">180</p>
+              <p className="mt-4 text-sm tracking-[0.2em] uppercase text-[#6b7c8a]">Day Closing</p>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <p className="font-heading text-6xl md:text-7xl text-[#2c3e50] tracking-wide">100%</p>
+              <p className="mt-4 text-sm tracking-[0.2em] uppercase text-[#6b7c8a]">Tax Deferral</p>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      <section className="py-24 md:py-32">
-        <div className="mx-auto grid max-w-wrapper gap-16 px-6 md:px-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1fr)] lg:items-center">
-          <Reveal>
-            <div className="space-y-6">
-              <span className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-[#4DA49B]">
-                Built for Washington Investors
-              </span>
-              <h2 className="font-heading text-3xl font-semibold text-[#1F3C58] sm:text-4xl">
-                Clarity, compliance, and nationwide reach.
-              </h2>
-              <p className="text-base leading-7 text-[#1B1B1B]/80">
-                Our Seattle team manages every stage of your 1031 exchange. We prepare lender-ready underwriting, coordinate diligence, and keep your intermediary, CPA, and legal advisors informed at every checkpoint.
-              </p>
-              <div className="grid gap-4">
-                {["Dedicated sourcing teams covering all fifty states with local intelligence across the Puget Sound", "Secure data rooms, weekly dashboards, and compliance records ready for audits", "Scenario modeling for cap rates, rent coverage, and lender sensitivity before you sign"].map((point) => (
-                  <div key={point} className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[#4DA49B]" />
-                    <p className="text-sm leading-6 text-[#1B1B1B]/80">{point}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href={`tel:${site.phoneDigits}`}
-                  className="rounded-full bg-[#1F3C58] px-6 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-[#F5F7FA] hover:bg-[#274f74]"
-                >
-                  Call {site.phone}
-                </a>
-                <Link
-                  href="/services/seattle-replacement-property-identification"
-                  className="rounded-full border border-[#1F3C58] px-6 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-[#1F3C58] hover:bg-[#1F3C58] hover:text-[#F5F7FA]"
-                >
-                  Explore Services
-                </Link>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal variant="scale" delay={0.1}>
-            <div className="space-y-6 rounded-3xl border border-[#1F3C58]/10 bg-white p-6 shadow-[0_24px_48px_-28px_rgba(17,40,60,0.35)]">
-              <DeadlineCalculator />
-              <IdentificationRules />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-[#0B3C5D] py-24 md:py-32 text-[#F5F7FA]">
-        <div className="mx-auto max-w-wrapper px-6 md:px-10">
-          <Reveal className="text-center">
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-[#C9A227]">
-              Tools & Calculators
-            </span>
-            <h2 className="mt-4 font-heading text-3xl font-semibold sm:text-4xl">
-              Interactive 1031 exchange planning tools.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#F5F7FA]/80">
-              Model boot exposure, estimate closing costs, and verify
-              identification strategies in minutes. Share the outputs with your
-              intermediary, CPA, and lender to streamline decision making.
+      {/* Tools Section (Replacing Testimonials) */}
+      <section className="py-24 bg-[#f7f6f4]">
+        <div className="max-w-6xl mx-auto px-6">
+          <Reveal className="text-center mb-16">
+            <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+              Interactive Resources
             </p>
+            <h2 className="font-heading text-4xl md:text-5xl tracking-[0.12em] text-[#2c3e50]">
+              Planning Tools
+            </h2>
           </Reveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {tools.map((tool, index) => (
-              <Reveal key={tool.slug} delay={index * 0.05}>
+              <Reveal key={tool.slug} delay={index * 0.1}>
                 <Link
                   href={`/tools/${tool.slug}`}
-                  className="group block h-full rounded-3xl border border-white/20 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 shadow-[0_28px_52px_-30px_rgba(0,0,0,0.55)] transition hover:-translate-y-1 hover:border-[#C9A227]/60"
+                  className="group block bg-white p-10 hover:shadow-lg transition-shadow"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
-                    {toolIconMap[tool.icon]}
-                  </div>
-                  <h3 className="mt-6 font-heading text-2xl font-semibold text-white">
+                  <div className="text-[#b8a074] mb-6">{toolIconMap[tool.icon]}</div>
+                  <h3 className="font-heading text-2xl tracking-[0.08em] text-[#2c3e50] mb-4">
                     {tool.name}
                   </h3>
-                  <p className="mt-3 text-sm text-[#F5F7FA]/80">{tool.summary}</p>
-                  <span className="mt-6 inline-flex items-center text-xs font-semibold uppercase tracking-[0.28em] text-[#C9A227]">
-                    Launch tool
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={1.5}
-                      className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.25 6.75H9m8.25 0V15m0-8.25L7.5 16.5"
-                      />
-                    </svg>
+                  <p className="text-[#6b7c8a] text-sm leading-relaxed mb-6">
+                    {tool.summary}
+                  </p>
+                  <span className="text-xs tracking-[0.2em] uppercase text-[#b8a074] group-hover:text-[#2c3e50] transition-colors">
+                    Launch Tool →
                   </span>
                 </Link>
               </Reveal>
@@ -428,40 +232,52 @@ export const HomeContent = ({
         </div>
       </section>
 
-      <section className="bg-[#E8EDEF] py-24 md:py-32">
-        <div className="mx-auto max-w-wrapper px-6 md:px-10">
-          <Reveal className="text-center">
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-[#1F3C58]">
-              How a 1031 Works
-            </span>
-            <h2 className="mt-4 font-heading text-3xl font-semibold text-[#1F3C58] sm:text-4xl">
-              Linear timeline with disciplined execution.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#1B1B1B]/80">
-              Every exchange progresses through discovery, identification, diligence, and closing. We align your advisors and lenders to ensure statutory deadlines are met and documented.
-            </p>
-          </Reveal>
-          <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-            <Reveal variant="scale">
-              <TimelineTracker />
+      {/* About Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <Reveal>
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src="/homepage-hero/seattle-washington-1031-exchange-2.jpg"
+                  alt="Seattle 1031 Exchange"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </Reveal>
-            <Reveal delay={0.1} variant="scale">
-              <div className="rounded-3xl border border-[#1F3C58]/10 bg-white p-6 shadow-[0_24px_44px_-26px_rgba(17,40,60,0.32)]">
-                <p className="text-sm text-[#1B1B1B]/80">
-                  Reference IRS guidance during identification and closing planning.
+            <Reveal delay={0.2}>
+              <div>
+                <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+                  About
                 </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  {timelineLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-full border border-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1F3C58] transition hover:bg-[#1F3C58] hover:text-[#F5F7FA]"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
+                <h2 className="font-heading text-4xl md:text-5xl tracking-[0.1em] text-[#2c3e50] mb-6">
+                  1031 Exchange Seattle
+                </h2>
+                <p className="text-sm tracking-[0.15em] uppercase text-[#2c3e50] mb-8">
+                  Expert Exchange Coordination for Washington Investors
+                </p>
+                <div className="space-y-6 text-[#6b7c8a] leading-relaxed">
+                  <p>
+                    We help Washington investors navigate IRC Section 1031 exchanges with 
+                    precision and transparency. From initial strategy through closing, our 
+                    team coordinates replacement property identification, timeline management, 
+                    and stakeholder communication.
+                  </p>
+                  <p>
+                    Our expertise spans single tenant NNN, multifamily, industrial, medical 
+                    office, and DST opportunities across the Pacific Northwest and nationwide. 
+                    We work alongside your qualified intermediary, CPA, and legal counsel to 
+                    ensure compliant execution.
+                  </p>
+                </div>
+                <div className="mt-10">
+                  <Link
+                    href="/about"
+                    className="text-xs tracking-[0.2em] uppercase text-[#2c3e50] border-b border-[#2c3e50] pb-1 hover:text-[#b8a074] hover:border-[#b8a074] transition-colors"
+                  >
+                    Learn More
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -469,65 +285,49 @@ export const HomeContent = ({
         </div>
       </section>
 
-      <section className="bg-[#4DA49B] py-24 md:py-32 text-[#F5F7FA]">
-        <div className="mx-auto max-w-wrapper px-6 md:px-10">
-          <Reveal className="text-center">
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.3em]">
-              Strategic Services
-            </span>
-            <h2 className="mt-4 font-heading text-3xl font-semibold sm:text-4xl">
-              Replacement property identification at institutional depth.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#F5F7FA]/90">
-              Filter services by the strategy that supports your exchange. Share precise requirements and we will prepare identification options with lender-ready diligence.
+      {/* Exchange Types Section (Replacing Significant Sales) */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <Reveal className="text-center mb-16">
+            <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+              Exchange Structures
             </p>
+            <h2 className="font-heading text-4xl md:text-5xl tracking-[0.12em] text-[#2c3e50]">
+              Types of Exchanges
+            </h2>
           </Reveal>
-          <div className="mt-10">
-            <SearchInput
-              label="Search services"
-              placeholder="Search services by keyword"
-              onSearch={setServiceQuery}
-              onClear={() => setServiceQuery("")}
-            />
-            {noServiceResults && (
-              <div className="mt-4 space-y-3 rounded-2xl border border-white/60 bg-white/15 p-4 text-sm">
-                <p>
-                  No services matched "{serviceQuery}". We can still help with "{serviceQuery}".
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {exchangeTypes.map((type, index) => (
+              <Reveal key={type.name} delay={index * 0.1}>
                 <Link
-                  href={`/contact?projectType=${encodeURIComponent(serviceQuery)}#contact-intake`}
-                  className="inline-flex rounded-full border border-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white hover:bg-white/20"
+                  href={type.route}
+                  className="group block relative overflow-hidden"
                 >
-                  Contact the Seattle team about {serviceQuery}
-                </Link>
-              </div>
-            )}
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {filteredServices.slice(0, 9).map((service, index) => (
-              <Reveal key={service.slug} delay={index * 0.05} variant="scale">
-                <Link
-                  href={service.route}
-                  className="block h-full rounded-3xl border border-white/25 bg-white/10 p-6 text-left shadow-[0_24px_44px_-28px_rgba(12,28,40,0.45)] transition hover:border-white/60 hover:bg-white/15"
-                >
-                  <p className="font-heading text-xs font-semibold uppercase tracking-[0.28em] text-[#F5F7FA]/80">
-                    {service.category}
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-white">
-                    {service.name}
-                  </h3>
-                  <p className="mt-3 text-sm text-[#F5F7FA]/75">{service.short}</p>
-                  <span className="mt-6 inline-flex items-center text-xs font-semibold uppercase tracking-[0.28em] text-[#F5F7FA]">
-                    View Details
-                  </span>
+                  <div className="relative aspect-[16/10]">
+                    <Image
+                      src={type.image}
+                      alt={type.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <h3 className="font-heading text-2xl md:text-3xl tracking-[0.1em] text-white mb-3">
+                        {type.name}
+                      </h3>
+                      <p className="text-white/80 text-sm leading-relaxed">
+                        {type.description}
+                      </p>
+                    </div>
+                  </div>
                 </Link>
               </Reveal>
             ))}
           </div>
-          <div className="mt-12 flex justify-center">
+          <div className="mt-12 text-center">
             <Link
               href="/services"
-              className="rounded-full border border-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.24em] text-white hover:bg-white/15"
+              className="inline-block px-10 py-4 border border-[#2c3e50] text-xs tracking-[0.25em] uppercase text-[#2c3e50] hover:bg-[#2c3e50] hover:text-white transition-all"
             >
               View All Services
             </Link>
@@ -535,158 +335,110 @@ export const HomeContent = ({
         </div>
       </section>
 
-      <section className="py-24 md:py-32">
-        <div className="mx-auto max-w-wrapper px-6 md:px-10">
+      {/* Neighborhoods Section - Full width grid */}
+      <section className="py-24 bg-[#f7f6f4]">
+        <div className="max-w-6xl mx-auto px-6 mb-12">
           <Reveal className="text-center">
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-[#1F3C58]">
-              Property Profiles
-            </span>
-            <h2 className="mt-4 font-heading text-3xl font-semibold text-[#1F3C58] sm:text-4xl">
-              Asset classes matched to investor objectives.
+            <h2 className="font-heading text-4xl md:text-5xl tracking-[0.12em] text-[#2c3e50]">
+              Seattle Markets
             </h2>
-            <p className="mt-4 text-base leading-7 text-[#1B1B1B]/80">
-              Preview the asset classes we model most often for ${PRIMARY_CITY}, ${PRIMARY_STATE_ABBR} investors. Each profile includes underwriting frameworks, rent rolls, and market comp support.
-            </p>
           </Reveal>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {propertyTypes.slice(0, 9).map((type, index) => (
-              <Reveal key={type.slug} delay={index * 0.05}>
-                <div className="flex h-full flex-col rounded-3xl border border-[#1F3C58]/15 bg-white p-6 shadow-[0_24px_44px_-30px_rgba(17,40,60,0.32)]">
-                  <h3 className="font-heading text-lg font-semibold text-[#1F3C58]">
-                    {type.name}
-                  </h3>
-                  <p className="mt-3 text-sm text-[#1B1B1B]/75">{type.summary}</p>
-                  <ul className="mt-4 space-y-2 text-sm text-[#1B1B1B]/70">
-                    {type.focusAreas.map((focus) => (
-                      <li key={focus} className="flex items-start gap-2">
-                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#4DA49B]" />
-                        <span>{focus}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-6 pt-4">
-                    <Link
-                      href={type.route}
-                      className="inline-flex rounded-full border border-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1F3C58] hover:bg-[#1F3C58] hover:text-[#F5F7FA]"
-                    >
-                      View Playbook
-                    </Link>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
-            <Reveal variant="scale">
-              <IdentificationLetterHelper />
-            </Reveal>
-            <Reveal variant="scale" delay={0.1}>
-              <div className="rounded-3xl border border-[#1F3C58]/15 bg-[#F5F7FA] p-6 shadow-[0_22px_44px_-28px_rgba(17,40,60,0.28)]">
-                <h3 className="font-heading text-lg font-semibold text-[#1F3C58]">
-                  Washington State Excise Guidance
-                </h3>
-                <p className="mt-2 text-sm text-[#1B1B1B]/75">
-                  Review Washington State Real Estate Excise Tax requirements alongside federal exchange planning. Excise tax applies even when capital gains are deferred.
-                </p>
-                <a
-                  href={waTaxHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex rounded-full border border-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1F3C58] hover:bg-[#1F3C58] hover:text-[#F5F7FA]"
-                >
-                  Washington State REET Guidance
-                </a>
-              </div>
-            </Reveal>
-          </div>
         </div>
-      </section>
-
-      <section className="bg-[#F5F7FA] py-24 md:py-32">
-        <div className="mx-auto max-w-wrapper px-6 md:px-10">
-          <Reveal className="text-center">
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-[#1F3C58]">
-              Seattle Coverage
-            </span>
-            <h2 className="mt-4 font-heading text-3xl font-semibold text-[#1F3C58] sm:text-4xl">
-              Puget Sound markets with national reach.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#1B1B1B]/80">
-              We support investors across Seattle, Bellevue, Redmond, Kirkland, Mercer Island, and beyond while sourcing replacement options in every major U.S. market.
-            </p>
-          </Reveal>
-          <div className="mt-8">
-            <SearchInput
-              label="Search locations"
-              placeholder="Filter locations by city or neighborhood"
-              onSearch={setLocationQuery}
-              onClear={() => setLocationQuery("")}
-            />
-            {noLocationResults && (
-              <div className="mt-4 space-y-3 rounded-2xl border border-[#1F3C58]/20 bg-white p-4 text-sm">
-                <p>
-                  We do not yet list "{locationQuery}". We can still prepare replacement options in that market.
-                </p>
-                <Link
-                  href={`/contact?projectType=${encodeURIComponent(locationQuery)}#contact-intake`}
-                  className="inline-flex rounded-full border border-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1F3C58] hover:bg-[#1F3C58] hover:text-[#F5F7FA]"
-                >
-                  Contact us about {locationQuery}
-                </Link>
-              </div>
-            )}
-          </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {filteredLocations.slice(0, 8).map((location, index) => (
-              <Reveal key={location.route} delay={index * 0.04}>
-                <Link
-                  href={location.route}
-                  className="flex h-full flex-col justify-between rounded-3xl border border-[#1F3C58]/15 bg-white px-5 py-6 shadow-[0_20px_40px_-28px_rgba(17,40,60,0.28)] transition hover:border-[#1F3C58]"
-                >
-                  <div>
-                    <p className="font-heading text-sm font-semibold uppercase tracking-[0.26em] text-[#4DA49B]">
-                      {location.name}
-                    </p>
-                    <p className="mt-3 text-sm text-[#1B1B1B]/75">
-                      Replacement strategies, FAQs, and lender alignment tailored to {location.name}.
-                    </p>
-                  </div>
-                  <span className="mt-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#1F3C58]">
-                    View Market
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {neighborhoods.map((location, index) => (
+            <Reveal key={location.route} delay={index * 0.03}>
+              <Link
+                href={location.route}
+                className="group relative aspect-square overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-[#1a3a52]" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1a3a52] to-[#2c3e50] group-hover:from-[#b8a074] group-hover:to-[#9a8660] transition-all duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center p-4">
+                  <span className="font-heading text-lg md:text-xl tracking-[0.15em] text-white text-center">
+                    {location.name}
                   </span>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-[#b8a074]">
+                  <span className="text-xs tracking-[0.2em] uppercase text-white">
+                    Learn More
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+        <div className="max-w-6xl mx-auto px-6 mt-12 text-center">
+          <Link
+            href="/locations"
+            className="inline-block px-10 py-4 border border-[#2c3e50] text-xs tracking-[0.25em] uppercase text-[#2c3e50] hover:bg-[#2c3e50] hover:text-white transition-all"
+          >
+            View All Locations
+          </Link>
+        </div>
+      </section>
+
+      {/* Services Preview */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <Reveal className="text-center mb-16">
+            <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+              Our Expertise
+            </p>
+            <h2 className="font-heading text-4xl md:text-5xl tracking-[0.12em] text-[#2c3e50]">
+              Exchange Services
+            </h2>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
+            {services.slice(0, 6).map((service, index) => (
+              <Reveal key={service.slug} delay={index * 0.08}>
+                <Link
+                  href={service.route}
+                  className="group block border-l-2 border-gray-200 pl-6 hover:border-[#b8a074] transition-colors"
+                >
+                  <p className="text-xs tracking-[0.2em] uppercase text-[#b8a074] mb-2">
+                    {service.category}
+                  </p>
+                  <h3 className="font-heading text-xl tracking-[0.05em] text-[#2c3e50] mb-3 group-hover:text-[#b8a074] transition-colors">
+                    {service.name}
+                  </h3>
+                  <p className="text-[#6b7c8a] text-sm leading-relaxed">
+                    {service.short}
+                  </p>
                 </Link>
               </Reveal>
             ))}
           </div>
-          <div className="mt-12 text-center text-sm text-[#1B1B1B]/75">
-            <p>
-              A 1031 exchange defers federal and Washington State capital gains tax on qualifying real property. It does not remove excise tax obligations.
-            </p>
+          <div className="mt-12 text-center">
+            <Link
+              href="/services"
+              className="inline-block px-10 py-4 border border-[#2c3e50] text-xs tracking-[0.25em] uppercase text-[#2c3e50] hover:bg-[#2c3e50] hover:text-white transition-all"
+            >
+              View All Services
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-24 md:py-32">
-        <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <Reveal className="text-center">
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-[#1F3C58]">
-              FAQs
-            </span>
-            <h2 className="mt-4 font-heading text-3xl font-semibold text-[#1F3C58] sm:text-4xl">
-              Frequently asked questions.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#1B1B1B]/80">
-              Clear answers for investors, developers, attorneys, and advisors advancing 1031 exchange strategies in Washington and across the country.
+      {/* FAQ Section */}
+      <section className="py-24 bg-[#f7f6f4]">
+        <div className="max-w-3xl mx-auto px-6">
+          <Reveal className="text-center mb-16">
+            <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+              Common Questions
             </p>
+            <h2 className="font-heading text-4xl md:text-5xl tracking-[0.12em] text-[#2c3e50]">
+              FAQ
+            </h2>
           </Reveal>
-          <div className="mt-12 space-y-4">
-            {faqItems.map((faq, index) => (
-              <Reveal key={faq.question} delay={index * 0.04}>
-                <details className="group rounded-3xl border border-[#1F3C58]/10 bg-[#F5F7FA] px-6 py-5 shadow-[0_20px_40px_-30px_rgba(17,40,60,0.25)]">
-                  <summary className="cursor-pointer font-heading text-base font-semibold text-[#1F3C58]">
-                    {faq.question}
+          <div className="space-y-4">
+            {faqItems.slice(0, 5).map((faq, index) => (
+              <Reveal key={faq.question} delay={index * 0.05}>
+                <details className="group bg-white border border-gray-200">
+                  <summary className="cursor-pointer px-8 py-6 text-[#2c3e50] font-medium flex items-center justify-between">
+                    <span className="pr-8">{faq.question}</span>
+                    <span className="text-[#b8a074] text-xl transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <div className="mt-3 border-t border-[#1F3C58]/10 pt-4 text-sm text-[#1B1B1B]/80">
+                  <div className="px-8 pb-6 text-[#6b7c8a] text-sm leading-relaxed border-t border-gray-100 pt-6">
                     {faq.answer}
                   </div>
                 </details>
@@ -696,29 +448,59 @@ export const HomeContent = ({
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1F3C58] via-[#234a6d] to-[#4DA49B] py-24 md:py-32 text-[#F5F7FA]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(245,247,250,0.18),_transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-6 text-center md:px-10">
-          <Reveal className="space-y-6">
-            <h2 className="font-heading text-3xl font-semibold sm:text-4xl">
-              Start your 1031 exchange with confidence.
+      {/* Contact CTA Section */}
+      <section id="contact" className="relative min-h-[80vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/homepage-hero/seattle-washington-1031-exchange-3.jpg"
+            alt="Seattle"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 w-full max-w-2xl mx-auto px-6 py-24 text-center">
+          <Reveal>
+            <h2 className="font-heading text-4xl md:text-5xl tracking-[0.15em] text-white mb-6">
+              Connect With Us
             </h2>
-            <p className="text-base leading-7 text-[#F5F7FA]/85">
-              Our Seattle advisors help you identify replacement properties, manage diligence, and close on time. Share your objectives and we will deploy a project plan tailored to your timeline.
+            <p className="text-white/80 mb-12 leading-relaxed">
+              Share your exchange requirements and a senior advisor will respond 
+              within one business day with replacement property options and timeline guidance.
             </p>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
-                href="#contact-intake"
-                className="rounded-full bg-[#F5F7FA] px-6 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-[#1F3C58] hover:bg-[#E8EDEF]"
-              >
-                Start My Exchange
+          </Reveal>
+          <Reveal delay={0.2}>
+            {formSubmitted ? (
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 text-white">
+                <p className="text-xl tracking-wide mb-4">Thank you.</p>
+                <p className="text-white/80 text-sm">
+                  Expect a response within one business day.
+                </p>
+                <a
+                  href={`tel:${site.phoneDigits}`}
+                  className="inline-block mt-8 px-8 py-3 border border-white/60 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-[#2c3e50] transition-all"
+                >
+                  Call {site.phone}
+                </a>
+              </div>
+            ) : (
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-10">
+                <ContactForm
+                  source="Homepage CTA"
+                  onSuccess={() => setFormSubmitted(true)}
+                />
+              </div>
+            )}
+          </Reveal>
+          <Reveal delay={0.3}>
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-white/80">
+              <a href={`tel:${site.phoneDigits}`} className="hover:text-white transition-colors">
+                {site.phone}
               </a>
-              <Link
-                href="/contact"
-                className="rounded-full border border-[#F5F7FA]/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-[#F5F7FA] hover:bg-[#F5F7FA] hover:text-[#1F3C58]"
-              >
-                Schedule a Strategy Call
-              </Link>
+              <span className="hidden sm:block">|</span>
+              <a href={`mailto:${site.email}`} className="hover:text-white transition-colors">
+                {site.email}
+              </a>
             </div>
           </Reveal>
         </div>

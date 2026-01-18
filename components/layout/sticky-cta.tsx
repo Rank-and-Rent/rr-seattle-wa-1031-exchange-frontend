@@ -5,45 +5,49 @@ import Link from "next/link";
 import site from "@/content/site.json";
 
 export const StickyCta = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end space-y-4">
-      <div className="hidden lg:flex">
+    <div className="fixed bottom-6 right-6 z-40">
+      {/* Desktop */}
+      <div className="hidden lg:block">
         <Link
-          href="/contact#contact-intake"
-          className="rounded-full bg-[#4DA49B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-[#0E2536] shadow-[0_20px_46px_-24px_rgba(77,164,155,0.8)] transition hover:bg-[#7BC5BD]"
+          href="/contact"
+          className="px-6 py-3 bg-[#b8a074] text-white text-xs tracking-[0.15em] uppercase shadow-lg hover:bg-[#a08960] transition-colors"
         >
-          Contact Seattle Team
+          Contact Us
         </Link>
       </div>
 
+      {/* Mobile */}
       <div className="lg:hidden">
         <button
           type="button"
-          onClick={() => setMobileOpen((prev) => !prev)}
-          className="flex items-center gap-2 rounded-full bg-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-[#F5F7FA] shadow-lg"
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-sticky-cta"
+          onClick={() => setOpen(!open)}
+          className="w-12 h-12 bg-[#b8a074] text-white shadow-lg flex items-center justify-center"
+          aria-label="Contact options"
         >
-          {mobileOpen ? "Hide Help" : "Need 1031 Help?"}
+          {open ? (
+            <span className="text-xl">&times;</span>
+          ) : (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          )}
         </button>
-        {mobileOpen && (
-          <div
-            id="mobile-sticky-cta"
-            className="mt-3 space-y-2 rounded-2xl border border-white/20 bg-[#0E2536]/95 p-4 text-sm text-white shadow-lg"
-          >
+        {open && (
+          <div className="absolute bottom-14 right-0 w-44 bg-white shadow-xl border border-gray-100 p-4 space-y-3">
             <a
               href={`tel:${site.phoneDigits}`}
-              className="block rounded-full bg-[#4DA49B] px-4 py-2 text-center font-semibold uppercase tracking-[0.24em] text-[#0E2536]"
+              className="block py-2 px-4 text-center text-xs tracking-[0.15em] uppercase border border-[#b8a074] text-[#b8a074] hover:bg-[#b8a074] hover:text-white transition-all"
             >
-              Call {site.phone}
+              Call
             </a>
             <Link
-              href="/contact#contact-intake"
-              className="block rounded-full border border-white/30 px-4 py-2 text-center font-semibold uppercase tracking-[0.24em] text-white"
+              href="/contact"
+              className="block py-2 px-4 text-center text-xs tracking-[0.15em] uppercase border border-[#2c3e50] text-[#2c3e50] hover:bg-[#2c3e50] hover:text-white transition-all"
             >
-              Message Team
+              Message
             </Link>
           </div>
         )}

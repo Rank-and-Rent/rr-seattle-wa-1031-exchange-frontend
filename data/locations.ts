@@ -20,50 +20,80 @@ export const locationsData: LocationItem[] = [
   },
   {
     slug: "bellevue-core",
-    name: "Bellevue Core",
+    name: "Bellevue",
     route: "/locations/bellevue-core",
     type: "suburb",
   },
   {
     slug: "kirkland-waterfront",
-    name: "Kirkland Waterfront",
+    name: "Kirkland",
     route: "/locations/kirkland-waterfront",
     type: "suburb",
   },
   {
     slug: "redmond-tech-corridor",
-    name: "Redmond Tech Corridor",
+    name: "Redmond",
     route: "/locations/redmond-tech-corridor",
     type: "suburb",
   },
   {
     slug: "ballard-maritime-district",
-    name: "Ballard Maritime District",
+    name: "Ballard",
     route: "/locations/ballard-maritime-district",
     type: "neighborhood",
   },
   {
     slug: "capitol-hill-pike-pine",
-    name: "Capitol Hill Pike-Pine",
+    name: "Capitol Hill",
     route: "/locations/capitol-hill-pike-pine",
     type: "neighborhood",
   },
   {
     slug: "fremont-innovation-hub",
-    name: "Fremont Innovation Hub",
+    name: "Fremont",
     route: "/locations/fremont-innovation-hub",
     type: "neighborhood",
   },
   {
     slug: "issaquah-highlands",
-    name: "Issaquah Highlands",
+    name: "Issaquah",
     route: "/locations/issaquah-highlands",
     type: "suburb",
   },
   {
     slug: "mercer-island-town-center",
-    name: "Mercer Island Town Center",
+    name: "Mercer Island",
     route: "/locations/mercer-island-town-center",
+    type: "suburb",
+  },
+  {
+    slug: "tacoma-waterfront",
+    name: "Tacoma",
+    route: "/locations/tacoma-waterfront",
+    type: "city",
+  },
+  {
+    slug: "queen-anne",
+    name: "Queen Anne",
+    route: "/locations/queen-anne",
+    type: "neighborhood",
+  },
+  {
+    slug: "university-district",
+    name: "University District",
+    route: "/locations/university-district",
+    type: "neighborhood",
+  },
+  {
+    slug: "west-seattle",
+    name: "West Seattle",
+    route: "/locations/west-seattle",
+    type: "neighborhood",
+  },
+  {
+    slug: "bainbridge-island",
+    name: "Bainbridge Island",
+    route: "/locations/bainbridge-island",
     type: "suburb",
   },
 ];
@@ -267,6 +297,91 @@ const locationDetailsRaw: Record<string, LocationDetail> = {
       title: "Mercer Island Town Center 1031 Exchange Support | 1031 Exchange Seattle",
       description:
         "Invest in Mercer Island, WA replacement properties with high-income demographics, underwriting, and deadline controls.",
+    },
+  },
+  "tacoma-waterfront": {
+    slug: "tacoma-waterfront",
+    overview:
+      "Tacoma offers industrial, logistics, and multifamily investment opportunities with strong port access, growing tech presence, and improving urban amenities.",
+    highlights: [
+      "Port of Tacoma industrial and logistics assets",
+      "Growing downtown revitalization with mixed-use development",
+      "Affordable multifamily with rent growth potential",
+      "Strong infrastructure connecting to Seattle metro",
+    ],
+    faqs: buildFAQs("Tacoma"),
+    seo: {
+      title: "Tacoma 1031 Exchange Support | 1031 Exchange Seattle",
+      description:
+        "Exchange into Tacoma, WA assets with industrial strength, port access, and growing urban investment opportunities.",
+    },
+  },
+  "queen-anne": {
+    slug: "queen-anne",
+    overview:
+      "Queen Anne combines residential charm with urban convenience, offering multifamily and retail investment opportunities near Seattle Center and downtown employment.",
+    highlights: [
+      "Prime residential neighborhood with strong demographics",
+      "Proximity to Seattle Center and major employers",
+      "Limited supply supporting premium valuations",
+      "Mix of historic and modern multifamily inventory",
+    ],
+    faqs: buildFAQs("Queen Anne"),
+    seo: {
+      title: "Queen Anne 1031 Exchange Support | 1031 Exchange Seattle",
+      description:
+        "Target Queen Anne, WA replacement properties with residential strength and urban convenience for your 1031 exchange.",
+    },
+  },
+  "university-district": {
+    slug: "university-district",
+    overview:
+      "The University District serves the University of Washington community with student housing, retail, and research-adjacent real estate opportunities.",
+    highlights: [
+      "University of Washington anchor providing stable tenant demand",
+      "Light rail connectivity improving accessibility",
+      "Student housing with consistent occupancy",
+      "Research and innovation-related commercial space",
+    ],
+    faqs: buildFAQs("University District"),
+    seo: {
+      title: "University District 1031 Exchange Support | 1031 Exchange Seattle",
+      description:
+        "Invest in University District, WA replacement properties with university-driven demand and transit connectivity.",
+    },
+  },
+  "west-seattle": {
+    slug: "west-seattle",
+    overview:
+      "West Seattle offers waterfront living, neighborhood retail, and multifamily opportunities in a peninsula community with distinct village character.",
+    highlights: [
+      "Waterfront and view properties commanding premium values",
+      "Strong neighborhood retail in Junction and Alki areas",
+      "Residential multifamily with stable occupancy",
+      "Improving infrastructure with future light rail",
+    ],
+    faqs: buildFAQs("West Seattle"),
+    seo: {
+      title: "West Seattle 1031 Exchange Support | 1031 Exchange Seattle",
+      description:
+        "Exchange into West Seattle, WA assets with waterfront appeal, neighborhood character, and transit improvements.",
+    },
+  },
+  "bainbridge-island": {
+    slug: "bainbridge-island",
+    overview:
+      "Bainbridge Island provides premium retail, office, and residential opportunities serving affluent households with ferry access to downtown Seattle.",
+    highlights: [
+      "Affluent demographics supporting premium retail",
+      "Limited commercial supply maintaining low vacancy",
+      "Ferry connectivity to Seattle financial district",
+      "Quality of life attracting high-income residents",
+    ],
+    faqs: buildFAQs("Bainbridge Island"),
+    seo: {
+      title: "Bainbridge Island 1031 Exchange Support | 1031 Exchange Seattle",
+      description:
+        "Identify Bainbridge Island, WA replacement properties with affluent demographics and limited supply advantages.",
     },
   },
 };

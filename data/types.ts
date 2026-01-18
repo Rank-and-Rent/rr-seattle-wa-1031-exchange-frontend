@@ -33,6 +33,7 @@ export interface LocationItem {
   name: string;
   route: Slug;
   type: "city" | "neighborhood" | "suburb" | "district" | "remote";
+  image?: string;
 }
 
 export interface LocationDetail {

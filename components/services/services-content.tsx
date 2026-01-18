@@ -2,11 +2,9 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { ServiceItem } from "@/data";
 import site from "@/content/site.json";
-import { SearchInput } from "@/components/ui/search-input";
-import { DeadlineCalculator } from "@/components/widgets/deadline-calculator";
-import { IdentificationRules } from "@/components/widgets/identification-rules";
 
 interface ServicesContentProps {
   services: ServiceItem[];
@@ -14,111 +12,174 @@ interface ServicesContentProps {
 
 export const ServicesContent = ({ services }: ServicesContentProps) => {
   const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const categories = useMemo(() => {
+    const cats = new Set(services.map((s) => s.category));
+    return Array.from(cats);
+  }, [services]);
 
   const filtered = useMemo(() => {
-    if (!query.trim()) {
-      return services;
+    let result = services;
+    
+    if (activeCategory) {
+      result = result.filter((s) => s.category === activeCategory);
     }
-    const normalized = query.trim().toLowerCase();
-    const exact = services.find(
-      (service) => service.name.toLowerCase() === normalized
-    );
-    if (exact) {
-      return [exact];
+    
+    if (query.trim()) {
+      const normalized = query.trim().toLowerCase();
+      result = result.filter((service) => {
+        const haystack = [service.name, service.short, ...service.keywords]
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(normalized);
+      });
     }
-    return services.filter((service) => {
-      const haystack = [service.name, service.short, ...service.keywords]
-        .join(" ")
-        .toLowerCase();
-      return haystack.includes(normalized);
-    });
-  }, [query, services]);
-
-  const noResults = query.trim().length > 0 && filtered.length === 0;
+    
+    return result;
+  }, [query, services, activeCategory]);
 
   return (
-    <div className="mx-auto max-w-wrapper px-6 py-24 md:px-10 md:py-32">
-      <div className="max-w-3xl">
-        <h1 className="font-heading text-3xl font-semibold text-[#1F3C58] sm:text-4xl">
-          Seattle 1031 Exchange Services
-        </h1>
-        <p className="mt-4 text-base leading-7 text-[#1B1B1B]/80">
-          Browse the strategies we deploy for Seattle, WA investors. Search by asset class, deadline, or support need to surface the right engagement. Every service includes lender-ready analysis, secure documentation, and coordination with your Qualified Intermediary.
-        </p>
-      </div>
-
-      <div className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-        <div className="space-y-6">
-          <SearchInput
-            label="Search services"
-            placeholder="Search by strategy or asset type"
-            onSearch={setQuery}
-            onClear={() => setQuery("")}
+    <>
+      {/* Hero Section */}
+      <section className="relative h-[50vh] min-h-[400px] flex items-end bg-[#1a3a52]">
+        <div className="absolute inset-0">
+          <Image
+            src="/homepage-hero/seattle-washington-1031-exchange-2.jpg"
+            alt="Seattle 1031 Exchange Services"
+            fill
+            className="object-cover opacity-40"
+            priority
           />
-          {noResults && (
-            <div className="space-y-3 rounded-3xl border border-[#1F3C58]/10 bg-[#F5F7FA] p-5 text-sm text-[#1B1B1B]/80">
-              <p>No services matched "{query}". We can still design a program for that focus.</p>
-              <Link
-                href={`/contact?projectType=${encodeURIComponent(query)}#contact-intake`}
-                className="inline-flex rounded-full border border-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1F3C58] hover:bg-[#1F3C58] hover:text-[#F5F7FA]"
-              >
-                Contact the Seattle team about {query}
-              </Link>
-            </div>
-          )}
+        </div>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 md:px-10">
+          <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+            Our Expertise
+          </p>
+          <h1 className="font-heading text-5xl md:text-6xl tracking-[0.12em] text-white mb-4">
+            Exchange Services
+          </h1>
+          <p className="text-white/70 max-w-2xl text-lg">
+            Comprehensive 1031 exchange coordination for Washington investors. Every service includes lender-ready analysis and compliance support.
+          </p>
+        </div>
+      </section>
 
-          <div className="grid gap-5">
-            {filtered.map((service) => (
-              <article
-                key={service.slug}
-                className="rounded-3xl border border-[#1F3C58]/10 bg-white p-6 shadow-[0_22px_48px_-28px_rgba(17,40,60,0.28)]"
+      {/* Filter Bar */}
+      <section className="bg-white border-b border-gray-100 sticky top-20 z-40">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="flex items-center gap-8 overflow-x-auto py-6 scrollbar-hide">
+            <button
+              onClick={() => setActiveCategory(null)}
+              className={`flex-shrink-0 text-xs tracking-[0.2em] uppercase pb-1 transition-colors ${
+                !activeCategory 
+                  ? 'text-[#2c3e50] border-b-2 border-[#b8a074]' 
+                  : 'text-[#6b7c8a] hover:text-[#2c3e50]'
+              }`}
+            >
+              All Services
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`flex-shrink-0 text-xs tracking-[0.2em] uppercase pb-1 transition-colors ${
+                  activeCategory === cat 
+                    ? 'text-[#2c3e50] border-b-2 border-[#b8a074]' 
+                    : 'text-[#6b7c8a] hover:text-[#2c3e50]'
+                }`}
               >
-                <p className="font-heading text-xs font-semibold uppercase tracking-[0.28em] text-[#4DA49B]">
-                  {service.category}
-                </p>
-                <h2 className="mt-3 text-xl font-semibold text-[#1F3C58]">
-                  {service.name}
-                </h2>
-                <p className="mt-3 text-sm text-[#1B1B1B]/80">{service.short}</p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    href={service.route}
-                    className="rounded-full bg-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#F5F7FA] hover:bg-[#274f74]"
-                  >
-                    View Service Details
-                  </Link>
-                  <Link
-                    href={`/contact?projectType=${encodeURIComponent(service.name)}#contact-intake`}
-                    className="rounded-full border border-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1F3C58] hover:bg-[#1F3C58] hover:text-[#F5F7FA]"
-                  >
-                    Prefill Contact Form
-                  </Link>
-                </div>
-              </article>
+                {cat}
+              </button>
             ))}
+            <div className="flex-shrink-0 ml-auto">
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search..."
+                className="px-4 py-2 border border-gray-200 text-sm text-[#2c3e50] focus:border-[#b8a074] focus:outline-none w-48"
+              />
+            </div>
           </div>
         </div>
+      </section>
 
-        <aside className="space-y-6">
-          <div className="rounded-3xl border border-[#1F3C58]/15 bg-white p-5 shadow-[0_22px_44px_-30px_rgba(17,40,60,0.28)]">
-            <h2 className="font-heading text-lg font-semibold text-[#1F3C58]">
-              Timeline Tools
-            </h2>
-            <p className="mt-2 text-sm text-[#1B1B1B]/75">
-              Keep 45-day and 180-day milestones visible while you vet services.
-            </p>
-            <div className="mt-4 space-y-4">
-              <DeadlineCalculator />
-              <IdentificationRules />
+      {/* Services Grid */}
+      <section className="bg-[#f7f6f4] py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          {filtered.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-[#6b7c8a] mb-6">No services match your criteria.</p>
+              <Link
+                href="/contact"
+                className="inline-block px-8 py-4 bg-[#2c3e50] text-xs tracking-[0.2em] uppercase text-white hover:bg-[#1a3a52] transition-colors"
+              >
+                Contact Us About Custom Services
+              </Link>
             </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map((service) => (
+                <Link
+                  key={service.slug}
+                  href={service.route}
+                  className="group bg-white p-8 hover:shadow-[0_20px_40px_-20px_rgba(26,58,82,0.15)] transition-all"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#b8a074]">
+                      {service.category}
+                    </p>
+                    <span className="text-[#2c3e50] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
+                    </span>
+                  </div>
+                  <h2 className="font-heading text-xl tracking-[0.05em] text-[#2c3e50] mb-4 group-hover:text-[#b8a074] transition-colors">
+                    {service.name}
+                  </h2>
+                  <p className="text-sm text-[#6b7c8a] leading-relaxed mb-6">
+                    {service.short}
+                  </p>
+                  <span className="text-xs tracking-[0.15em] uppercase text-[#2c3e50] border-b border-[#2c3e50] pb-1 group-hover:text-[#b8a074] group-hover:border-[#b8a074] transition-colors">
+                    Learn More
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-[#2c3e50] py-20">
+        <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
+          <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+            Ready to Start?
+          </p>
+          <h2 className="font-heading text-3xl md:text-4xl tracking-[0.1em] text-white mb-6">
+            Let&apos;s Discuss Your Exchange
+          </h2>
+          <p className="text-white/70 mb-10 max-w-2xl mx-auto">
+            Call {site.phone} or share your requirements through our intake form. We respond within one business day.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="px-10 py-4 bg-[#b8a074] text-xs tracking-[0.2em] uppercase text-white hover:bg-[#a08960] transition-colors"
+            >
+              Contact Us
+            </Link>
+            <a
+              href={`tel:${site.phoneDigits}`}
+              className="px-10 py-4 border border-white/40 text-xs tracking-[0.2em] uppercase text-white hover:bg-white hover:text-[#2c3e50] transition-all"
+            >
+              Call {site.phone}
+            </a>
           </div>
-          <div className="rounded-3xl border border-[#1F3C58]/15 bg-[#F5F7FA] p-5 text-sm text-[#1B1B1B]/75">
-            <p>
-              Ready to start? Call {site.phone} or share your requirements through the intake form. We respond within one business day.
-            </p>
-          </div>
-        </aside>
-      </div>
-    </div>
+        </div>
+      </section>
+    </>
   );
 };

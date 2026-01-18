@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { locationsData } from "@/data";
 import { LocationsContent } from "@/components/locations/locations-content";
-import { Breadcrumbs, buildBreadcrumbJsonLd } from "@/components/ui/breadcrumbs";
+import { buildBreadcrumbJsonLd } from "@/components/ui/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Seattle 1031 Exchange Locations | 1031 Exchange Seattle",
@@ -28,13 +28,7 @@ export default function LocationsPage() {
           __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="bg-[#F5F7FA]">
-        <div className="mx-auto max-w-wrapper px-6 pt-12 md:px-10">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-        <LocationsContent locations={locationsData} />
-      </div>
+      <LocationsContent locations={locationsData} />
     </>
   );
 }
-

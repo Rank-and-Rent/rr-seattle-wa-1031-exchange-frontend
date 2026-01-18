@@ -4,6 +4,7 @@
  * This bypasses the CLI bug completely
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const https = require('https');
 
 const PROJECT_ID = 'x5mdofpa';

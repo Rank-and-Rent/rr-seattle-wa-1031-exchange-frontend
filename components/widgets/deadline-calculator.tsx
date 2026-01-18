@@ -18,48 +18,51 @@ export const DeadlineCalculator = () => {
   const day180 = parsedDate ? addDays(parsedDate, 180) : null;
 
   return (
-    <section className="rounded-3xl border border-[#4DA49B]/40 bg-white/70 p-6 shadow-[0_20px_46px_-28px_rgba(17,40,60,0.35)]">
-      <h3 className="text-lg font-semibold text-[#1F3C58]">
-        45-Day and 180-Day Deadline Calculator
-      </h3>
-      <p className="mt-2 text-sm text-[#1B1B1B]/75">
-        Enter your relinquished closing date to preview statutory milestones. Share the outputs with your intermediary, CPA, and lender to keep every stakeholder aligned.
+    <section>
+      <p className="text-xs tracking-[0.25em] uppercase text-[#b8a074] mb-2">
+        Timeline Tool
       </p>
-      <div className="mt-4 space-y-3">
-        <label className="flex flex-col gap-2 text-sm font-semibold text-[#1F3C58]">
+      <h3 className="font-heading text-lg tracking-[0.05em] text-[#2c3e50] mb-2">
+        Deadline Calculator
+      </h3>
+      <p className="text-sm text-[#6b7c8a] mb-4">
+        Enter your relinquished closing date to preview statutory milestones.
+      </p>
+      <div className="space-y-3">
+        <label className="flex flex-col gap-2 text-xs tracking-[0.15em] uppercase text-[#6b7c8a]">
           Relinquished closing date
           <input
             type="date"
             value={closeDate}
             onChange={(event) => setCloseDate(event.target.value)}
-            className="rounded-2xl border border-[#1F3C58]/20 px-3 py-2 text-sm text-[#0E2536] focus:border-[#4DA49B] focus:outline-none focus:ring-2 focus:ring-[#4DA49B]/40"
+            className="border border-gray-200 px-4 py-3 text-sm text-[#2c3e50] focus:border-[#b8a074] focus:outline-none"
           />
         </label>
       </div>
-      <dl className="mt-6 grid gap-4 text-sm">
-        <div className="rounded-2xl border border-[#1F3C58]/10 bg-[#F5F7FA] px-4 py-3">
-          <dt className="text-xs font-semibold uppercase tracking-[0.24em] text-[#4DA49B]">
-            45-day identification deadline
+      <dl className="mt-6 space-y-4 text-sm">
+        <div className="border-l-2 border-[#b8a074] pl-4 py-2 bg-[#f7f6f4]">
+          <dt className="text-xs tracking-[0.2em] uppercase text-[#b8a074] mb-1">
+            45-day identification
           </dt>
-          <dd className="mt-2 text-[#1F3C58]">
+          <dd className="text-[#2c3e50]">
             {day45
               ? dateFormat(day45, timeZone)
-              : "Select a closing date to calculate the deadline."}
+              : "Select a closing date"}
           </dd>
         </div>
-        <div className="rounded-2xl border border-[#1F3C58]/10 bg-[#F5F7FA] px-4 py-3">
-          <dt className="text-xs font-semibold uppercase tracking-[0.24em] text-[#4DA49B]">
-            180-day exchange completion deadline
+        <div className="border-l-2 border-[#b8a074] pl-4 py-2 bg-[#f7f6f4]">
+          <dt className="text-xs tracking-[0.2em] uppercase text-[#b8a074] mb-1">
+            180-day completion
           </dt>
-          <dd className="mt-2 text-[#1F3C58]">
+          <dd className="text-[#2c3e50]">
             {day180
               ? dateFormat(day180, timeZone)
-              : "Select a closing date to calculate the deadline."}
+              : "Select a closing date"}
           </dd>
         </div>
       </dl>
-      <p className="mt-4 text-xs text-[#1B1B1B]/65">
-        Dates represent calendar days. Confirm every milestone with your Qualified Intermediary. We coordinate stakeholder updates but do not provide intermediary services.
+      <p className="mt-4 text-xs text-[#6b7c8a]">
+        Dates represent calendar days. Confirm with your Qualified Intermediary.
       </p>
     </section>
   );

@@ -1,4 +1,5 @@
 import { createClient } from "@sanity/client";
+import { PortableTextBlock } from "@portabletext/react";
 
 const projectId = process.env.SANITY_PROJECT_ID;
 const dataset = process.env.SANITY_DATASET;
@@ -34,7 +35,7 @@ type Article = {
 export type ArticlePreview = Article;
 
 export interface ArticleDetail extends Article {
-  content: any; // PortableText content from Sanity
+  content: PortableTextBlock[]; // PortableText content from Sanity
   author?: {
     name?: string;
   };

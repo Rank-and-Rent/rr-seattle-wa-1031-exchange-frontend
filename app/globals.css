@@ -166,3 +166,13 @@ a {
   background: var(--color-champagne);
   color: var(--color-white);
 }
+
+/* Hide scrollbar for horizontal scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

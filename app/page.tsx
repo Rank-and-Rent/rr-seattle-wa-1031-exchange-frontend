@@ -163,6 +163,7 @@ export default function Page() {
   const serviceAreaCards = locationsData.map((location) => ({
     name: location.name,
     route: location.route,
+    image: location.image,
   }));
 
   return (

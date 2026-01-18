@@ -52,9 +52,10 @@ export interface ContactFormProps {
   defaultProjectType?: string;
   id?: string;
   onSuccess?: () => void;
+  variant?: "light" | "dark";
 }
 
-export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess }: ContactFormProps) => {
+export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, variant = "light" }: ContactFormProps) => {
   const generatedId = useId();
   const formId = id ?? `contact-form-${generatedId}`;
   const datalistId = `${formId}-project-types`;
@@ -72,6 +73,25 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess }: 
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 
   const projectTypeOptions = useMemo(() => servicesData.map((s) => s.name), []);
+
+  // Styles based on variant
+  const styles = variant === "dark" ? {
+    label: "text-white/70",
+    input: "bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-[#b8a074]",
+    error: "text-red-400",
+    button: "bg-[#b8a074] text-white hover:bg-[#a08960]",
+    message: status === "error" ? "text-red-400" : "text-white/80",
+    hint: "text-white/50",
+    required: "text-[#b8a074]",
+  } : {
+    label: "text-[#6b7c8a]",
+    input: "bg-[#f7f6f4] border-gray-200 text-[#2c3e50] placeholder:text-[#6b7c8a]/60 focus:border-[#b8a074]",
+    error: "text-red-500",
+    button: "bg-[#2c3e50] text-white hover:bg-[#1a3a52]",
+    message: status === "error" ? "text-red-500" : "text-[#6b7c8a]",
+    hint: "text-[#6b7c8a]/70",
+    required: "text-[#b8a074]",
+  };
 
   useEffect(() => {
     if (!siteKey) return;
@@ -191,24 +211,24 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess }: 
   return (
     <form id={formId} className="space-y-5" noValidate onSubmit={handleSubmit}>
       <div className="grid gap-4 md:grid-cols-2">
-        <Field id={`${formId}-name`} label="Name" required value={formState.name} error={errors.name} onChange={onChange("name")} />
-        <Field id={`${formId}-email`} label="Email" type="email" required value={formState.email} error={errors.email} onChange={onChange("email")} />
-        <Field id={`${formId}-phone`} label="Phone" type="tel" required value={formState.phone} error={errors.phone} onChange={onChange("phone")} />
-        <Field id={`${formId}-project`} label="Project Type" required value={formState.projectType} error={errors.projectType} onChange={onChange("projectType")} list={datalistId} placeholder="e.g. NNN property acquisition" />
+        <Field id={`${formId}-name`} label="Name" required value={formState.name} error={errors.name} onChange={onChange("name")} styles={styles} />
+        <Field id={`${formId}-email`} label="Email" type="email" required value={formState.email} error={errors.email} onChange={onChange("email")} styles={styles} />
+        <Field id={`${formId}-phone`} label="Phone" type="tel" required value={formState.phone} error={errors.phone} onChange={onChange("phone")} styles={styles} />
+        <Field id={`${formId}-project`} label="Project Type" required value={formState.projectType} error={errors.projectType} onChange={onChange("projectType")} list={datalistId} placeholder="e.g. NNN property acquisition" styles={styles} />
       </div>
-      <Field id={`${formId}-details`} label="Details (optional)" value={formState.details} onChange={onChange("details")} placeholder="Share cap rate targets, timelines, or specific requirements." textarea />
+      <Field id={`${formId}-details`} label="Details (optional)" value={formState.details} onChange={onChange("details")} placeholder="Share cap rate targets, timelines, or specific requirements." textarea styles={styles} />
       <datalist id={datalistId}>{projectTypeOptions.map((o) => <option key={o} value={o} />)}</datalist>
       <div ref={turnstileContainerRef} className="hidden" />
-      {!siteKey && <p className="text-sm text-red-400">CAPTCHA unavailable.</p>}
+      {!siteKey && <p className={`text-sm ${styles.error}`}>CAPTCHA unavailable.</p>}
       <button
         type="submit"
         disabled={isDisabled}
-        className="w-full py-4 bg-[#b8a074] text-white text-xs tracking-[0.2em] uppercase hover:bg-[#a08960] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className={`w-full py-4 text-xs tracking-[0.2em] uppercase transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${styles.button}`}
       >
         {status === "submitting" ? "Sending..." : "Send Message"}
       </button>
-      {statusMessage && <p className={`text-sm ${status === "error" ? "text-red-400" : "text-white/80"}`}>{statusMessage}</p>}
-      <p className="text-xs text-white/50">Consult your QI, CPA, and legal counsel before executing exchange strategies.</p>
+      {statusMessage && <p className={`text-sm ${styles.message}`}>{statusMessage}</p>}
+      <p className={`text-xs ${styles.hint}`}>Consult your QI, CPA, and legal counsel before executing exchange strategies.</p>
     </form>
   );
 };
@@ -224,12 +244,18 @@ interface FieldProps {
   placeholder?: string;
   list?: string;
   textarea?: boolean;
+  styles: {
+    label: string;
+    input: string;
+    error: string;
+    required: string;
+  };
 }
 
-const Field = ({ id, label, value, onChange, type = "text", required, error, placeholder, list, textarea }: FieldProps) => (
+const Field = ({ id, label, value, onChange, type = "text", required, error, placeholder, list, textarea, styles }: FieldProps) => (
   <div className="space-y-2">
-    <label htmlFor={id} className="block text-xs tracking-[0.15em] uppercase text-white/70">
-      {label}{required && <span className="text-[#b8a074] ml-1">*</span>}
+    <label htmlFor={id} className={`block text-xs tracking-[0.15em] uppercase ${styles.label}`}>
+      {label}{required && <span className={`${styles.required} ml-1`}>*</span>}
     </label>
     {textarea ? (
       <textarea
@@ -238,7 +264,7 @@ const Field = ({ id, label, value, onChange, type = "text", required, error, pla
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         rows={4}
-        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white text-sm placeholder:text-white/40 focus:border-[#b8a074] focus:outline-none"
+        className={`w-full px-4 py-3 border text-sm focus:outline-none ${styles.input}`}
       />
     ) : (
       <input
@@ -249,10 +275,10 @@ const Field = ({ id, label, value, onChange, type = "text", required, error, pla
         required={required}
         placeholder={placeholder}
         list={list}
-        className={`w-full px-4 py-3 bg-white/10 border text-white text-sm placeholder:text-white/40 focus:outline-none ${error ? "border-red-400" : "border-white/20 focus:border-[#b8a074]"}`}
+        className={`w-full px-4 py-3 border text-sm focus:outline-none ${error ? "border-red-400" : styles.input}`}
       />
     )}
-    {error && <span className="text-xs text-red-400">{error}</span>}
+    {error && <span className={`text-xs ${styles.error}`}>{error}</span>}
   </div>
 );
 

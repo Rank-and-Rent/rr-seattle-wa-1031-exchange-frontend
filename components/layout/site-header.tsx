@@ -54,6 +54,8 @@ export const SiteHeader = () => {
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
 
+  // Close mobile menu and dropdowns when navigating to new page
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setMobileOpen(false);
     setOpenMenu(null);

@@ -36,7 +36,7 @@ export const SearchInput = ({
     onClear?.();
   };
 
-  const padding = size === "sm" ? "py-2 px-3 text-sm" : "py-3 px-4";
+  const padding = size === "sm" ? "py-2 px-4 text-sm" : "py-3 px-4";
 
   return (
     <form onSubmit={handleSubmit} className="relative">
@@ -48,7 +48,7 @@ export const SearchInput = ({
         value={value}
         onChange={(event) => setValue(event.target.value)}
         placeholder={placeholder}
-        className={`w-full rounded-full border border-[#4DA49B]/40 bg-white/90 ${padding} pr-24 text-sm text-[#0E2536] shadow-sm focus:border-[#4DA49B] focus:outline-none focus:ring-2 focus:ring-[#4DA49B]/50`}
+        className={`w-full border border-gray-200 bg-white ${padding} pr-28 text-sm text-[#2c3e50] focus:border-[#b8a074] focus:outline-none`}
         type="search"
         autoComplete="off"
       />
@@ -56,14 +56,17 @@ export const SearchInput = ({
         <button
           type="button"
           onClick={handleClear}
-          className="absolute right-20 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full bg-[#1F3C58]/10 text-xs font-semibold uppercase tracking-[0.2em] text-[#1F3C58]"
+          className="absolute right-20 top-1/2 h-6 w-6 -translate-y-1/2 flex items-center justify-center text-[#6b7c8a] hover:text-[#2c3e50] transition-colors"
         >
-          x
+          <span className="sr-only">Clear</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
         </button>
       )}
       <button
         type="submit"
-        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#4DA49B] to-[#7BC5BD] px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-[#0E2536]"
+        className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#2c3e50] px-4 py-2 text-xs tracking-[0.15em] uppercase text-white hover:bg-[#1a3a52] transition-colors"
       >
         Search
       </button>

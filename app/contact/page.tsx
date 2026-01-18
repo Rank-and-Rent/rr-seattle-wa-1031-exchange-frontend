@@ -31,11 +31,8 @@ export default function ContactPage() {
           __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="bg-[#F5F7FA]">
-        <div className="mx-auto max-w-wrapper px-6 pt-12 md:px-10">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-        <Suspense fallback={<div className="min-h-screen bg-[#F5F7FA]" />}>
+      <div className="bg-[#f7f6f4]">
+        <Suspense fallback={<div className="min-h-screen bg-[#f7f6f4]" />}>
           <ContactForm />
         </Suspense>
       </div>

@@ -4,6 +4,7 @@
  * This bypasses the CLI bug that crashes during hostname validation
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const https = require('https');
 const readline = require('readline');
 

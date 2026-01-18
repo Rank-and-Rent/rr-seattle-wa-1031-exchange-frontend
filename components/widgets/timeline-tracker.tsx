@@ -39,37 +39,37 @@ export const TimelineTracker = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="rounded-3xl border border-[#1F3C58]/15 bg-white/70 p-6 shadow-[0_20px_44px_-32px_rgba(17,40,60,0.35)]">
-      <h3 className="text-lg font-semibold text-[#1F3C58]">
-        Exchange Timeline Tracker
-      </h3>
-      <p className="mt-2 text-sm text-[#1B1B1B]/75">
-        Monitor each milestone from sale to replacement closing. Select a step to review the focus items and assign responsibilities to your advisors.
+    <section>
+      <p className="text-xs tracking-[0.25em] uppercase text-[#b8a074] mb-2">
+        Progress Tracking
       </p>
-      <div className="mt-5 grid gap-4 md:grid-cols-[minmax(0,16rem)_minmax(0,1fr)]">
-        <ul className="space-y-2">
-          {timelineSteps.map((step, index) => (
-            <li key={step.title}>
-              <button
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                className={`w-full rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition ${
-                  activeIndex === index
-                    ? "border-[#4DA49B] bg-[#4DA49B]/15 text-[#1F3C58]"
-                    : "border-[#1F3C58]/20 bg-white text-[#0E2536] hover:border-[#4DA49B]/40"
-                }`}
-              >
-                {step.title}
-              </button>
-            </li>
-          ))}
-        </ul>
-        <div className="rounded-3xl border border-[#1F3C58]/10 bg-[#F5F7FA] p-5 text-sm text-[#1B1B1B]/80">
-          <p>{timelineSteps[activeIndex].description}</p>
-          <p className="mt-4 text-xs text-[#1B1B1B]/60">
-            Keep your intermediary, CPA, attorney, and lenders updated on each milestone. We manage the project plan, but all compliance decisions remain with your licensed advisors.
-          </p>
-        </div>
+      <h3 className="font-heading text-lg tracking-[0.05em] text-[#2c3e50] mb-2">
+        Timeline Tracker
+      </h3>
+      <p className="text-sm text-[#6b7c8a] mb-4">
+        Monitor each milestone from sale to replacement closing.
+      </p>
+      <div className="space-y-2 mb-4">
+        {timelineSteps.map((step, index) => (
+          <button
+            key={step.title}
+            type="button"
+            onClick={() => setActiveIndex(index)}
+            className={`w-full border px-4 py-3 text-left text-sm transition ${
+              activeIndex === index
+                ? "border-[#b8a074] bg-[#f7f6f4] text-[#2c3e50]"
+                : "border-gray-200 bg-white text-[#6b7c8a] hover:border-[#b8a074]/50"
+            }`}
+          >
+            {step.title}
+          </button>
+        ))}
+      </div>
+      <div className="border-l-2 border-[#b8a074] pl-4 py-3 bg-[#f7f6f4]">
+        <p className="text-sm text-[#2c3e50]">{timelineSteps[activeIndex].description}</p>
+        <p className="mt-3 text-xs text-[#6b7c8a]">
+          Keep your intermediary, CPA, attorney, and lenders updated.
+        </p>
       </div>
     </section>
   );

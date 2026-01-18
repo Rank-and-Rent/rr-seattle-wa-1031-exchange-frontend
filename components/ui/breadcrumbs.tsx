@@ -13,23 +13,23 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   }
 
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-[#0E2536]/70">
+    <nav aria-label="Breadcrumb" className="text-sm">
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
             <li key={item.href} className="flex items-center gap-2">
               {isLast ? (
-                <span className="font-semibold text-[#0E2536]">{item.label}</span>
+                <span className="text-white/80">{item.label}</span>
               ) : (
                 <a
                   href={item.href}
-                  className="text-[#1F3C58] transition hover:text-[#4DA49B]"
+                  className="text-white/60 hover:text-[#b8a074] transition-colors"
                 >
                   {item.label}
                 </a>
               )}
-              {!isLast && <span aria-hidden="true">/</span>}
+              {!isLast && <span className="text-white/40" aria-hidden="true">/</span>}
             </li>
           );
         })}

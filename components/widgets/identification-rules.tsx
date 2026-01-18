@@ -18,23 +18,26 @@ const rules = [
 ];
 
 export const IdentificationRules = () => (
-  <section className="rounded-3xl border border-[#1F3C58]/15 bg-white/70 p-6 shadow-[0_20px_40px_-32px_rgba(17,40,60,0.4)]">
-    <h3 className="text-lg font-semibold text-[#1F3C58]">
-      Identification Rules Explained
-    </h3>
-    <p className="mt-2 text-sm text-[#1B1B1B]/75">
-      Use this guide to determine how you will complete the identification letter. We prepare letter drafts, valuation support, and backup scenarios so your ${PRIMARY_CITY}, ${PRIMARY_STATE_ABBR} exchange maintains compliance through day forty-five.
+  <section>
+    <p className="text-xs tracking-[0.25em] uppercase text-[#b8a074] mb-2">
+      Compliance Guide
     </p>
-    <div className="mt-6 space-y-5">
+    <h3 className="font-heading text-lg tracking-[0.05em] text-[#2c3e50] mb-2">
+      Identification Rules
+    </h3>
+    <p className="text-sm text-[#6b7c8a] mb-4">
+      Use this guide to determine how you will complete the identification letter.
+    </p>
+    <div className="space-y-4">
       {rules.map((rule) => (
-        <div key={rule.title} className="rounded-2xl border border-[#4DA49B]/30 bg-[#F5F7FA] p-4">
-          <h4 className="text-sm font-semibold text-[#1F3C58]">{rule.title}</h4>
-          <p className="mt-2 text-sm text-[#1B1B1B]/75">{rule.description}</p>
+        <div key={rule.title} className="border-l-2 border-[#b8a074] pl-4 py-2 bg-[#f7f6f4]">
+          <h4 className="font-heading text-sm tracking-[0.05em] text-[#2c3e50] mb-1">{rule.title}</h4>
+          <p className="text-xs text-[#6b7c8a] leading-relaxed">{rule.description}</p>
         </div>
       ))}
     </div>
-    <p className="mt-4 text-xs text-[#1B1B1B]/60">
-      We coordinate with your intermediary, CPA, and counsel, provide documentation, and maintain audit-ready files. We do not provide legal or tax advice.
+    <p className="mt-4 text-xs text-[#6b7c8a]">
+      We coordinate with your intermediary, CPA, and counsel. We do not provide legal or tax advice.
     </p>
   </section>
 );

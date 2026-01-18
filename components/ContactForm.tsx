@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import site from "@/content/site.json";
 import { ContactForm } from "@/components/forms/contact-form";
@@ -18,47 +19,39 @@ export default function ContactFormPage() {
 
   const defaultProjectType = useMemo(() => {
     const direct = searchParams?.get("projectType")?.trim();
-    if (direct) {
-      return direct;
-    }
+    if (direct) return direct;
     const serviceParam = searchParams?.get("service")?.trim();
-    if (serviceParam) {
-      return serviceParam;
-    }
+    if (serviceParam) return serviceParam;
     const projectParam = searchParams?.get("project")?.trim();
-    if (projectParam) {
-      return projectParam;
-    }
+    if (projectParam) return projectParam;
     const locationParam = searchParams?.get("location")?.trim();
-    if (locationParam) {
-      return `${locationParam} replacement property`;
-    }
+    if (locationParam) return `${locationParam} replacement property`;
     return "";
   }, [searchParams]);
 
   if (isSubmitted) {
     return (
-      <section className="min-h-screen bg-gradient-to-br from-[#0E1D2B] via-[#1F3C58] to-[#4DA49B] px-6 py-16 text-white">
-        <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-white/10 p-12 text-center shadow-[0_45px_85px_-40px_rgba(0,0,0,0.75)] backdrop-blur">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/10">
-            <span className="text-3xl font-semibold">✓</span>
+      <section className="min-h-screen bg-[#1a3a52] flex items-center justify-center px-6 py-24">
+        <div className="max-w-2xl w-full text-center">
+          <div className="w-20 h-20 border border-[#b8a074] flex items-center justify-center mx-auto mb-8">
+            <span className="text-4xl text-[#b8a074]">&#10003;</span>
           </div>
-          <h1 className="mt-8 text-3xl font-semibold">
-            Thank you. We received your request.
+          <h1 className="font-heading text-4xl tracking-[0.1em] text-white mb-4">
+            Thank You
           </h1>
-          <p className="mt-4 text-base text-white/80">
+          <p className="text-xl text-white/70 mb-10 leading-relaxed">
             A Seattle 1031 exchange advisor will reach out within one business day with next steps and replacement property insights.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4 text-sm font-semibold uppercase tracking-[0.28em]">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/"
-              className="rounded-full border border-white/60 px-6 py-3 transition hover:bg-white hover:text-[#1F3C58]"
+              className="px-10 py-4 border border-white/40 text-xs tracking-[0.2em] uppercase text-white hover:bg-white hover:text-[#1a3a52] transition-all"
             >
               Return Home
             </Link>
             <a
               href={phoneHref}
-              className="rounded-full border border-white/60 px-6 py-3 transition hover:bg-white hover:text-[#1F3C58]"
+              className="px-10 py-4 bg-[#b8a074] text-xs tracking-[0.2em] uppercase text-white hover:bg-[#a08960] transition-colors"
             >
               Call Us Now
             </a>
@@ -69,73 +62,126 @@ export default function ContactFormPage() {
   }
 
   return (
-    <section className="min-h-screen bg-[#F5F7FA] px-6 py-16">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
-        <div className="space-y-8 rounded-3xl border border-[#E2E8F0] bg-white/80 p-10 shadow-sm backdrop-blur">
-          <h1 className="text-3xl font-semibold text-[#12263A]">
-            Start your exchange plan.
-          </h1>
-          <p className="text-base text-[#1F3C58]/80">
-            We coordinate 45-day identification, 180-day closing control, and national property sourcing with full transparency.
+    <>
+      {/* Hero Section */}
+      <section className="relative h-[50vh] min-h-[400px] flex items-end">
+        <div className="absolute inset-0">
+          <Image
+            src="/homepage-hero/seattle-washington-1031-exchange-3.jpg"
+            alt="Contact Seattle 1031 Exchange"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        </div>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 md:px-10">
+          <nav className="mb-8 text-sm">
+            <ol className="flex items-center gap-2 text-white/60">
+              <li><Link href="/" className="hover:text-[#b8a074]">Home</Link></li>
+              <li>/</li>
+              <li className="text-white/90">Contact</li>
+            </ol>
+          </nav>
+          <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+            Get In Touch
           </p>
-          <div className="space-y-6 text-sm">
-            <InfoRow label="Phone">
-              <a
-                href={phoneHref}
-                className="text-[#1F3C58] underline decoration-[#4DA49B]/70 underline-offset-4 transition hover:text-[#274f74]"
-              >
-                {site.phone}
-              </a>
-            </InfoRow>
-            <InfoRow label="Email">
-              <a
-                href={emailHref}
-                className="text-[#1F3C58] underline decoration-[#4DA49B]/70 underline-offset-4 transition hover:text-[#274f74]"
-              >
-                {site.email}
-              </a>
-            </InfoRow>
-            <InfoRow label="Address">
-              <span className="text-[#1F3C58]">{site.address}</span>
-            </InfoRow>
-            <InfoRow label="Hours">
-              <span className="text-[#1F3C58]">{BUSINESS_HOURS}</span>
-            </InfoRow>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm">
-            <div className="h-56 w-full">
-              <iframe
-                title={`Map of ${site.address}`}
-                src={mapSrc}
-                width="100%"
-                height="100%"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
+          <h1 className="font-heading text-5xl md:text-7xl tracking-[0.1em] text-white">
+            Contact Us
+          </h1>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left Column - Info */}
+            <div>
+              <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-4">
+                Start Your Exchange
+              </p>
+              <h2 className="font-heading text-3xl md:text-4xl tracking-[0.1em] text-[#2c3e50] mb-6">
+                Let&apos;s Work Together
+              </h2>
+              <p className="text-xl text-[#6b7c8a] leading-relaxed mb-10">
+                We coordinate 45-day identification, 180-day closing control, and national property sourcing with full transparency.
+              </p>
+
+              <div className="space-y-8 mb-10">
+                <InfoRow label="Phone">
+                  <a href={phoneHref} className="text-[#2c3e50] text-lg hover:text-[#b8a074] transition-colors">
+                    {site.phone}
+                  </a>
+                </InfoRow>
+                <InfoRow label="Email">
+                  <a href={emailHref} className="text-[#2c3e50] text-lg hover:text-[#b8a074] transition-colors">
+                    {site.email}
+                  </a>
+                </InfoRow>
+                <InfoRow label="Address">
+                  <span className="text-[#2c3e50] text-lg">{site.address}</span>
+                </InfoRow>
+                <InfoRow label="Hours">
+                  <span className="text-[#2c3e50] text-lg">{BUSINESS_HOURS}</span>
+                </InfoRow>
+              </div>
+
+              <div className="bg-[#1a3a52] p-8">
+                <p className="text-xs tracking-[0.25em] uppercase text-[#b8a074] mb-4">
+                  What Happens Next
+                </p>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-1.5 h-1.5 bg-[#b8a074] flex-shrink-0" />
+                    <span>Intake review and intermediary alignment within one business day.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-1.5 h-1.5 bg-[#b8a074] flex-shrink-0" />
+                    <span>Custom replacement property slate within 10 business days.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-1.5 h-1.5 bg-[#b8a074] flex-shrink-0" />
+                    <span>Weekly status updates covering lender, legal, and identification milestones.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Right Column - Form */}
+            <div className="bg-[#f7f6f4] p-8 md:p-10">
+              <p className="text-xs tracking-[0.35em] uppercase text-[#b8a074] mb-2">
+                Send a Message
+              </p>
+              <h3 className="font-heading text-2xl tracking-[0.08em] text-[#2c3e50] mb-8">
+                Share Your Requirements
+              </h3>
+              <ContactForm
+                source="Contact page form"
+                defaultProjectType={defaultProjectType}
+                id="contact-page-form"
+                onSuccess={() => setIsSubmitted(true)}
+                variant="light"
               />
             </div>
           </div>
-          <div className="rounded-2xl border border-[#E2E8F0] bg-[#1F3C58] p-6 text-white">
-            <h2 className="text-lg font-semibold uppercase tracking-[0.3em] text-white/80">
-              What happens next
-            </h2>
-            <ul className="mt-4 space-y-3 text-sm text-white/85">
-              <li>• Intake review and intermediary alignment within one business day.</li>
-              <li>• Custom replacement property slate within 10 business days.</li>
-              <li>• Weekly status updates covering lender, legal, and identification milestones.</li>
-            </ul>
-          </div>
         </div>
-        <div className="rounded-3xl border border-[#1F3C58]/10 bg-white p-10 shadow-lg">
-          <ContactForm
-            source="Contact page form"
-            defaultProjectType={defaultProjectType}
-            id="contact-page-form"
-            onSuccess={() => setIsSubmitted(true)}
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Map Section */}
+      <section className="h-[400px]">
+        <iframe
+          title={`Map of ${site.address}`}
+          src={mapSrc}
+          width="100%"
+          height="100%"
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          className="grayscale"
+        />
+      </section>
+    </>
   );
 }
 
@@ -146,12 +192,11 @@ type InfoRowProps = {
 
 function InfoRow({ label, children }: InfoRowProps) {
   return (
-    <div className="flex flex-col gap-1">
-      <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#4DA49B]">
+    <div>
+      <span className="text-xs tracking-[0.25em] uppercase text-[#b8a074] block mb-1">
         {label}
       </span>
       {children}
     </div>
   );
 }
-

@@ -47,7 +47,7 @@ export const PropertyTypesContent = ({ propertyTypes }: PropertyTypesContentProp
         />
         {noResults && (
           <div className="rounded-3xl border border-[#1F3C58]/10 bg-[#F5F7FA] p-4 text-sm text-[#1B1B1B]/75">
-            <p>No property types matched "{query}". Request a custom underwriting package and we will prepare guidance.</p>
+            <p>No property types matched &ldquo;{query}&rdquo;. Request a custom underwriting package and we will prepare guidance.</p>
             <Link
               href={`/contact?projectType=${encodeURIComponent(query)}#contact-intake`}
               className="mt-3 inline-flex rounded-full border border-[#1F3C58] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1F3C58] hover:bg-[#1F3C58] hover:text-[#F5F7FA]"

@@ -44,7 +44,7 @@ const initialFormState: FormState = {
 
 const serviceOptions = [
   "Forward Exchange",
-  "Reverse Exchange", 
+  "Reverse Exchange",
   "Qualified Intermediary Services",
   "Property Identification",
   "NNN Property Identification",
@@ -89,19 +89,25 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
     return Array.from(combined).sort();
   }, []);
 
-  // Styles based on variant
+  // Styles - Seattle design system
   const isDark = variant === "dark";
+  const inputBase = "w-full border-b bg-transparent py-3 text-sm focus:outline-none transition-colors";
+  const labelBase = "block text-xs tracking-[0.2em] uppercase mb-2";
+  
   const styles = {
-    label: isDark ? "text-white/80" : "text-[#1F3C58]",
-    hint: isDark ? "text-white/50" : "text-[#6b7c8a]",
+    label: isDark ? "text-white/70" : "text-[#6b7c8a]",
+    hint: isDark ? "text-white/50" : "text-[#6b7c8a]/70",
     input: isDark 
-      ? "bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-[#4DA49B] focus:ring-[#4DA49B]/30" 
-      : "bg-white border-[#E2E8F0] text-[#1F3C58] placeholder:text-[#6b7c8a]/60 focus:border-[#4DA49B] focus:ring-[#4DA49B]/30",
+      ? `${inputBase} border-white/20 text-white placeholder:text-white/40 focus:border-[#b8a074]`
+      : `${inputBase} border-gray-300 text-[#2c3e50] placeholder:text-[#6b7c8a]/60 focus:border-[#b8a074]`,
+    select: isDark
+      ? `${inputBase} border-white/20 text-white bg-transparent focus:border-[#b8a074]`
+      : `${inputBase} border-gray-300 text-[#2c3e50] bg-[#f7f6f4] focus:border-[#b8a074]`,
     error: isDark ? "text-red-400" : "text-red-500",
-    button: isDark 
-      ? "bg-[#4DA49B] text-white hover:bg-[#3d8a83]" 
-      : "bg-[#1F3C58] text-white hover:bg-[#274f74]",
-    message: status === "error" ? (isDark ? "text-red-400" : "text-red-500") : (isDark ? "text-white/80" : "text-[#1F3C58]"),
+    button: isDark
+      ? "bg-[#b8a074] text-white hover:bg-[#a08960]"
+      : "bg-[#2c3e50] text-white hover:bg-[#1a3a52]",
+    message: status === "error" ? (isDark ? "text-red-400" : "text-red-500") : (isDark ? "text-white/80" : "text-[#6b7c8a]"),
   };
 
   useEffect(() => {
@@ -195,11 +201,11 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          ...formState, 
-          source, 
+        body: JSON.stringify({
+          ...formState,
+          source,
           turnstileToken: captchaTokenRef.current,
-          details: formState.message, // Also send as details for API compatibility
+          details: formState.message,
         }),
       });
       if (!res.ok) throw new Error();
@@ -224,145 +230,126 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
 
   const isDisabled = status === "submitting" || !captchaToken || !siteKey;
 
-  if (status === "success") {
-    return (
-      <div className={`rounded-2xl border p-8 text-center ${isDark ? "border-white/20 bg-white/10" : "border-[#E2E8F0] bg-white"}`}>
-        <div className={`mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full ${isDark ? "bg-[#4DA49B]/20" : "bg-[#4DA49B]/10"}`}>
-          <svg className="h-8 w-8 text-[#4DA49B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h3 className={`text-2xl font-semibold ${isDark ? "text-white" : "text-[#1F3C58]"}`}>Thank You!</h3>
-        <p className={`mt-4 ${isDark ? "text-white/70" : "text-[#6b7c8a]"}`}>
-          We've received your inquiry and will contact you within one business day.
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <form id={formId} className="space-y-6" noValidate onSubmit={handleSubmit}>
-      <h2 className={`text-xl font-semibold ${styles.label}`}>Start Your Exchange Plan</h2>
-      
-      {/* Name */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-name`} className={`block text-sm font-medium ${styles.label}`}>
-          Name <span className="text-[#4DA49B]">*</span>
-        </label>
-        <input
-          id={`${formId}-name`}
-          type="text"
-          value={formState.name}
-          onChange={(e) => onChange("name")(e.target.value)}
-          placeholder="Primary investor or advisor name"
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
-          required
-        />
-        {errors.name && <span className={`text-xs ${styles.error}`}>{errors.name}</span>}
+    <form id={formId} className="space-y-5" noValidate onSubmit={handleSubmit}>
+      {/* Row 1: Name + Email */}
+      <div className="grid gap-5 md:grid-cols-2">
+        <div>
+          <label htmlFor={`${formId}-name`} className={`${labelBase} ${styles.label}`}>
+            Name <span className="text-[#b8a074]">*</span>
+          </label>
+          <input
+            id={`${formId}-name`}
+            type="text"
+            value={formState.name}
+            onChange={(e) => onChange("name")(e.target.value)}
+            placeholder="Primary investor or advisor name"
+            className={styles.input}
+            required
+          />
+          {errors.name && <span className={`text-xs mt-1 block ${styles.error}`}>{errors.name}</span>}
+        </div>
+        <div>
+          <label htmlFor={`${formId}-email`} className={`${labelBase} ${styles.label}`}>
+            Email <span className="text-[#b8a074]">*</span>
+          </label>
+          <input
+            id={`${formId}-email`}
+            type="email"
+            value={formState.email}
+            onChange={(e) => onChange("email")(e.target.value)}
+            placeholder="We send a confirmation and checklist"
+            className={styles.input}
+            required
+          />
+          {errors.email && <span className={`text-xs mt-1 block ${styles.error}`}>{errors.email}</span>}
+        </div>
       </div>
 
-      {/* Email */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-email`} className={`block text-sm font-medium ${styles.label}`}>
-          Email <span className="text-[#4DA49B]">*</span>
-        </label>
-        <input
-          id={`${formId}-email`}
-          type="email"
-          value={formState.email}
-          onChange={(e) => onChange("email")(e.target.value)}
-          placeholder="We send a confirmation and documentation checklist"
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
-          required
-        />
-        {errors.email && <span className={`text-xs ${styles.error}`}>{errors.email}</span>}
-      </div>
-
-      {/* Phone */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-phone`} className={`block text-sm font-medium ${styles.label}`}>
-          Phone <span className="text-[#4DA49B]">*</span>
-        </label>
-        <input
-          id={`${formId}-phone`}
-          type="tel"
-          value={formState.phone}
-          onChange={(e) => onChange("phone")(e.target.value)}
-          placeholder="We confirm timelines by phone within one business day"
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
-          required
-        />
-        {errors.phone && <span className={`text-xs ${styles.error}`}>{errors.phone}</span>}
-      </div>
-
-      {/* Company */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-company`} className={`block text-sm font-medium ${styles.label}`}>
-          Company
-        </label>
-        <input
-          id={`${formId}-company`}
-          type="text"
-          value={formState.company}
-          onChange={(e) => onChange("company")(e.target.value)}
-          placeholder="Company or organization name (optional)"
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
-        />
+      {/* Row 2: Phone + Company */}
+      <div className="grid gap-5 md:grid-cols-2">
+        <div>
+          <label htmlFor={`${formId}-phone`} className={`${labelBase} ${styles.label}`}>
+            Phone <span className="text-[#b8a074]">*</span>
+          </label>
+          <input
+            id={`${formId}-phone`}
+            type="tel"
+            value={formState.phone}
+            onChange={(e) => onChange("phone")(e.target.value)}
+            placeholder="We confirm timelines within one business day"
+            className={styles.input}
+            required
+          />
+          {errors.phone && <span className={`text-xs mt-1 block ${styles.error}`}>{errors.phone}</span>}
+        </div>
+        <div>
+          <label htmlFor={`${formId}-company`} className={`${labelBase} ${styles.label}`}>
+            Company
+          </label>
+          <input
+            id={`${formId}-company`}
+            type="text"
+            value={formState.company}
+            onChange={(e) => onChange("company")(e.target.value)}
+            placeholder="Company or organization (optional)"
+            className={styles.input}
+          />
+        </div>
       </div>
 
       {/* Service */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-service`} className={`block text-sm font-medium ${styles.label}`}>
-          Service <span className="text-[#4DA49B]">*</span>
+      <div>
+        <label htmlFor={`${formId}-service`} className={`${labelBase} ${styles.label}`}>
+          Service <span className="text-[#b8a074]">*</span>
         </label>
         <select
           id={`${formId}-service`}
           value={formState.projectType}
           onChange={(e) => onChange("projectType")(e.target.value)}
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+          className={styles.select}
           required
         >
           <option value="">Select the service you are interested in</option>
           {allServices.map((s) => <option key={s} value={s}>{s}</option>)}
         </select>
-        {errors.projectType && <span className={`text-xs ${styles.error}`}>{errors.projectType}</span>}
+        {errors.projectType && <span className={`text-xs mt-1 block ${styles.error}`}>{errors.projectType}</span>}
       </div>
 
-      {/* City */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-city`} className={`block text-sm font-medium ${styles.label}`}>
-          City
-        </label>
-        <input
-          id={`${formId}-city`}
-          type="text"
-          value={formState.city}
-          onChange={(e) => onChange("city")(e.target.value)}
-          placeholder="Primary metro or submarket (optional)"
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
-        />
-      </div>
-
-      {/* Timeline */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-timeline`} className={`block text-sm font-medium ${styles.label}`}>
-          Timeline
-        </label>
-        <select
-          id={`${formId}-timeline`}
-          value={formState.timeline}
-          onChange={(e) => onChange("timeline")(e.target.value)}
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
-        >
-          <option value="">Select timeline (optional)</option>
-          {timelineOptions.map((t) => <option key={t} value={t}>{t}</option>)}
-        </select>
-        <p className={`text-xs ${styles.hint}`}>When do you plan to start your exchange?</p>
+      {/* Row 3: City + Timeline */}
+      <div className="grid gap-5 md:grid-cols-2">
+        <div>
+          <label htmlFor={`${formId}-city`} className={`${labelBase} ${styles.label}`}>
+            City
+          </label>
+          <input
+            id={`${formId}-city`}
+            type="text"
+            value={formState.city}
+            onChange={(e) => onChange("city")(e.target.value)}
+            placeholder="Primary metro or submarket (optional)"
+            className={styles.input}
+          />
+        </div>
+        <div>
+          <label htmlFor={`${formId}-timeline`} className={`${labelBase} ${styles.label}`}>
+            Timeline
+          </label>
+          <select
+            id={`${formId}-timeline`}
+            value={formState.timeline}
+            onChange={(e) => onChange("timeline")(e.target.value)}
+            className={styles.select}
+          >
+            <option value="">Select timeline (optional)</option>
+            {timelineOptions.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </div>
       </div>
 
       {/* Property Being Sold */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-property`} className={`block text-sm font-medium ${styles.label}`}>
+      <div>
+        <label htmlFor={`${formId}-property`} className={`${labelBase} ${styles.label}`}>
           Property Being Sold
         </label>
         <input
@@ -370,14 +357,14 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
           type="text"
           value={formState.property}
           onChange={(e) => onChange("property")(e.target.value)}
-          placeholder="Include property type, location, and estimated value (optional)"
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+          placeholder="Property type, location, and estimated value (optional)"
+          className={styles.input}
         />
       </div>
 
       {/* Estimated Close Date */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-closeDate`} className={`block text-sm font-medium ${styles.label}`}>
+      <div>
+        <label htmlFor={`${formId}-closeDate`} className={`${labelBase} ${styles.label}`}>
           Estimated Close Date
         </label>
         <input
@@ -385,14 +372,14 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
           type="date"
           value={formState.estimatedCloseDate}
           onChange={(e) => onChange("estimatedCloseDate")(e.target.value)}
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+          className={styles.input}
         />
-        <p className={`text-xs ${styles.hint}`}>Determines your 45 day and 180 day milestones (optional)</p>
+        <p className={`text-xs mt-1 ${styles.hint}`}>Determines your 45 day and 180 day milestones (optional)</p>
       </div>
 
       {/* Message */}
-      <div className="space-y-2">
-        <label htmlFor={`${formId}-message`} className={`block text-sm font-medium ${styles.label}`}>
+      <div>
+        <label htmlFor={`${formId}-message`} className={`${labelBase} ${styles.label}`}>
           Message
         </label>
         <textarea
@@ -401,25 +388,25 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
           onChange={(e) => onChange("message")(e.target.value)}
           placeholder="Outline goals, replacement preferences, or coordination needs (optional)"
           rows={4}
-          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+          className={`${styles.input} resize-none`}
         />
       </div>
 
       {/* Turnstile */}
-      <div ref={turnstileContainerRef} className="flex justify-center" />
+      <div ref={turnstileContainerRef} className="flex justify-start" />
       {!siteKey && <p className={`text-sm ${styles.error}`}>CAPTCHA unavailable. Please contact us directly.</p>}
 
       {/* Submit */}
       <button
         type="submit"
         disabled={isDisabled}
-        className={`w-full rounded-lg py-4 text-sm font-semibold uppercase tracking-wider transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${styles.button}`}
+        className={`w-full py-4 text-xs tracking-[0.2em] uppercase font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${styles.button}`}
       >
-        {status === "submitting" ? "Submitting..." : "Submit Request"}
+        {status === "submitting" ? "Sending..." : "Send Message"}
       </button>
 
       {statusMessage && <p className={`text-sm ${styles.message}`}>{statusMessage}</p>}
-      
+
       <p className={`text-xs ${styles.hint}`}>
         Consult your QI, CPA, and legal counsel before executing exchange strategies.
       </p>

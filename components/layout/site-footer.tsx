@@ -6,7 +6,7 @@ export const SiteFooter = () => {
   return (
     <footer className="bg-[#1a3a52] text-white">
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Contact */}
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-[#b8a074] mb-6">Contact</p>
@@ -51,6 +51,22 @@ export const SiteFooter = () => {
                   {tool.name}
                 </Link>
               ))}
+            </div>
+          </div>
+
+          {/* Location Map */}
+          <div>
+            <p className="text-xs tracking-[0.2em] uppercase text-[#b8a074] mb-6">Location</p>
+            <div className="w-full h-48 border border-white/20 rounded">
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(site.address)}&output=embed`}
+              />
             </div>
           </div>
         </div>

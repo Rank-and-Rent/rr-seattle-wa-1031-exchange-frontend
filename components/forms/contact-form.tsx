@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ChangeEvent,
   FormEvent,
   useCallback,
   useEffect,
@@ -34,31 +33,42 @@ declare global {
   }
 }
 
-type FieldKey = "name" | "company" | "email" | "phone" | "projectType" | "property" | "estimatedCloseDate" | "city" | "timeline" | "details";
+type FieldKey = "name" | "company" | "email" | "phone" | "projectType" | "property" | "estimatedCloseDate" | "city" | "timeline" | "message";
 type FormState = Record<FieldKey, string>;
 type Status = "idle" | "submitting" | "success" | "error";
 
 const initialFormState: FormState = {
   name: "", company: "", email: "", phone: "", projectType: "",
-  property: "", estimatedCloseDate: "", city: "", timeline: "", details: "",
+  property: "", estimatedCloseDate: "", city: "", timeline: "", message: "",
 };
 
+const serviceOptions = [
+  "Forward Exchange",
+  "Reverse Exchange", 
+  "Qualified Intermediary Services",
+  "Property Identification",
+  "NNN Property Identification",
+  "Exchange Consultation",
+  "Form 8824 Preparation",
+  "Boot Analysis",
+];
+
 const timelineOptions = ["Immediate", "45 days", "180 days", "Planning phase"];
+
 const TURNSTILE_SCRIPT_ID = "cf-turnstile-script";
-const TURNSTILE_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=invisible";
+const TURNSTILE_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
 export interface ContactFormProps {
-  source: string;
+  source?: string;
   defaultProjectType?: string;
   id?: string;
   onSuccess?: () => void;
   variant?: "light" | "dark";
 }
 
-export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, variant = "light" }: ContactFormProps) => {
+export const ContactForm = ({ source = "Contact form", defaultProjectType = "", id, onSuccess, variant = "light" }: ContactFormProps) => {
   const generatedId = useId();
   const formId = id ?? `contact-form-${generatedId}`;
-  const datalistId = `${formId}-project-types`;
 
   const [formState, setFormState] = useState<FormState>({ ...initialFormState, projectType: defaultProjectType });
   const [errors, setErrors] = useState<Partial<Record<FieldKey, string>>>({});
@@ -72,25 +82,26 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, va
   const captchaPromiseRef = useRef<{ resolve: (t: string) => void; reject: () => void } | null>(null);
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 
-  const projectTypeOptions = useMemo(() => servicesData.map((s) => s.name), []);
+  // Combine service options with services from data
+  const allServices = useMemo(() => {
+    const dataServices = servicesData.map((s) => s.name);
+    const combined = new Set([...serviceOptions, ...dataServices]);
+    return Array.from(combined).sort();
+  }, []);
 
   // Styles based on variant
-  const styles = variant === "dark" ? {
-    label: "text-white/70",
-    input: "bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-[#b8a074]",
-    error: "text-red-400",
-    button: "bg-[#b8a074] text-white hover:bg-[#a08960]",
-    message: status === "error" ? "text-red-400" : "text-white/80",
-    hint: "text-white/50",
-    required: "text-[#b8a074]",
-  } : {
-    label: "text-[#6b7c8a]",
-    input: "bg-[#f7f6f4] border-gray-200 text-[#2c3e50] placeholder:text-[#6b7c8a]/60 focus:border-[#b8a074]",
-    error: "text-red-500",
-    button: "bg-[#2c3e50] text-white hover:bg-[#1a3a52]",
-    message: status === "error" ? "text-red-500" : "text-[#6b7c8a]",
-    hint: "text-[#6b7c8a]/70",
-    required: "text-[#b8a074]",
+  const isDark = variant === "dark";
+  const styles = {
+    label: isDark ? "text-white/80" : "text-[#1F3C58]",
+    hint: isDark ? "text-white/50" : "text-[#6b7c8a]",
+    input: isDark 
+      ? "bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-[#4DA49B] focus:ring-[#4DA49B]/30" 
+      : "bg-white border-[#E2E8F0] text-[#1F3C58] placeholder:text-[#6b7c8a]/60 focus:border-[#4DA49B] focus:ring-[#4DA49B]/30",
+    error: isDark ? "text-red-400" : "text-red-500",
+    button: isDark 
+      ? "bg-[#4DA49B] text-white hover:bg-[#3d8a83]" 
+      : "bg-[#1F3C58] text-white hover:bg-[#274f74]",
+    message: status === "error" ? (isDark ? "text-red-400" : "text-red-500") : (isDark ? "text-white/80" : "text-[#1F3C58]"),
   };
 
   useEffect(() => {
@@ -98,7 +109,7 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, va
     const renderTurnstile = () => {
       if (!window.turnstile || !turnstileContainerRef.current) return;
       const wid = window.turnstile.render(turnstileContainerRef.current, {
-        sitekey: siteKey, size: "invisible",
+        sitekey: siteKey, size: "normal",
         callback: (token: string) => {
           captchaTokenRef.current = token;
           setCaptchaToken(token);
@@ -140,17 +151,17 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, va
   }, [siteKey]);
 
   useEffect(() => {
-    if (status === "success") setStatusMessage("Thank you. We will contact you within one business day.");
+    if (status === "success") setStatusMessage("Thank you. A Seattle exchange specialist will follow up within one business day.");
     else if (status === "error" && !statusMessage) setStatusMessage(`Submission failed. Please call ${site.phone}.`);
   }, [status, statusMessage]);
 
   const validate = useCallback((s: FormState) => {
     const e: Partial<Record<FieldKey, string>> = {};
-    if (!s.name.trim()) e.name = "Name required.";
-    if (!s.email.trim()) e.email = "Email required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email.trim())) e.email = "Invalid email.";
-    if (!s.phone.trim()) e.phone = "Phone required.";
-    if (!s.projectType.trim()) e.projectType = "Project type required.";
+    if (!s.name.trim()) e.name = "Name is required.";
+    if (!s.email.trim()) e.email = "Email is required.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email.trim())) e.email = "Please enter a valid email.";
+    if (!s.phone.trim()) e.phone = "Phone is required.";
+    if (!s.projectType.trim()) e.projectType = "Please select a service.";
     return e;
   }, []);
 
@@ -171,12 +182,12 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, va
         setCaptchaToken(token);
       } catch {
         setStatus("error");
-        setStatusMessage("Verification timed out.");
+        setStatusMessage("Verification timed out. Please try again.");
         captchaPromiseRef.current = null;
         return;
       }
     }
-    if (!captchaTokenRef.current) { setStatus("error"); setStatusMessage("Please complete verification."); return; }
+    if (!captchaTokenRef.current) { setStatus("error"); setStatusMessage("Please complete the security verification."); return; }
 
     setStatus("submitting");
     setStatusMessage("");
@@ -184,7 +195,12 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, va
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formState, source, turnstileToken: captchaTokenRef.current }),
+        body: JSON.stringify({ 
+          ...formState, 
+          source, 
+          turnstileToken: captchaTokenRef.current,
+          details: formState.message, // Also send as details for API compatibility
+        }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -208,78 +224,207 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, va
 
   const isDisabled = status === "submitting" || !captchaToken || !siteKey;
 
-  return (
-    <form id={formId} className="space-y-5" noValidate onSubmit={handleSubmit}>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field id={`${formId}-name`} label="Name" required value={formState.name} error={errors.name} onChange={onChange("name")} styles={styles} />
-        <Field id={`${formId}-email`} label="Email" type="email" required value={formState.email} error={errors.email} onChange={onChange("email")} styles={styles} />
-        <Field id={`${formId}-phone`} label="Phone" type="tel" required value={formState.phone} error={errors.phone} onChange={onChange("phone")} styles={styles} />
-        <Field id={`${formId}-project`} label="Project Type" required value={formState.projectType} error={errors.projectType} onChange={onChange("projectType")} list={datalistId} placeholder="e.g. NNN property acquisition" styles={styles} />
+  if (status === "success") {
+    return (
+      <div className={`rounded-2xl border p-8 text-center ${isDark ? "border-white/20 bg-white/10" : "border-[#E2E8F0] bg-white"}`}>
+        <div className={`mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full ${isDark ? "bg-[#4DA49B]/20" : "bg-[#4DA49B]/10"}`}>
+          <svg className="h-8 w-8 text-[#4DA49B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className={`text-2xl font-semibold ${isDark ? "text-white" : "text-[#1F3C58]"}`}>Thank You!</h3>
+        <p className={`mt-4 ${isDark ? "text-white/70" : "text-[#6b7c8a]"}`}>
+          We've received your inquiry and will contact you within one business day.
+        </p>
       </div>
-      <Field id={`${formId}-details`} label="Details (optional)" value={formState.details} onChange={onChange("details")} placeholder="Share cap rate targets, timelines, or specific requirements." textarea styles={styles} />
-      <datalist id={datalistId}>{projectTypeOptions.map((o) => <option key={o} value={o} />)}</datalist>
-      <div ref={turnstileContainerRef} className="hidden" />
-      {!siteKey && <p className={`text-sm ${styles.error}`}>CAPTCHA unavailable.</p>}
+    );
+  }
+
+  return (
+    <form id={formId} className="space-y-6" noValidate onSubmit={handleSubmit}>
+      <h2 className={`text-xl font-semibold ${styles.label}`}>Start Your Exchange Plan</h2>
+      
+      {/* Name */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-name`} className={`block text-sm font-medium ${styles.label}`}>
+          Name <span className="text-[#4DA49B]">*</span>
+        </label>
+        <input
+          id={`${formId}-name`}
+          type="text"
+          value={formState.name}
+          onChange={(e) => onChange("name")(e.target.value)}
+          placeholder="Primary investor or advisor name"
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+          required
+        />
+        {errors.name && <span className={`text-xs ${styles.error}`}>{errors.name}</span>}
+      </div>
+
+      {/* Email */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-email`} className={`block text-sm font-medium ${styles.label}`}>
+          Email <span className="text-[#4DA49B]">*</span>
+        </label>
+        <input
+          id={`${formId}-email`}
+          type="email"
+          value={formState.email}
+          onChange={(e) => onChange("email")(e.target.value)}
+          placeholder="We send a confirmation and documentation checklist"
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+          required
+        />
+        {errors.email && <span className={`text-xs ${styles.error}`}>{errors.email}</span>}
+      </div>
+
+      {/* Phone */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-phone`} className={`block text-sm font-medium ${styles.label}`}>
+          Phone <span className="text-[#4DA49B]">*</span>
+        </label>
+        <input
+          id={`${formId}-phone`}
+          type="tel"
+          value={formState.phone}
+          onChange={(e) => onChange("phone")(e.target.value)}
+          placeholder="We confirm timelines by phone within one business day"
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+          required
+        />
+        {errors.phone && <span className={`text-xs ${styles.error}`}>{errors.phone}</span>}
+      </div>
+
+      {/* Company */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-company`} className={`block text-sm font-medium ${styles.label}`}>
+          Company
+        </label>
+        <input
+          id={`${formId}-company`}
+          type="text"
+          value={formState.company}
+          onChange={(e) => onChange("company")(e.target.value)}
+          placeholder="Company or organization name (optional)"
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+        />
+      </div>
+
+      {/* Service */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-service`} className={`block text-sm font-medium ${styles.label}`}>
+          Service <span className="text-[#4DA49B]">*</span>
+        </label>
+        <select
+          id={`${formId}-service`}
+          value={formState.projectType}
+          onChange={(e) => onChange("projectType")(e.target.value)}
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+          required
+        >
+          <option value="">Select the service you are interested in</option>
+          {allServices.map((s) => <option key={s} value={s}>{s}</option>)}
+        </select>
+        {errors.projectType && <span className={`text-xs ${styles.error}`}>{errors.projectType}</span>}
+      </div>
+
+      {/* City */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-city`} className={`block text-sm font-medium ${styles.label}`}>
+          City
+        </label>
+        <input
+          id={`${formId}-city`}
+          type="text"
+          value={formState.city}
+          onChange={(e) => onChange("city")(e.target.value)}
+          placeholder="Primary metro or submarket (optional)"
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+        />
+      </div>
+
+      {/* Timeline */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-timeline`} className={`block text-sm font-medium ${styles.label}`}>
+          Timeline
+        </label>
+        <select
+          id={`${formId}-timeline`}
+          value={formState.timeline}
+          onChange={(e) => onChange("timeline")(e.target.value)}
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+        >
+          <option value="">Select timeline (optional)</option>
+          {timelineOptions.map((t) => <option key={t} value={t}>{t}</option>)}
+        </select>
+        <p className={`text-xs ${styles.hint}`}>When do you plan to start your exchange?</p>
+      </div>
+
+      {/* Property Being Sold */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-property`} className={`block text-sm font-medium ${styles.label}`}>
+          Property Being Sold
+        </label>
+        <input
+          id={`${formId}-property`}
+          type="text"
+          value={formState.property}
+          onChange={(e) => onChange("property")(e.target.value)}
+          placeholder="Include property type, location, and estimated value (optional)"
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+        />
+      </div>
+
+      {/* Estimated Close Date */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-closeDate`} className={`block text-sm font-medium ${styles.label}`}>
+          Estimated Close Date
+        </label>
+        <input
+          id={`${formId}-closeDate`}
+          type="date"
+          value={formState.estimatedCloseDate}
+          onChange={(e) => onChange("estimatedCloseDate")(e.target.value)}
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+        />
+        <p className={`text-xs ${styles.hint}`}>Determines your 45 day and 180 day milestones (optional)</p>
+      </div>
+
+      {/* Message */}
+      <div className="space-y-2">
+        <label htmlFor={`${formId}-message`} className={`block text-sm font-medium ${styles.label}`}>
+          Message
+        </label>
+        <textarea
+          id={`${formId}-message`}
+          value={formState.message}
+          onChange={(e) => onChange("message")(e.target.value)}
+          placeholder="Outline goals, replacement preferences, or coordination needs (optional)"
+          rows={4}
+          className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${styles.input}`}
+        />
+      </div>
+
+      {/* Turnstile */}
+      <div ref={turnstileContainerRef} className="flex justify-center" />
+      {!siteKey && <p className={`text-sm ${styles.error}`}>CAPTCHA unavailable. Please contact us directly.</p>}
+
+      {/* Submit */}
       <button
         type="submit"
         disabled={isDisabled}
-        className={`w-full py-4 text-xs tracking-[0.2em] uppercase transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${styles.button}`}
+        className={`w-full rounded-lg py-4 text-sm font-semibold uppercase tracking-wider transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${styles.button}`}
       >
-        {status === "submitting" ? "Sending..." : "Send Message"}
+        {status === "submitting" ? "Submitting..." : "Submit Request"}
       </button>
+
       {statusMessage && <p className={`text-sm ${styles.message}`}>{statusMessage}</p>}
-      <p className={`text-xs ${styles.hint}`}>Consult your QI, CPA, and legal counsel before executing exchange strategies.</p>
+      
+      <p className={`text-xs ${styles.hint}`}>
+        Consult your QI, CPA, and legal counsel before executing exchange strategies.
+      </p>
     </form>
   );
 };
-
-interface FieldProps {
-  id: string;
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  type?: string;
-  required?: boolean;
-  error?: string;
-  placeholder?: string;
-  list?: string;
-  textarea?: boolean;
-  styles: {
-    label: string;
-    input: string;
-    error: string;
-    required: string;
-  };
-}
-
-const Field = ({ id, label, value, onChange, type = "text", required, error, placeholder, list, textarea, styles }: FieldProps) => (
-  <div className="space-y-2">
-    <label htmlFor={id} className={`block text-xs tracking-[0.15em] uppercase ${styles.label}`}>
-      {label}{required && <span className={`${styles.required} ml-1`}>*</span>}
-    </label>
-    {textarea ? (
-      <textarea
-        id={id}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        rows={4}
-        className={`w-full px-4 py-3 border text-sm focus:outline-none ${styles.input}`}
-      />
-    ) : (
-      <input
-        id={id}
-        type={type}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        required={required}
-        placeholder={placeholder}
-        list={list}
-        className={`w-full px-4 py-3 border text-sm focus:outline-none ${error ? "border-red-400" : styles.input}`}
-      />
-    )}
-    {error && <span className={`text-xs ${styles.error}`}>{error}</span>}
-  </div>
-);
 
 export default ContactForm;

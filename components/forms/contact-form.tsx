@@ -181,10 +181,10 @@ export const ContactForm = ({ source, defaultProjectType = "", id, onSuccess, va
     setStatus("submitting");
     setStatusMessage("");
     try {
-      const res = await fetch("/api/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formState, source, "cf-turnstile-response": captchaTokenRef.current }),
+        body: JSON.stringify({ ...formState, source, turnstileToken: captchaTokenRef.current }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");

@@ -6,7 +6,6 @@ import {
   COMPANY_NAME,
   PHONE,
   PHONE_DIGITS,
-  PRIMARY_MARKET,
   SOURCE_LABEL,
 } from "@/lib/config";
 import {
@@ -53,8 +52,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const token = body["cf-turnstile-response"];
+    // Accept both token formats like LA does
+    const token = body["cf-turnstile-response"] || body["turnstileToken"];
     if (!token) {
+      console.error("Missing captcha token in request");
       return NextResponse.json(
         { error: "Captcha token missing" },
         { status: 400, headers: baseHeaders }
@@ -68,6 +69,7 @@ export async function POST(request: NextRequest) {
 
     const captchaValid = await verifyTurnstile(token, clientIp);
     if (!captchaValid) {
+      console.error("Captcha verification failed");
       return NextResponse.json(
         { error: "Captcha verification failed" },
         { status: 400, headers: baseHeaders }
@@ -86,7 +88,7 @@ export async function POST(request: NextRequest) {
         "https://www.1031exchangeseattle.com",
       _meta: {
         site: SITE_IDENTIFIER,
-        route: "/api/submit",
+        route: "/api/contact",
       },
     };
 
@@ -121,7 +123,8 @@ export async function POST(request: NextRequest) {
       const text = webhookResponse
         ? await webhookResponse.text().catch(() => "")
         : "";
-      console.error("Zapier webhook failed after retries", { status, text });
+      console.error("Zapier webhook failed after retries (will continue)", { status, text });
+      // Do not block UX; continue to email even if Zapier fails
     }
 
     const brand = getBrand();
@@ -157,8 +160,10 @@ export async function POST(request: NextRequest) {
         sendCustomerConfirmation(brandWithDate, lead),
         sendInternalNotifications(brandWithDate, lead),
       ]);
+      console.log("SendGrid emails sent successfully to:", body.email);
     } catch (error) {
       console.error("SendGrid email failed", error);
+      // continue without blocking UX
     }
 
     return NextResponse.json({ success: true }, { headers: baseHeaders });
@@ -170,4 +175,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-

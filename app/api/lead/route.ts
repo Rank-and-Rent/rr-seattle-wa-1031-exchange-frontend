@@ -1,1 +1,1 @@
-export { POST } from "../submit/route";
+export { POST } from "../contact/route";

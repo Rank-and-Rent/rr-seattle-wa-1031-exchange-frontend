@@ -1,0 +1,58 @@
+{
+ "slug": "improvement-exchange-planning",
+ "taxonomy": "services",
+ "title": "Improvement Exchange Planning",
+ "name": "Improvement Exchange Planning",
+ "metaTitle": "Improvement Exchange Planning in Seattle, WA",
+ "metaDescription": "Construction-schedule and contractor-submittal coordination for Seattle improvement exchanges, built to the 180-day completion deadline.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>An improvement exchange lets a Seattle investor direct exchange funds toward construction or renovation work on the replacement property, with title held temporarily by an exchange accommodation titleholder until the improvements are complete and the property is deeded over. It's a useful structure when the best available replacement is a property that needs real work, such as an older building in a seismic retrofit district, but the construction schedule still has to fit inside the same 180-day window as a standard purchase. That constraint is what separates an improvement exchange from an ordinary renovation project, where the schedule can flex without any tax consequence attached to it.</p>"
+  },
+  {
+   "heading": "Why Seattle Investors Use This Structure for Older Building Stock",
+   "html": "<p>Some of the more attractively priced replacement candidates in and around downtown Seattle are older unreinforced masonry buildings subject to the city's seismic retrofit requirements, and an improvement exchange gives an investor a way to complete qualifying retrofit work using exchange funds before taking direct title. That approach can turn a building that wouldn't otherwise pencil as a straightforward purchase into a viable replacement property, provided the retrofit scope is defined and priced before the exchange clock starts running. Waiting to price the scope until after the relinquished sale closes tends to compress the construction timeline right when it needs the most room to work with.</p>"
+  },
+  {
+   "heading": "Scoping the Construction Work Before the Exchange Begins",
+   "html": "<p>Because all improvements have to be completed and the property deeded to the taxpayer within 180 days, the construction scope needs firm contractor pricing and a realistic schedule before the relinquished property even closes, not after. A seismic retrofit scope in particular should already have engineering plans and permit timelines confirmed, since Seattle's permitting process for structural work can move slower than a typical tenant improvement build-out. Getting a preliminary read from the city's permitting office on expected review time, before the exchange begins, gives the construction schedule a realistic foundation rather than an optimistic guess.</p>"
+  },
+  {
+   "heading": "Contractor Submittal Package Requirements",
+   "html": "<p>The exchange accommodation titleholder typically requires a defined submittal package before releasing funds for construction draws, since the titleholder is the party of record until completion. That package generally includes:</p><ul><li>Signed construction contract with fixed scope and price</li><li>Permit approvals or confirmed permit timeline from the city</li><li>Draw schedule tied to construction milestones</li><li>Certificate of completion requirements for the final draw</li></ul>"
+  },
+  {
+   "heading": "Draw Schedule Coordination Against the 180-Day Clock",
+   "html": "<p>Construction draws need to be sequenced so the final milestone, and the deed transfer that follows it, lands comfortably before day 180 rather than on it. For seismic retrofit work specifically, inspection sign-off from the city can add time beyond the contractor's own completion date, and that inspection lag has to be built into the draw schedule from the start rather than treated as a formality at the end. Coordinating directly with the assigned city inspector's office on scheduling expectations, rather than relying solely on the contractor's general estimate, tends to produce a more reliable final date to plan the deed transfer around.</p>"
+  },
+  {
+   "heading": "What Happens if Construction Isn't Finished by Day 180",
+   "html": "<p>If the improvements aren't complete and the property isn't deeded to the taxpayer by day 180, the exchange fails for whatever value wasn't transferred, regardless of how much construction progress has been made. That risk is exactly why the construction schedule for a Seattle improvement exchange needs buffer built in from the earliest planning stage, particularly for retrofit or structural work where permitting delays are common rather than exceptional. Building that buffer in at the planning stage costs nothing but a little extra scheduling discipline, while discovering the need for it on day 170 costs the entire exchange and everything that was already invested in it, a difference in outcome that is entirely avoidable with a bit of earlier planning done carefully and well at the very outset.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What is an improvement exchange and why would a Seattle investor use one?",
+   "a": "It's a structure where an exchange accommodation titleholder holds the replacement property temporarily while exchange funds pay for construction or renovation, then deeds the improved property to the taxpayer. It's often used when the best available replacement needs significant work, such as an older building requiring seismic retrofit."
+  },
+  {
+   "q": "Does seismic retrofit work qualify for improvement exchange funding?",
+   "a": "Structural retrofit work generally qualifies as an improvement under this structure, as long as it's completed and the property is deeded to the taxpayer within the 180-day window, which makes early permit and schedule confirmation especially important for this type of work."
+  },
+  {
+   "q": "What happens if construction isn't finished within 180 days?",
+   "a": "The exchange fails for any value not represented by completed, deeded improvements at that point, regardless of how far along construction is. This is why the schedule needs buffer for permitting or inspection delays built in from the start."
+  },
+  {
+   "q": "Who holds title to the replacement property during an improvement exchange?",
+   "a": "An exchange accommodation titleholder holds title temporarily while the improvements are completed, then transfers the property to the taxpayer once the work is finished and the required documentation is in place."
+  },
+  {
+   "q": "Does city permitting timing affect the improvement exchange schedule?",
+   "a": "Yes, and for structural or seismic retrofit work in Seattle, permit review and inspection sign-off can take longer than a standard tenant improvement build-out, which needs to be factored into the construction schedule well before the 180-day deadline approaches."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 851
+}

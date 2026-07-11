@@ -1,0 +1,58 @@
+{
+ "slug": "three-property-rule-strategy",
+ "taxonomy": "services",
+ "title": "Three-Property Rule Strategy",
+ "name": "Three-Property Rule Strategy",
+ "metaTitle": "Three-Property Rule Strategy in Seattle, WA",
+ "metaDescription": "Three-property rule identification strategy for Seattle 1031 investors, ranked on deal certainty and financing feasibility inside your closing window.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>The three-property rule lets an investor identify up to three replacement properties, by name, regardless of their combined total value, which is often the simplest and most direct identification path for a Seattle exchange when a small number of genuinely strong candidates already exist. It trades breadth of options for certainty about exactly what is on the notice, which suits some investors better than others. The tradeoff is worth stating plainly at the outset rather than discovering it once the notice is already drafted. This office builds that shortlist as a scoped, defensible deliverable rather than a loose, informal list of options assembled hastily under deadline pressure. The strategy works best for investors who already have a clear view of what they want to own next, rather than those still exploring asset classes broadly. If the search is still in an exploratory phase when the 45-day window opens, the 200 percent rule or a longer sourcing runway usually fits better, and we say so directly rather than forcing a shortlist before it is ready, since a rushed three-property notice built on unready candidates can do more harm than good.</p>"
+  },
+  {
+   "heading": "Scope of the Three-Property Strategy",
+   "html": "<p>Instead of casting an unnecessarily wide net under the broader 200 percent rule, this strategy narrows the search early to a small, high-conviction number of candidates that have already cleared diligence, financing feasibility, and confirmed seller readiness. The three-property rule works best when the investor and this office fully agree on that final shortlist well before the 45-day identification window even opens. That early agreement is what allows diligence on all three candidates to start immediately rather than waiting on a broader search to narrow itself down. It also means the identification notice can often be drafted well before the deadline pressure sets in.</p>"
+  },
+  {
+   "heading": "When Three Named Properties Beats the 200 Percent Count",
+   "html": "<p>The three-property rule removes the aggregate value cap that applies under the 200 percent rule, which matters when one or two of the strongest Seattle-area candidates are worth more, combined, than double the relinquished property's value. In that situation, naming three specific properties can preserve options the 200 percent rule would otherwise close off. This comes up often for investors trading a single Seattle asset into higher-value replacement product, such as a larger industrial building or a full multifamily community. In those cases, a wide search under the 200 percent rule can actually work against the investor by pulling in candidates that never had a real chance of closing.</p>"
+  },
+  {
+   "heading": "Criteria We Use to Select the Three Candidates",
+   "html": "<p>Candidates are ranked against the following before three are chosen for the notice:</p><ul><li>Deal certainty and seller readiness to close inside the 180-day period</li><li>Financing feasibility confirmed with a lender before the notice is filed</li><li>Price band matched to the relinquished property's basis and target debt</li><li>Asset-class or submarket diversification across the three candidates</li><li>Backup viability if the top-ranked candidate falls out of contract</li></ul>"
+  },
+  {
+   "heading": "Sequencing the Three Candidates Against Your Clock",
+   "html": "<p>Each of the three candidates is diligenced in parallel rather than in sequence, so if the top choice falls out during the 180-day period, the second candidate is already far enough along to close without restarting the process. That sequencing is what makes a three-property notice practical rather than aspirational.</p>"
+  },
+  {
+   "heading": "Coordinating the Final Notice With Your QI",
+   "html": "<p>Once the three candidates are ranked and diligenced, the identification notice naming all three, explicitly under the three-property rule, is delivered to your qualified intermediary well inside the 45-day window, leaving room for a revision if circumstances change before the deadline closes. We also keep a fourth candidate diligenced but unnamed as a contingency, ready to be substituted in if the window has not yet closed. That contingency candidate is reviewed on the same schedule as the three named properties, so it is never a last-minute addition if it is actually needed, and the revised notice can go out the same day a substitution becomes necessary rather than days later after fresh diligence begins.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "How is the three-property rule different from the 200 percent rule?",
+   "a": "The three-property rule allows up to three identified properties with no cap on their combined value. The 200 percent rule allows unlimited properties but caps their combined value at 200 percent of the relinquished property's value."
+  },
+  {
+   "q": "When does the three-property rule make more sense for a Seattle exchange?",
+   "a": "It tends to fit best when a small number of strong candidates already exceed what the 200 percent rule's value cap would allow, or when the investor prefers a short, high-conviction list over a broad one."
+  },
+  {
+   "q": "What happens if one of my three identified properties falls out of contract?",
+   "a": "As long as the 45-day window has not closed, the notice can be revised to name a replacement candidate. After the window closes, only the three properties named on the final notice are eligible."
+  },
+  {
+   "q": "How do you rank which three properties make the final list?",
+   "a": "Candidates are scored on deal certainty, financing feasibility, price fit against your target debt, and whether a backup exists if the top choice does not close."
+  },
+  {
+   "q": "Does choosing the three-property rule affect how my tax advisor calculates gain?",
+   "a": "No. The rule affects which properties are eligible for identification, not the gain or basis calculation itself. That calculation stays with your tax advisor regardless of which identification rule is used."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 852
+}

@@ -1,0 +1,58 @@
+{
+ "slug": "95-percent-rule-strategy",
+ "taxonomy": "services",
+ "title": "95% Rule Strategy",
+ "name": "95% Rule Strategy",
+ "metaTitle": "95% Rule Strategy in Seattle, WA",
+ "metaDescription": "Contingency identification planning for Seattle exchanges using the 95% rule, with acquisition tracking across every listed candidate.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>The 95% rule allows an investor to identify an unlimited number of replacement properties, with no cap on count or aggregate value, but only if the investor actually closes on at least 95% of the total value of everything identified. It's the least forgiving of the identification rules and rarely the first choice for a Seattle exchange, but it becomes relevant as a fallback when a candidate list built under the 200% rule accidentally exceeds that rule's value ceiling. Understanding how it works before a list is finalized, rather than learning it only after a value error surfaces, is what keeps a Seattle exchange from being forced into its stricter closing requirement without warning.</p>"
+  },
+  {
+   "heading": "When the 95% Rule Becomes the Only Available Path",
+   "html": "<p>If a Seattle investor's identification list, spanning perhaps a South Lake Union office suite, a Kent Valley industrial building, and a small multifamily property, is later found to exceed 200% of the relinquished property's value, the exchange isn't automatically dead. Falling back on the 95% rule keeps the identification valid, but it raises the bar sharply: nearly all of the list now has to close, rather than only a portion sufficient to satisfy a simpler headcount rule.</p>"
+  },
+  {
+   "heading": "Acquisition Tracking Against the 95% Threshold",
+   "html": "<p>Once the 95% rule applies, every identified property's closing status has to be tracked against the aggregate value threshold in real time, since a single deal falling through late can push the acquired percentage below the required mark and unwind the entire exchange. A tracking sheet listing each property's identified value, closing status, and running percentage of the total keeps that threshold visible rather than something discovered only after day 180. For a list spanning a South Lake Union office asset alongside Kent Valley industrial buildings, the tracking sheet should be updated the same day any deal's status changes, since a single delayed closing can shift the running percentage more than expected.</p>"
+  },
+  {
+   "heading": "Documentation Required to Support a 95% Rule Position",
+   "html": "<p>Supporting a 95% rule position starts with the same written identification as any other rule, but the acquisition side needs its own paper trail, since the qualified intermediary's final accounting alone rarely tells the full story of how the running percentage was reached, and a gap in that record is the last thing an investor wants to discover if the identification is ever scrutinized by a reviewer looking closely at the numbers:</p><ul><li>Closing statements for every property actually acquired</li><li>Documented fair market value for each identified property, closed or not</li><li>A running calculation showing acquired value against total identified value</li><li>Written confirmation from the qualified intermediary of the final percentage achieved</li></ul>"
+  },
+  {
+   "heading": "Why Seattle Investors Rarely Choose This Rule Deliberately",
+   "html": "<p>Given the closing risk on any single asset in a competitive market like South Lake Union, or the environmental diligence that can stall a Kent Valley industrial closing, deliberately structuring an identification around the 95% rule means accepting that nearly every deal on the list has to close on schedule, with very little room for even one of them to fall through late. Most investors instead keep their list within the 200% value ceiling from the outset, treating the 95% rule as a safety net rather than a plan. That preference holds especially true for a Seattle multifamily portfolio, where a single closing delayed by financing or a rent-cap compliance question could otherwise put the whole exchange at risk.</p>"
+  },
+  {
+   "heading": "Coordinating the Fallback With the Qualified Intermediary Early",
+   "html": "<p>If a value overage is caught before day 45, the cleanest fix is usually trimming the list back under the 200% ceiling rather than accepting the 95% requirement. That decision has to happen before the identification deadline, which means the qualified intermediary needs the aggregate value calculation well ahead of day 45, not as a last-day discovery. Building in a short buffer below the 200% ceiling from the outset is far simpler than trying to catch an overage the week the identification is due.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "When does the 95% rule apply to a Seattle 1031 exchange?",
+   "a": "It applies whenever an investor's identified properties exceed both the three-property rule's headcount limit and the 200% rule's aggregate value ceiling. In that situation, the identification remains valid only if the investor acquires at least 95% of the total value identified."
+  },
+  {
+   "q": "Is the 95% rule a good primary strategy for a multi-asset Seattle exchange?",
+   "a": "Rarely. Because it requires closing on nearly everything identified, most investors treat it as a fallback rather than a deliberate plan, and instead keep their identification list within the 200% value ceiling from the start."
+  },
+  {
+   "q": "What happens if a Seattle investor falls just short of the 95% threshold?",
+   "a": "The identification is treated as invalid retroactively, which disqualifies the exchange and makes the relinquished-sale proceeds taxable. There's no partial credit for coming close to the 95% mark."
+  },
+  {
+   "q": "Can a value overage discovered late still be fixed before it triggers the 95% rule?",
+   "a": "Yes, if it's caught before the 45-day identification deadline, the list can usually be trimmed back under the 200% ceiling instead. Catching the overage after day 45 removes that option."
+  },
+  {
+   "q": "Who tracks the running acquisition percentage under a 95% rule identification?",
+   "a": "The qualified intermediary typically maintains the closing record, but the investor and their advisor should independently track the running percentage against the total identified value, since the consequence of falling short affects the investor directly rather than the intermediary administering the exchange on their behalf."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 859
+}

@@ -1,0 +1,58 @@
+{
+ "slug": "45-day-identification-strategy",
+ "taxonomy": "services",
+ "title": "45-Day Identification Strategy",
+ "name": "45-Day Identification Strategy",
+ "metaTitle": "45-Day Identification Strategy in Seattle, WA",
+ "metaDescription": "Pre-scouted candidate pipelines and submittal-ready identification packages for Seattle 1031 exchanges racing the 45-day clock.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Forty-five calendar days is a tight scope for sourcing, vetting, and formally identifying replacement property, especially when the candidate pool spans South Lake Union office space competing for tech-sector tenants, Kent Valley industrial buildings, and multifamily assets now underwriting against the statewide rent-cap statute. Treating the window as a procurement schedule, with a pipeline built before day one rather than a search that starts cold at closing, is what keeps the deadline from arriving before the paperwork is ready. Every day spent without a candidate list already forming is a day borrowed from the diligence work that still has to happen after a property is identified.</p>"
+  },
+  {
+   "heading": "Pre-Scouting a Candidate Pipeline Before the Clock Starts",
+   "html": "<p>Nothing in the exchange rules stops an investor from touring properties, requesting rent rolls, or negotiating letters of intent before the relinquished property closes. Building that candidate pipeline in advance, with two or three viable options in different Seattle submarkets, converts the 45-day window from a search period into a confirmation period. For a trade into a competitive corridor like South Lake Union, where quality office product doesn't sit on the market long, that head start is often the difference between a clean identification and a rushed one. The same logic applies further south in Kent Valley, where the better-positioned distribution buildings tend to trade among a small circle of brokers before they're ever broadly marketed.</p>"
+  },
+  {
+   "heading": "Assembling a Submittal-Ready Identification Package",
+   "html": "<p>Each candidate needs its legal description, a preliminary value estimate, and confirmation that the seller is willing to negotiate on a compressed timeline, gathered before the formal identification is drafted rather than after. A submittal-ready package for a Kent Valley industrial parcel typically includes the parcel number, a note on any known environmental history from prior port-adjacent use, and a broker contact confirmed as responsive within the exchange timeline. For a South Lake Union office candidate, the equivalent package would instead center on lease abstracts and tenant credit rather than environmental history, since the underlying risks differ by asset type.</p>"
+  },
+  {
+   "heading": "Written Delivery Requirements That Cannot Be Skipped",
+   "html": "<p>An identification is only valid once it is in writing, signed, and delivered to the qualified intermediary, not simply discussed with a broker or noted in an internal file. The requirements are consistent regardless of asset type:</p><ul><li>Unambiguous legal description or parcel number for each property</li><li>Signature of the taxpayer or an authorized representative</li><li>Delivery to the qualified intermediary before midnight on day 45</li><li>A retained delivery receipt or timestamp confirming submission</li></ul>"
+  },
+  {
+   "heading": "Scope Differences Between Office, Industrial, and Multifamily Candidates",
+   "html": "<p>An office identification in South Lake Union usually turns on lease terms and tenant credit; a Kent Valley or SODO industrial identification turns more on clear title and environmental history; a multifamily identification increasingly requires confirming current rents against the statewide rent-cap ceiling before an offer is even drafted. Scoping the pre-identification diligence differently for each asset type, rather than running one generic checklist across all three, is what keeps the 45-day window from being consumed by the wrong questions. An investor working across two or three asset types at once benefits from a short scoping memo for each, listing exactly what needs to be confirmed before that specific candidate can move onto the formal identification list.</p>"
+  },
+  {
+   "heading": "Calendar Mechanics and Buffer Planning",
+   "html": "<p>The 45 days run on calendar days with no extension for weekends, holidays, or a qualified intermediary's office being closed, apart from narrow federally declared disaster relief. Setting an internal deadline two business days ahead of day 45 for delivery, rather than treating day 45 itself as the target, leaves room to fix a missing signature or an incomplete legal description before it becomes a failed identification. For a Seattle investor juggling candidates across three or four submarkets at once, that buffer also gives time to confirm every legal description one last time against county parcel records before the list goes final.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Can a Seattle investor start touring replacement properties before the relinquished sale closes?",
+   "a": "Yes, and doing so is one of the more effective ways to manage the 45-day window. Touring, negotiating, or signing a contingent letter of intent before closing doesn't violate exchange rules, and building that pipeline early converts the identification period into a confirmation step rather than a cold search."
+  },
+  {
+   "q": "What counts as a valid legal description for a Kent Valley industrial parcel?",
+   "a": "The identification needs the parcel number or full legal description rather than a street address alone, particularly where an address could apply to more than one tax parcel or building on a shared industrial site."
+  },
+  {
+   "q": "Does the 45-day rule apply differently to multifamily property under the rent-cap statute?",
+   "a": "The identification mechanics are the same regardless of asset type, but the pre-identification diligence differs, since multifamily buyers now typically confirm current rents against the statewide cap before finalizing an offer, which can add a step to the pre-scouting process."
+  },
+  {
+   "q": "What happens if the identification is delivered after day 45?",
+   "a": "The identification is invalid and the exchange fails outright, with no case-by-case leniency outside narrow federally declared disaster relief. That is why the delivery deadline is treated as two business days before day 45, not on day 45 itself."
+  },
+  {
+   "q": "Can an identified property be swapped for a different one before the deadline?",
+   "a": "Yes, as long as the revised list is also in writing, signed, and delivered to the qualified intermediary before the 45-day window closes. After that point, the list is locked and cannot be changed."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 872
+}

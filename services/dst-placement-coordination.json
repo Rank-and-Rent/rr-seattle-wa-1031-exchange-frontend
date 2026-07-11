@@ -1,0 +1,58 @@
+{
+ "slug": "dst-placement-coordination",
+ "taxonomy": "services",
+ "title": "DST Placement Coordination",
+ "name": "DST Placement Coordination",
+ "metaTitle": "DST Placement Coordination in Seattle, WA",
+ "metaDescription": "Sponsor diligence, PPM review, and subscription-document sequencing for Seattle investors placing exchange proceeds into a DST.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>A Delaware statutory trust gives a Seattle investor a way to satisfy the 45-day identification and 180-day closing requirements with a fractional, passive ownership interest rather than a directly managed property, which matters when a competitive corridor like South Lake Union isn't producing a direct replacement fast enough. Placing exchange proceeds into a DST still runs through a formal document sequence, and treating that sequence as a checklist rather than a single signature keeps the placement from stalling near the deadline. It's a structure worth understanding well before the identification deadline forces a decision under pressure.</p>"
+  },
+  {
+   "heading": "Sponsor Diligence Before Any Capital Is Committed",
+   "html": "<p>Not every DST sponsor is underwriting the same kind of asset or carrying the same balance-sheet strength, and a sponsor diligence review should happen before a specific offering is chosen, not after. That review typically covers the sponsor's track record with prior DST dispositions, the property manager's experience managing the specific asset class being offered, and whether the offering's debt structure is already in place or still being arranged, since the latter can introduce timing risk against the 180-day deadline. A sponsor still finalizing its own acquisition debt at the same time an investor is trying to close an exchange is a common source of avoidable delay.</p>"
+  },
+  {
+   "heading": "PPM Review and Offering Document Sequencing",
+   "html": "<p>The private placement memorandum is the core disclosure document and needs a full, careful read before subscription rather than a quick pass, covering the property's debt terms, the sponsor's fee structure, hold-period expectations, and any restrictions on transfer or early exit. For a Seattle investor exchanging out of a multifamily asset now underwriting against the statewide rent-cap statute, comparing the DST's own rent-growth assumptions against that same regulatory backdrop is a useful diligence step rather than an afterthought. The offering documents for a multifamily DST elsewhere in the state should show the same underwriting discipline expected of a directly owned Seattle replacement.</p>"
+  },
+  {
+   "heading": "Subscription Package Assembly",
+   "html": "<p>Once a specific DST offering is selected, the subscription package has to be assembled and delivered with enough runway before day 180 to allow for sponsor processing time, which is not instantaneous. The package generally includes:</p><ul><li>Signed subscription agreement matching the exchange entity's title</li><li>Qualified intermediary wire instructions and exchange confirmation</li><li>Investor suitability and accreditation documentation</li><li>Copy of the delivered 45-day identification listing the DST interest</li></ul>"
+  },
+  {
+   "heading": "Coordinating Timing With the Qualified Intermediary's Fund Release",
+   "html": "<p>The qualified intermediary releases exchange funds only against a completed subscription package and confirmed closing instructions from the sponsor, so any delay on the sponsor's side directly consumes days from the 180-day window. Confirming the sponsor's typical funding turnaround before committing to a specific offering, rather than assuming every DST closes on the same schedule, avoids a late scramble. A quick call to the sponsor's investor relations desk early in the process is usually enough to get a realistic answer on typical closing timelines.</p>"
+  },
+  {
+   "heading": "DST Placements as Part of a Larger Seattle Portfolio Exit",
+   "html": "<p>A DST interest can sit alongside a directly owned Kent Valley industrial building or a South Lake Union office allocation as part of a single identification, splitting exchange proceeds across a directly managed asset and a passive fractional interest. That split can make sense for an investor stepping back from active management on part of a portfolio while still wanting to retain direct control over another piece, particularly one with hands-on upside like a Kent Valley building nearing lease-up, and the identification and closing documents for each piece still have to satisfy their own requirements independently. Treating each piece of a split identification as its own coordination track, with its own document sequence and deadline buffer, is what keeps a mixed Seattle portfolio exchange from letting one slower piece hold up the rest, whether that piece is a DST subscription still awaiting sponsor funding or a directly owned parcel stuck in title review.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Can a Seattle investor split exchange proceeds between a DST and a directly owned property?",
+   "a": "Yes, exchange proceeds can be divided across multiple replacement properties, including a DST interest alongside a directly owned asset, as long as each piece is properly identified and closed within the standard deadlines."
+  },
+  {
+   "q": "What should be reviewed in a DST's private placement memorandum before subscribing?",
+   "a": "Key items include the property's existing debt terms, the sponsor's fee structure, expected hold period, and any restrictions on transferring or exiting the interest early, since these vary meaningfully between sponsors and offerings."
+  },
+  {
+   "q": "How much lead time does a DST subscription need before the 180-day deadline?",
+   "a": "Sponsor funding and closing turnaround varies by offering, so confirming the specific sponsor's typical processing time before committing capital, rather than assuming a standard timeline, is the safer approach given how little slack remains near day 180."
+  },
+  {
+   "q": "Does a DST interest satisfy the like-kind requirement for a 1031 exchange?",
+   "a": "A properly structured Delaware statutory trust interest is generally treated as a direct interest in real property for exchange purposes, which is why it qualifies as replacement property, though investors should confirm the specific offering's structure with their tax advisor before relying on that treatment for a Seattle exchange."
+  },
+  {
+   "q": "Who evaluates a DST sponsor's track record before a Seattle investor commits capital?",
+   "a": "That diligence typically falls to the investor and their advisor before a specific offering is chosen, since the qualified intermediary's role is limited to holding and releasing exchange funds rather than vetting sponsors or offerings."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 860
+}

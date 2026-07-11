@@ -1,0 +1,58 @@
+{
+ "slug": "market-comparable-analysis",
+ "taxonomy": "services",
+ "title": "Market Comparable Analysis",
+ "name": "Market Comparable Analysis",
+ "metaTitle": "Market Comparable Analysis in Seattle, WA",
+ "metaDescription": "Submarket-specific comparable sets for Seattle exchange candidates, supporting value estimates across office, industrial, and multifamily assets.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>A defensible value estimate for a Seattle identification candidate depends on pulling comparables from the right submarket and the right asset type, rather than simply the nearest recent sale regardless of how well it actually matches. A South Lake Union office comp doesn't translate to a Kent Valley industrial building, and a multifamily comp priced before the statewide rent-cap statute took effect may no longer reflect current buyer expectations. Building the comparable set deliberately is what supports both a 200% rule aggregate calculation and the eventual purchase negotiation. A rushed comparable set built under deadline pressure is one of the more common ways a Seattle identification later runs into a value dispute.</p>"
+  },
+  {
+   "heading": "Submarket Segmentation for Comparable Selection",
+   "html": "<p>Office comparables should be pulled specifically from South Lake Union or the adjacent downtown core rather than the broader metro, since tenant demand tied to the tech sector, including the large Amazon office footprint anchoring the corridor, has kept that pricing meaningfully different from other office submarkets across the metro. Industrial comparables need the same discipline between Kent Valley and SODO, since the two submarkets serve different tenant profiles and rarely share a comparable pool. Pulling a Kent Valley comp for a SODO candidate, or the reverse, tends to understate or overstate value in a way that only becomes obvious once the deal is already under contract.</p>"
+  },
+  {
+   "heading": "Adjusting Multifamily Comparables for the Rent-Cap Statute",
+   "html": "<p>Multifamily sale comparables from before the statewide rent-cap law took effect need an adjustment for how buyers now underwrite rent growth assumptions, since a comparable priced against unrestricted rent growth may overstate value for a building now subject to the cap. Pulling comparables closed after the law's effective date, where available, gives a cleaner read on current buyer expectations than adjusting an older sale after the fact. Where post-effective-date sales are scarce for a specific Seattle submarket, a documented adjustment methodology applied consistently across the comparable set is the next best option.</p>"
+  },
+  {
+   "heading": "Comparable Set Documentation Requirements",
+   "html": "<p>A defensible comparable set for a Seattle identification candidate should be documented with enough detail to support the value conclusion on its own, rather than serving as only a list of addresses and prices. That documentation generally includes:</p><ul><li>Sale date, price, and price per square foot or per unit</li><li>Property type, size, and condition relative to the subject</li><li>Submarket location confirmed as genuinely comparable</li><li>Any adjustments made for financing terms or unusual sale conditions</li></ul><p>Assembling this level of detail up front is what allows the comparable set to stand on its own if a lender, a co-investor, or the qualified intermediary ever asks how a specific candidate's value was reached.</p>"
+  },
+  {
+   "heading": "Using Comparables to Support the 200% Rule Calculation",
+   "html": "<p>Where an identification list is built under the 200% rule, each candidate's value estimate has to be defensible on its own, since the aggregate calculation depends on every individual number being reasonably supportable. A comparable set built from the wrong submarket, or from stale sales predating the rent-cap statute, can understate or overstate a candidate's value enough to throw off the 200% ceiling calculation without anyone noticing until it's questioned. Running a second, independent comparable check on the highest-value candidate in a Seattle portfolio list is a reasonable safeguard given how much weight that single number carries.</p>"
+  },
+  {
+   "heading": "Refreshing Comparables as the Exchange Timeline Progresses",
+   "html": "<p>A comparable set pulled early in the identification process can go stale by the time a purchase agreement is negotiated weeks later, particularly in an active corridor like South Lake Union where new sales close regularly. Refreshing the comparable set once a specific candidate moves toward a signed purchase agreement, rather than relying on the original identification-stage analysis, keeps the negotiating position current and genuinely defensible if the seller pushes back hard on price at the negotiating table late in the process.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Why can't a South Lake Union office comparable be used for a Kent Valley industrial candidate?",
+   "a": "The two submarkets serve entirely different tenant profiles and pricing drivers, so a comparable pulled from the wrong asset type or submarket doesn't produce a defensible value estimate, even if the sale is recent and nearby in a general sense."
+  },
+  {
+   "q": "How does the statewide rent-cap law affect multifamily comparable analysis in Seattle?",
+   "a": "Sales that closed before the law took effect may reflect rent growth assumptions that no longer apply, so comparables closed after the effective date generally give a more accurate read on how current buyers are underwriting multifamily value."
+  },
+  {
+   "q": "What documentation should support a comparable used in a 200% rule value calculation?",
+   "a": "Sale date, price, property type and condition, confirmed submarket comparability, and any adjustments for financing or unusual sale terms should all be documented, since the aggregate 200% calculation depends on each individual value being reasonably supportable."
+  },
+  {
+   "q": "How often should comparables be refreshed during a Seattle exchange?",
+   "a": "At minimum once a candidate moves from initial identification toward a signed purchase agreement, since comparable sets pulled early in the process can go stale within a few weeks in an active submarket like South Lake Union."
+  },
+  {
+   "q": "Does a stale comparable set create risk beyond just a bad purchase price?",
+   "a": "Yes, it can also throw off a 200% rule aggregate value calculation if the individual candidate values used are understated or overstated relative to current market conditions, which can affect the validity of the identification itself."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 851
+}

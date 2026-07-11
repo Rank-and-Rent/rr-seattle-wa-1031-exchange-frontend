@@ -1,0 +1,58 @@
+{
+ "slug": "tax-advisor-and-cpa-coordination",
+ "taxonomy": "services",
+ "title": "Tax Advisor and CPA Coordination",
+ "name": "Tax Advisor and CPA Coordination",
+ "metaTitle": "Tax Advisor and CPA Coordination in Seattle, WA",
+ "metaDescription": "Document routing between Seattle 1031 exchange files and your own CPA or tax advisor, scheduled around the 45-day and 180-day deadlines.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>This office does not give tax advice of any kind, and it should never be the last party to see an exchange file before it finally reaches the taxpayer's own CPA. It routes documents to your tax advisor on a fixed, predictable schedule instead of leaving delivery to whenever the exchange file happens to reach a natural, convenient pause, so nothing about your Seattle exchange surprises your advisor after the fact. A rushed, self-managed exchange file most often leaves out the qualified intermediary's final accounting, which is exactly the document this schedule is built to send first once it becomes available. Building the routing around that single, frequently missed document has proven the simplest way to keep the whole file complete.</p>"
+  },
+  {
+   "heading": "Scope of the Coordination Service",
+   "html": "<p>The service is fundamentally a delivery schedule, not an advisory relationship of any kind. As each individual stage of the exchange completes in turn, the relevant supporting documents are sent to your CPA or tax advisor automatically, with a short, plain-language cover note describing exactly what changed and why it changed, so your advisor is never left reconstructing the entire exchange file from scratch at year end under filing-deadline pressure. Investors with an out-of-state CPA benefit from this most, since the coordination happens by document, not by a shared local relationship. The cover note itself is kept short and factual, describing what stage of the exchange the attached document supports, without adding commentary or interpretation on what it might mean for the advisor's own tax analysis of the transaction.</p>"
+  },
+  {
+   "heading": "What We Send Your CPA and When",
+   "html": "<p>Delivery is tied to milestones, not a calendar date: the exchange agreement goes out once executed, the identification notice goes out the day it is filed, and closing statements go out within days of each closing. Your advisor sees the file build in real time rather than receiving a single package after the 180-day period ends. That pacing also gives the advisor an early chance to flag a concern while there is still time to address it, rather than after the 180-day period has already closed and the options for a fix are gone. A concern raised while the exchange is still open can often still be corrected; one raised afterward usually cannot.</p>"
+  },
+  {
+   "heading": "Documents Routed to Your Tax Advisor During the Exchange",
+   "html": "<p>Over the course of a typical exchange, the following are routed to your CPA or tax advisor:</p><ul><li>Executed exchange agreement with the qualified intermediary</li><li>Copies of the identification notice and any revisions filed within the 45-day window</li><li>Closing statements for both the relinquished and replacement property</li><li>The qualified intermediary's final accounting of exchange funds</li><li>Boot calculation worksheet, where cash or non-like-kind property is involved</li><li>Entity and vesting confirmation for the replacement property</li></ul>"
+  },
+  {
+   "heading": "Keeping Advice Separated From Process",
+   "html": "<p>Every document sent to your advisor is labeled with the process step it supports, not a conclusion about tax treatment. Questions about basis, gain recognition, or whether a specific structure qualifies stay with your CPA and are never answered by this office. If a document raises a question that touches on tax treatment, it is routed to your advisor rather than answered informally in the moment. This distinction matters most around the boot calculation, where a small structuring choice can change the answer your advisor gives, so the underlying facts are documented clearly and the interpretation is left entirely to them.</p>"
+  },
+  {
+   "heading": "Scheduling Check-Ins Around the 180-Day Deadline",
+   "html": "<p>A short check-in is scheduled with your advisor as the 180-day exchange period approaches its close, so any outstanding document or clarification is resolved before your return is prepared rather than during tax season. That check-in is set on the calendar at the start of the exchange, not left to be scheduled once the deadline is already close. It is a short call, usually no more than a status review, and it is often the simplest way to catch an overlooked item while it is still easy to fix, well before your return is due and while your advisor still has room to ask a follow-up question or request an additional document.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Does this office give tax advice as part of the coordination service?",
+   "a": "No. We route documents and keep your CPA informed of the process timeline. Tax treatment, basis calculations, and filing positions are determined entirely by your own tax advisor."
+  },
+  {
+   "q": "When does my CPA receive the identification notice?",
+   "a": "On the day it is filed with your qualified intermediary, not after the exchange closes, so your advisor has a running record rather than a single after-the-fact package."
+  },
+  {
+   "q": "What is a boot calculation worksheet and why would my CPA need it?",
+   "a": "It documents any cash or non-like-kind property received in the exchange, which can trigger partial gain recognition. Your CPA uses it to determine the tax treatment, which we do not calculate ourselves."
+  },
+  {
+   "q": "Can this coordination work with any CPA, or only ones you have worked with before?",
+   "a": "It works with whichever CPA or tax advisor you have already engaged. The document schedule is scheduled to match their preferences for format and timing."
+  },
+  {
+   "q": "Does routing documents this way replace filing Form 8824?",
+   "a": "No. Form 8824 preparation is a separate, dedicated step handled with your tax advisor. This service ensures the supporting documents your advisor needs are already in hand when that form is prepared."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 850
+}

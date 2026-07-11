@@ -1,0 +1,58 @@
+{
+ "slug": "redmond-wa",
+ "taxonomy": "locations",
+ "title": "Redmond",
+ "name": "Redmond",
+ "metaTitle": "Redmond in Seattle, WA",
+ "metaDescription": "1031 exchange coordination for Redmond's Microsoft-anchored office campus, Overlake tech corridor, and Redmond Town Center near Seattle.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Redmond's commercial base runs almost entirely on the technology campuses centered on Microsoft's headquarters and the surrounding Overlake corridor, and a buyer building a Redmond identification package should expect office and lab-flex product to dominate the submittal ahead of retail or multifamily. A qualified intermediary coordinating the closing should confirm which tenant a target office building's rent roll depends on before the 45-day identification window closes, since Redmond's office demand concentrates more heavily around a single employer than most other Eastside cities.</p>"
+  },
+  {
+   "heading": "Microsoft's Campus and the Corporate Office Market It Supports",
+   "html": "<p>Microsoft's headquarters campus anchors Redmond's office market, and the buildings surrounding it lease heavily to Microsoft itself, its contractors, and a roster of smaller technology tenants that locate in Redmond specifically for proximity to the campus. A buyer identifying Redmond office space should confirm whether a rent roll includes a direct Microsoft lease or a contractor and vendor tenant base instead, since the two carry different renewal timelines and credit profiles.</p><p>The extension of East Link light rail to Redmond Technology Station has begun to reshape which office buildings command a premium, and a buyer should weight walking distance to the station alongside traditional campus-proximity metrics when comparing two Redmond office candidates. A buyer should also confirm parking ratios on an older Redmond office building against current tenant expectations, since several buildings constructed before the campus reached its current scale were built to a lower ratio than a modern technology tenant now requires.</p>"
+  },
+  {
+   "heading": "Overlake's Lab-Flex and Biotech-Adjacent Space",
+   "html": "<p>The Overlake corridor between Redmond and Bellevue has added lab-flex buildings serving technology and biotech-adjacent tenants who need a mix of office and lab-configured space that a standard office tower cannot provide. A buyer should confirm mechanical and power capacity on this product type separately from conventional office, since lab-flex tenants often require upgrades a general office tenant would not. This corridor draws overflow demand from both Redmond's technology campuses and Bothell's life-sciences cluster to its north, giving it a broader tenant pool than either city alone would support.</p>"
+  },
+  {
+   "heading": "Redmond Town Center Retail",
+   "html": "<p>Redmond Town Center anchors the city's retail base with a mix of national tenants and restaurants drawing on the daytime population from the surrounding office campuses, and its rents run closer to a regional lifestyle center than a neighborhood strip. A buyer identifying retail here should confirm how much of the center's traffic depends on office-worker daytime patronage, since that dependency showed up clearly during periods of reduced office attendance and should factor into any lease-renewal forecast. Weekend and evening traffic at Redmond Town Center draws more from the surrounding residential population, and a buyer should separate that steadier base from the more cyclical weekday office-worker patronage when underwriting a specific storefront.</p>"
+  },
+  {
+   "heading": "Building the Redmond Identification List",
+   "html": "<p>A workable Redmond submittal typically draws from:</p><ul><li>office buildings leased to Microsoft or its direct contractor base</li><li>lab-flex space in the Overlake corridor</li><li>retail inside or adjacent to Redmond Town Center</li><li>smaller professional-office buildings serving the surrounding tech workforce</li></ul>"
+  },
+  {
+   "heading": "Managing Concentration Risk in the Identification Package",
+   "html": "<p>Because so much of Redmond's office demand ties back to one employer, a buyer should discuss concentration risk directly with a lender before finalizing an identification, since a single-tenant-dependent building can carry different loan terms than a diversified office asset even at a comparable cap rate, and an insurer may also price a policy differently once that concentration is disclosed. Redmond office space also qualifies as like-kind against almost any other investment real property a buyer is relinquishing, so the underwriting question here is tenant concentration, not exchange eligibility.</p><p>Buyers frequently pair a Redmond office identification with a Bellevue or Kirkland alternative on the same three-property list, spreading employer concentration across the identification set so a delay tied to one building's tenant review does not jeopardize the exchange inside the 180-day period.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "How concentrated is Redmond's office market around Microsoft?",
+   "a": "Heavily. Microsoft's headquarters campus anchors most of the surrounding office demand, and a buyer should confirm whether a target building's rent roll includes a direct Microsoft lease or a contractor and vendor tenant base instead, since the vendor and contractor pool tends to carry shorter average lease terms."
+  },
+  {
+   "q": "What is lab-flex space and where is it concentrated in Redmond?",
+   "a": "It is office space built with lab-configured mechanical and power capacity for biotech-adjacent tenants, concentrated mainly in the Overlake corridor between Redmond and Bellevue, which also draws overflow tenant demand from Bothell's life-sciences cluster to the north."
+  },
+  {
+   "q": "Has light rail changed which Redmond office buildings are in demand?",
+   "a": "Yes, buildings within walking distance of Redmond Technology Station have started to command a premium alongside traditional campus-proximity considerations."
+  },
+  {
+   "q": "Does Redmond Town Center retail depend on office workers?",
+   "a": "A meaningful share of its traffic comes from the daytime population at the surrounding office campuses, which is worth factoring into any lease-renewal forecast for retail space there, though evening and weekend patronage draws more steadily from the surrounding residential population instead."
+  },
+  {
+   "q": "Why pair a Redmond identification with Bellevue or Kirkland?",
+   "a": "Both spread employer concentration across the identification set, so a delay tied to reviewing a single-tenant-dependent Redmond building does not leave the exchange without a workable alternative, and both still sit close enough to Redmond that a buyer's underlying investment thesis for the Eastside stays consistent across the three-property list."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 851
+}

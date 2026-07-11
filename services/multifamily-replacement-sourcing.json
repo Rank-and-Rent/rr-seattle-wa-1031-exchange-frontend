@@ -1,0 +1,58 @@
+{
+ "slug": "multifamily-replacement-sourcing",
+ "taxonomy": "services",
+ "title": "Multifamily Replacement Sourcing",
+ "name": "Multifamily Replacement Sourcing",
+ "metaTitle": "Multifamily Replacement Sourcing in Seattle, WA",
+ "metaDescription": "Multifamily replacement sourcing for Seattle 1031 exchanges, underwritten against the statewide rent-cap framework before a unit count reaches your file.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Multifamily replacement sourcing in Seattle now runs through one filter every other market skips: the statewide rent-cap law that resets how a rent roll gets underwritten. This office builds the search package so that constraint is priced in from the first candidate, not discovered after your identification notice is filed. The same discipline applies whether the replacement building sits downtown, on the Eastside, or further south in the Kent Valley bench.</p>"
+  },
+  {
+   "heading": "Scope of the Multifamily Search",
+   "html": "<p>The engagement is scoped by unit count, vintage, and submarket before any candidate is circulated, and every property that reaches your file has already been checked against your target debt structure and hold period. A Seattle search built this way keeps the candidate list short and workable instead of a stack of broker packages you have to sort yourself, which saves your own review time for candidates that have already cleared the first pass.</p><p>We treat the search the same way a procurement team treats a bid list: a defined specification first, then submittals scored against it, not the reverse.</p><p>A Seattle-based investor exchanging out of a smaller building often wants either more units at a lower basis per door or fewer units in a higher-growth submarket, and the search specification states which of those two directions your file is pointed toward before candidates are circulated.</p>"
+  },
+  {
+   "heading": "Underwriting Under the Rent-Cap Framework",
+   "html": "<p>The statewide cap on annual rent increases changes how in-place rent should be trended forward, and sellers do not always adjust their pro forma to reflect it. Before a property is added to your package, we rebuild the rent schedule using the capped growth assumption rather than the seller's forecast.</p><p>New construction carries a temporary exemption window under the law, which matters when comparing a stabilized asset to a lease-up property, so that distinction is documented separately in every package rather than buried in a footnote.</p><p>We also check whether a seller has applied any exemption incorrectly, since a mischaracterized building can leave an investor holding a rent schedule that does not survive a later challenge from a tenant or a local enforcement inquiry.</p>"
+  },
+  {
+   "heading": "Verification Points Before a Unit Count Reaches Your File",
+   "html": "<p>Every candidate is checked against the following before it is added to your identification package:</p><ul><li>Rent roll audited against the trailing twelve months of collections, not the asking pro forma</li><li>Cap-rate assumptions reset for the rent-cap growth ceiling</li><li>Unit mix and renovation status by building, not blended averages</li><li>Deferred maintenance and capital-reserve adequacy</li><li>Utility billing method, including any ratio utility billing exposure under state rules</li><li>New-construction exemption status, where applicable</li></ul>"
+  },
+  {
+   "heading": "Where Density Concentrates: South Lake Union to the Eastside Bench",
+   "html": "<p>South Lake Union and the surrounding downtown core carry the tightest multifamily demand in the metro, driven in large part by the tech-office footprint tied to Amazon's downtown presence, but land basis there leaves little room for error on the rent-cap math. Investors trading for yield more often land on Eastside product near Bellevue and Redmond, or on the Kent and Renton bench where basis is lower and unit counts run larger.</p><p>Everett and Lynnwood have also added meaningful supply in recent cycles, giving investors a middle option between downtown density and the deeper South Sound bench when a candidate needs to match a specific price band. Each of those submarkets is treated as its own line in the search rather than blended into a single metro-wide average.</p>"
+  },
+  {
+   "heading": "Coordinating the Package Inside Your Identification Window",
+   "html": "<p>Every rent-cap adjustment and capital-reserve check is finished before your 45-day window closes, not after, so the candidates on your identification notice are ones we have already stress-tested against the same growth assumption a lender would use. We hand the finished package to your qualified intermediary once you sign off, and we leave gain and basis calculations to your own tax advisor.</p><p>If financing is part of the plan, we also confirm the lender's rent-cap treatment during underwriting, since some lenders discount projected rent growth more conservatively than the statewide cap technically requires, which can change how much leverage a given Seattle-area candidate will actually support.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "How does the Washington rent-cap law change how you underwrite a Seattle multifamily deal?",
+   "a": "We rebuild the rent trend using the capped annual growth ceiling instead of the seller's pro forma, so the cash flow you see in your package already reflects the constraint rather than an optimistic forecast."
+  },
+  {
+   "q": "Does the rent cap apply the same way to new construction?",
+   "a": "New construction carries a temporary exemption window under state law. We document which candidates fall inside that window separately so you are not comparing exempt and capped assets on the same basis."
+  },
+  {
+   "q": "Can the sourcing search cover Eastside or Kent Valley properties beyond Seattle proper?",
+   "a": "Yes. Once your unit count and price band are set, candidates are pulled from any submarket in the metro that fits, including Bellevue, Redmond, Kent, and Renton."
+  },
+  {
+   "q": "What happens if the rent roll does not match the seller's stated collections?",
+   "a": "The candidate is flagged and either corrected with backup documentation from the seller or removed from consideration before it reaches your identification file. We do not carry an unresolved discrepancy forward into your notice."
+  },
+  {
+   "q": "Will this service tell me how a replacement multifamily purchase affects my exchange basis?",
+   "a": "No. We handle sourcing and underwriting verification only. Basis and gain calculations stay with your qualified intermediary and tax advisor."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 858
+}

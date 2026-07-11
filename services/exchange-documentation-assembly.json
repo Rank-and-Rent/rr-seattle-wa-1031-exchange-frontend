@@ -1,0 +1,58 @@
+{
+ "slug": "exchange-documentation-assembly",
+ "taxonomy": "services",
+ "title": "Exchange Documentation Assembly",
+ "name": "Exchange Documentation Assembly",
+ "metaTitle": "Exchange Documentation Assembly in Seattle, WA",
+ "metaDescription": "A single documentation record spanning identification through closing for Seattle 1031 exchanges, assembled for QI, lender, and CPA review.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>A 1031 exchange generates documents from several independent sources: the qualified intermediary's exchange agreement, the lender's closing conditions, the title company's commitment, and the taxpayer's own identification notices, and none of those parties is responsible for assembling them into one coherent record. For a Seattle exchange moving through a South Lake Union office sale and a Kent Valley industrial purchase, keeping that record current as each document arrives, rather than reconstructing it after closing, is what makes the eventual CPA review and Form 8824 preparation straightforward instead of a scramble. The habit is easy to skip while a transaction is moving quickly, which is exactly when the record tends to fall the furthest behind.</p>"
+  },
+  {
+   "heading": "What a Complete Exchange File Actually Contains",
+   "html": "<p>A complete file covers both the relinquished and replacement sides of the transaction, plus every notice exchanged between the taxpayer and the qualified intermediary. Missing pieces are usually the informal ones: an email confirming an identification revision, a signed extension request, or a broker's written value opinion supporting a 200% rule calculation, none of which the title company or lender retains as part of their own closing file. Those informal items are usually the ones a CPA asks for months later, once the original email thread has scrolled well out of view and the person who sent it has moved on to other transactions.</p>"
+  },
+  {
+   "heading": "Assembly Sequence From Relinquished Sale Through Closing",
+   "html": "<p>Building the file in the order documents are actually generated, rather than trying to assemble everything retroactively at closing, keeps gaps from forming. The core sequence for a Seattle exchange runs:</p><ul><li>Relinquished property purchase and sale agreement with QI assignment</li><li>Qualified intermediary exchange agreement and escrow instructions</li><li>Signed 45-day identification notice with delivery confirmation</li><li>Replacement property purchase agreement and lender commitment</li><li>Closing statements for both relinquished and replacement transactions</li><li>Washington real estate excise tax affidavits for each property transferred</li></ul>"
+  },
+  {
+   "heading": "Version Control on Identification Notices",
+   "html": "<p>When a Seattle identification list is revised before the 45-day deadline, whether a Kent Valley industrial candidate is swapped out for a different parcel or a multifamily property is added late in the process, the file needs every version retained with its delivery date, rather than only the final list. If the identification is ever questioned, being able to show the sequence of revisions and their timely delivery matters more than only having the last version on hand. A simple dated folder for each revision, rather than overwriting the same file repeatedly, preserves that sequence without adding much administrative work to an already busy closing process.</p>"
+  },
+  {
+   "heading": "Handoff to the Tax Advisor Before Form 8824 Season",
+   "html": "<p>The completed file should move to the taxpayer's CPA or tax advisor well ahead of the filing deadline for the year the exchange closed, not during the return preparation crunch. Handing over a file that's already organized by transaction stage, rather than a folder of unsorted PDFs from four different parties, shortens the back-and-forth needed to prepare an accurate Form 8824. For a Seattle exchange closing near year-end, that lead time matters even more, since the tax advisor may need to confirm reporting treatment before the filing deadline arrives.</p>"
+  },
+  {
+   "heading": "Retention Practices for Seattle Exchange Records",
+   "html": "<p>Exchange documentation should be retained for as long as the replacement property is held, since a future disposition or a later exchange may need to reference the original deferred gain calculation established when the property was first acquired. Digital storage with the file organized by transaction date, rather than scattered across email threads and closing binders, is the practical standard for a portfolio that may include several Seattle-area properties acquired through different exchanges over time. A consistent naming convention across every folder makes the difference between finding a document in minutes and reconstructing it from scratch years later, particularly for an investor holding several Seattle-area properties acquired at different points through separate exchanges over the course of a longer-term investment strategy spanning many years and multiple property cycles.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Who is responsible for assembling the complete documentation file for a Seattle exchange?",
+   "a": "No single party automatically does this; the qualified intermediary, lender, and title company each hold pieces relevant to their own role, but pulling everything into one organized file is typically left to the taxpayer or their advisor."
+  },
+  {
+   "q": "What documents are most often missing from an exchange file after closing?",
+   "a": "Informal items tend to go missing first: email confirmations of identification revisions, signed value-opinion memos supporting a 200% rule calculation, and any correspondence around a deadline or delivery confirmation that wasn't part of a formal closing package."
+  },
+  {
+   "q": "Does the Washington real estate excise tax affidavit need to be kept with the exchange file?",
+   "a": "Yes, it should be retained alongside the closing statements for each property transferred, since it documents the transfer itself even though it's a state filing separate from the federal exchange paperwork."
+  },
+  {
+   "q": "When should the exchange file be handed to a tax advisor for Form 8824 preparation?",
+   "a": "As soon as the exchange closes, well before the filing deadline for that tax year, rather than during return preparation season. An organized handoff shortens the time needed to prepare an accurate filing."
+  },
+  {
+   "q": "How long should exchange documentation be kept after closing?",
+   "a": "For as long as the replacement property is held, since the deferred gain calculation may be needed again if the property is sold or exchanged again in the future."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 852
+}

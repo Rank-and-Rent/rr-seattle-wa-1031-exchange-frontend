@@ -1,0 +1,58 @@
+{
+ "slug": "retail-replacement-sourcing",
+ "taxonomy": "services",
+ "title": "Retail Replacement Sourcing",
+ "name": "Retail Replacement Sourcing",
+ "metaTitle": "Retail Replacement Sourcing in Seattle, WA",
+ "metaDescription": "Multi-tenant retail replacement sourcing for Seattle 1031 exchanges, checked on anchor strength and capital condition before it reaches your file.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Multi-tenant retail carries a meaningfully different diligence load than a single-pad net-lease position: co-tenancy clauses, shared CAM pools, and capital items spread unevenly across several different tenants instead of concentrated in just one. This office sources and screens that product for Seattle investors as a distinct package, not a variation on single-tenant sourcing. Treating it separately from the start avoids forcing multi-tenant diligence into a checklist built for a single lease. The two asset types share a tax treatment under the exchange rules but almost nothing else in how they are underwritten.</p>"
+  },
+  {
+   "heading": "Scope of the Retail Search",
+   "html": "<p>The search is scoped by anchor type, gross leasable area, and the co-tenancy exposure the investor is willing to carry. A grocery-anchored center behaves differently than a discount-anchored center, and the package built for your file states which specific anchor profile the candidate carries, why it cleared initial screening, and what ongoing risk that particular profile carries forward into your ownership period. A center with no clear anchor at all is treated as its own category and screened more conservatively, since income there depends on the collective health of several smaller tenants rather than one strong lease. That kind of center is not automatically excluded, but it is priced and reviewed with a wider margin for turnover.</p>"
+  },
+  {
+   "heading": "Multi-Tenant Centers vs. Single-Pad Product",
+   "html": "<p>A multi-tenant center spreads risk across several leases, which can smooth cash flow, but it also means one anchor's co-tenancy clause can affect every smaller tenant's rent if that anchor vacates. Single-pad product avoids that exposure entirely but concentrates risk in one tenant's credit. Both are sourced separately so investors are comparing like against like. Most Seattle exchange investors ask for both categories in a single search and let the underwriting numbers decide between them rather than ruling one out ahead of time. The final choice usually comes down to how much active management the investor wants to take on, since a multi-tenant center requires more ongoing lease administration than a single net-lease position, even when a third-party manager handles the day-to-day work.</p>"
+  },
+  {
+   "heading": "Package Line Items for a Retail Candidate",
+   "html": "<p>Every retail candidate is checked against the following before it is added to your file:</p><ul><li>Anchor tenant lease strength and remaining term</li><li>Co-tenancy clauses and their trigger conditions for smaller tenants</li><li>CAM, tax, and insurance reconciliation history for the trailing two years</li><li>Parking ratio and available traffic-count data</li><li>Vacancy history for the center over the past three years</li><li>Roof and parking-lot capital condition, with recent reserve study if one exists</li></ul>"
+  },
+  {
+   "heading": "Grocery-Anchored Product Along the South Sound Corridors",
+   "html": "<p>Grocery-anchored centers along the Kent, Renton, and Federal Way corridors have held occupancy more consistently than discount-anchored centers closer to the urban core, largely because grocery anchors draw repeat trips that support the smaller shop tenants around them. That distinction is documented in every package rather than assumed. Investors trading a downtown Seattle asset for suburban retail often ask specifically about this pattern, since it changes how conservative the vacancy assumption in their underwriting should be. Traffic-count data along these corridors is checked against the most recent public counts available rather than a broker's own estimate, since a stale or optimistic count can quietly overstate a center's real draw.</p>"
+  },
+  {
+   "heading": "Coordinating Diligence Before the Package Closes",
+   "html": "<p>Roof, parking-lot, and structural inspections are scheduled early enough in your 45-day window to leave room for a substitute if a capital item surfaces that was not disclosed. The finished package, including inspection reports, transfers to your qualified intermediary and closing team once you sign off. Any capital item flagged but not disqualifying is carried forward as a negotiating point rather than dropped from the file, so it can still factor into the final purchase price. Investors who prefer to walk away from any disclosed capital item are told about it as soon as it surfaces, not after the diligence period has already closed. That transparency is what lets an investor decide quickly whether a candidate is still worth pursuing under the same terms, or whether the price needs to be revisited with the seller before the purchase agreement moves forward toward closing.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What is a co-tenancy clause and why does it matter for a replacement center?",
+   "a": "A co-tenancy clause lets smaller tenants reduce rent or exit if a named anchor closes. It matters because losing one anchor can reduce cash flow across the whole center, beyond the anchor's own space."
+  },
+  {
+   "q": "Does grocery-anchored retail perform differently than discount-anchored retail in this market?",
+   "a": "Grocery-anchored centers along corridors like Kent and Federal Way have generally held occupancy more consistently, since grocery anchors draw repeat visits that support surrounding shop tenants."
+  },
+  {
+   "q": "How do you verify CAM reconciliation history before adding a center to my file?",
+   "a": "We request the trailing two years of reconciliation statements directly from the seller's property manager and compare them against the lease language for allowable charges."
+  },
+  {
+   "q": "Can this sourcing include single-pad sites as an alternative to a multi-tenant center?",
+   "a": "Yes, though single-pad candidates are sourced and screened under a separate net-lease specification since the risk profile is different."
+  },
+  {
+   "q": "Who schedules roof and parking-lot inspections during my identification window?",
+   "a": "We schedule them directly with a licensed inspector as soon as a candidate clears initial screening, leaving enough time in the window to substitute a candidate if a major capital item is found."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 853
+}

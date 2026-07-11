@@ -1,0 +1,58 @@
+{
+ "slug": "boot-calculation-support",
+ "taxonomy": "services",
+ "title": "Boot Calculation Support",
+ "name": "Boot Calculation Support",
+ "metaTitle": "Boot Calculation Support in Seattle, WA",
+ "metaDescription": "Debt and equity reconciliation schedules for Seattle exchanges, flagging cash and mortgage boot before closing rather than after.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Boot is any value an investor receives out of an exchange that isn't like-kind real property, whether it shows up as cash left over after closing or as a reduction in mortgage debt on the replacement side. For a Seattle exchange moving proceeds from a relinquished South Lake Union office building into a smaller Kent Valley industrial parcel, a debt mismatch is one of the more common ways boot appears without anyone intending it, and catching it before closing beats discovering it on a tax return. A short reconciliation exercise, run before an offer is even signed, is usually all it takes to see whether a specific Seattle replacement candidate will trigger boot.</p>"
+  },
+  {
+   "heading": "Cash Boot Versus Mortgage Boot in Practice",
+   "html": "<p>Cash boot is straightforward: any exchange proceeds not reinvested into replacement property, including funds pulled out at closing for any reason, are taxable to the extent of gain. Mortgage boot is less intuitive, since it results from replacing a relinquished property's debt with less debt on the replacement side, even if no cash actually changes hands. An investor selling a leveraged Seattle multifamily building and buying an all-cash replacement, for instance, can trigger mortgage boot purely from the debt reduction, regardless of how the equity was reinvested. This distinction trips up more first-time exchange participants than any other single rule, largely because it has nothing to do with what the investor sees land in a bank account.</p>"
+  },
+  {
+   "heading": "Reconciliation Schedule Contents",
+   "html": "<p>A debt and equity reconciliation schedule lines up the relinquished property's payoff figures against the replacement property's financing terms, isolating any gap before it becomes a surprise. The schedule typically tracks:</p><ul><li>Relinquished property sale price and existing debt payoff</li><li>Net exchange equity after closing costs and qualified intermediary fees</li><li>Replacement property purchase price and new loan amount</li><li>Any cash received outside the exchange account</li><li>Resulting debt or cash boot, if any, before closing is finalized</li></ul>"
+  },
+  {
+   "heading": "Offsetting Debt Reduction With Additional Cash Investment",
+   "html": "<p>Where a Seattle replacement carries less debt than the relinquished property, the shortfall can typically be offset by contributing additional cash into the deal, which restores the equal-or-greater debt and value test without requiring a different replacement asset. This is a common adjustment when trading out of a heavily leveraged office asset into a lower-leverage industrial building in Kent Valley or SODO, where lenders may simply underwrite to a lower loan-to-value ratio than the relinquished property carried. Confirming the additional cash amount needed before the purchase agreement is signed keeps the offer terms from needing to be renegotiated later once the reconciliation is run, which is a far more disruptive conversation to have after a seller has already agreed to price and terms and expects the deal to close as negotiated.</p>"
+  },
+  {
+   "heading": "Running the Numbers Before the Purchase Agreement Is Signed",
+   "html": "<p>Boot exposure is far easier to fix before a purchase agreement is executed than after, since adjusting the offer price, the financing terms, or the additional cash contribution becomes much harder once terms are locked. Running the debt and equity reconciliation as soon as a specific Seattle replacement property is under serious consideration, rather than waiting until the closing statement is drafted, keeps the fix options open. Waiting until the week of closing to run this exercise leaves almost no room to adjust financing terms without risking the closing date itself.</p>"
+  },
+  {
+   "heading": "Coordinating the Reconciliation With the Qualified Intermediary",
+   "html": "<p>The qualified intermediary holds the exchange funds and processes the closing but doesn't independently calculate boot exposure as part of standard exchange administration, which surprises more first-time exchange participants than any other single detail of the process. Sharing the reconciliation schedule with the QI ahead of the closing date, alongside the taxpayer's own tax advisor, keeps the closing statement structured to avoid any inadvertent boot rather than fixing it retroactively. For a Seattle exchange with a tight closing calendar, this coordination step is one of the easiest to skip under time pressure and one of the most expensive to skip in practice.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What is mortgage boot and how does it show up in a Seattle exchange?",
+   "a": "Mortgage boot occurs when the replacement property carries less debt than the relinquished property did, even if all the cash proceeds are reinvested. It commonly appears when an investor trades a leveraged Seattle asset for a lower-leverage or all-cash replacement."
+  },
+  {
+   "q": "Can mortgage boot be avoided without buying a more expensive replacement property?",
+   "a": "Yes, contributing additional cash into the replacement purchase can offset a debt shortfall and satisfy the equal-or-greater value and debt test without changing the target property."
+  },
+  {
+   "q": "Is leftover cash after closing always considered boot?",
+   "a": "Any exchange proceeds not reinvested into replacement property and instead distributed to the investor are treated as cash boot and are taxable to the extent of recognized gain, regardless of the reason for the leftover funds."
+  },
+  {
+   "q": "When should a debt and equity reconciliation be run for a Seattle exchange?",
+   "a": "As soon as a specific replacement property is under serious consideration, ideally before a purchase agreement is signed, since adjusting price, financing, or additional cash contribution is far easier before terms are locked."
+  },
+  {
+   "q": "Does the qualified intermediary calculate boot exposure automatically?",
+   "a": "No, standard qualified intermediary administration covers holding funds and processing the exchange, not calculating boot. That reconciliation is typically run separately and shared with the QI and the investor's tax advisor ahead of closing."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 853
+}

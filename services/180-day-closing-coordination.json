@@ -1,0 +1,58 @@
+{
+ "slug": "180-day-closing-coordination",
+ "taxonomy": "services",
+ "title": "180-Day Closing Coordination",
+ "name": "180-Day Closing Coordination",
+ "metaTitle": "180-Day Closing Coordination in Seattle, WA",
+ "metaDescription": "Closing-package scheduling for Seattle 1031 exchanges: sequencing QI sign-off, lender submittals, and title documents inside the 180-day window.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>The 180-day exchange period is less a countdown than a closing calendar that has to accommodate a qualified intermediary, a lender's underwriting desk, a title company, and sometimes a DST sponsor, each running on its own internal clock. In Seattle, where replacement candidates can span a South Lake Union office tower, a Kent Valley industrial parcel, and a multifamily building subject to the statewide rent-cap statute, the closing customs and lead times differ enough between assets that a single generic timeline rarely holds up without active coordination.</p>"
+  },
+  {
+   "heading": "Reverse-Engineering the Closing Date From Day 180",
+   "html": "<p>Working backward from the 180-day deadline, rather than forward from the relinquished sale, exposes which tasks are actually load-bearing. Title clearance, lender final approval, and the qualified intermediary's exchange-funds release each need their own buffer before the closing date, and each buffer competes for the same finite runway. A Seattle closing calendar built this way typically reserves the final five to seven business days strictly for signature logistics and wire confirmation, leaving the earlier weeks for underwriting and title curative work.</p><p>King County recording queues can add a day or two beyond what a smaller county needs, and that lag has to be built into the schedule rather than discovered on day 178.</p>"
+  },
+  {
+   "heading": "Submittal Sequencing Between Qualified Intermediary and Lender",
+   "html": "<p>The qualified intermediary and the replacement-property lender are not reviewing the same documents in the same order, and treating their submittals as a single combined package tends to create bottlenecks. The QI generally needs the identification confirmation and the exchange agreement addendum finalized before it will release funds, while the lender's underwriting file centers on the appraisal, the rent roll, and its own closing conditions. Sequencing the submittals so each party receives what it needs without waiting on the other's unrelated paperwork keeps both tracks moving in parallel instead of stacking end to end.</p>"
+  },
+  {
+   "heading": "Closing Package Contents That Move Through Multiple Reviewers",
+   "html": "<p>A Seattle exchange closing package typically routes through the qualified intermediary, the lender, the title company, and the taxpayer's own counsel before signature, and each reviewer is checking a different subset of the same documents. The core set includes:</p><ul><li>Assignment of the purchase and sale agreement to the qualified intermediary</li><li>Signed qualified intermediary exchange agreement and escrow instructions</li><li>Title commitment with all exceptions cleared or explained</li><li>Closing or settlement statement reflecting the exchange proceeds flow</li><li>Copy of the delivered 45-day identification notice</li><li>Washington State real estate excise tax affidavit for the transfer</li></ul>"
+  },
+  {
+   "heading": "Coordinating Closings Across Different Seattle Submarkets",
+   "html": "<p>A South Lake Union office closing, a Kent Valley industrial closing, and a multifamily closing subject to the state's rent-cap rules do not move at the same pace. Industrial parcels in Kent Valley or SODO frequently carry a Phase I environmental site assessment tied to prior port-adjacent use, and that report's turnaround can become the schedule's critical path if it is not ordered early. Multifamily closings add their own document layer, since buyers and lenders increasingly want confirmation of current rent levels against the statewide cap before they will finalize terms. None of this is a reason to slow the exchange down; it is a reason to identify which document is actually driving the calendar for that specific asset.</p>"
+  },
+  {
+   "heading": "When Day 180 Lands on a Non-Business Day",
+   "html": "<p>Like the 45-day identification period, the 180-day exchange period runs on calendar days, with no routine extension for weekends, holidays, or a lender that simply needs one more day. The rare exception is a federally declared disaster affecting the taxpayer or a party to the transaction, and that relief has to be confirmed rather than assumed. Scheduling the actual closing two to three business days ahead of day 180, with wire confirmation completed before the deadline rather than on it, keeps a late-arriving signature or a title curative item from becoming an unrecoverable problem.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What happens if the closing package isn't complete by day 180 for a Seattle exchange?",
+   "a": "The exchange fails and the relinquished-sale proceeds become taxable, since there is no routine extension beyond the 180-day period. That is why the closing schedule is built backward from day 180 with several days of buffer rather than treating that date as the target itself."
+  },
+  {
+   "q": "Does the 180-day period run at the same time as the 45-day identification window?",
+   "a": "Yes, both periods start on the same day, the date the relinquished property closes. The 45-day window is the first, shorter phase inside the larger 180-day period rather than a separate clock that runs afterward."
+  },
+  {
+   "q": "Who typically prepares the Washington real estate excise tax affidavit for a Seattle closing?",
+   "a": "The closing or title company usually prepares the affidavit as part of the standard closing package, since Washington requires it for any transfer of real property regardless of the 1031 exchange structure layered on top."
+  },
+  {
+   "q": "Can a lender's underwriting delay push a Seattle exchange past the 180-day deadline?",
+   "a": "It can if the lender's timeline isn't built into the closing schedule from the start. Ordering the appraisal, environmental report, and any rent-roll verification early, rather than after the purchase agreement is fully negotiated, is what keeps lender underwriting from becoming the bottleneck."
+  },
+  {
+   "q": "Is there any flexibility if day 180 falls on a weekend or holiday?",
+   "a": "No routine flexibility exists; the period runs on calendar days and the deadline stands regardless of the day of the week. Scheduling the closing several business days before day 180, rather than on it, is the standard way to absorb that risk."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 868
+}

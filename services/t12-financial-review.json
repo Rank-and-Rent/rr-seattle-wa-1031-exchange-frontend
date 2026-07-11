@@ -1,0 +1,58 @@
+{
+ "slug": "t12-financial-review",
+ "taxonomy": "services",
+ "title": "T12 Financial Review",
+ "name": "T12 Financial Review",
+ "metaTitle": "T12 Financial Review in Seattle, WA",
+ "metaDescription": "Trailing-twelve-month financial review for Seattle 1031 replacement candidates, normalized before it is used to underwrite your identification file.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>A seller's trailing-twelve-month statement is rarely ever fully ready to underwrite exactly as delivered, no matter how clean or professionally formatted it may appear at first glance. One-time items, deferred capital costs booked incorrectly as expense, and a property-tax basis that has not been reset for a pending sale all distort the number an investor sees first. Treating that statement as fact rather than a starting point is one of the more common mistakes in a rushed exchange timeline, and it is one of the easiest to avoid with a structured review conducted before the candidate is ever added to your identification package. This office normalizes that statement before it becomes part of a Seattle exchange file.</p>"
+  },
+  {
+   "heading": "Scope of the T12 Review",
+   "html": "<p>The review takes the seller's trailing twelve months of reported income and expense, checks each individual line item against supporting invoices, vendor contracts, and the current rent roll, and produces a fully normalized statement that reflects what the property will actually cost to operate under new Seattle-based ownership going forward. That fully normalized statement, never the seller's raw original T12 figure, is what ultimately goes into your final, completed identification package. A Seattle buyer using the raw figure in a lender submission risks an underwriting number that does not survive the lender's own diligence a few weeks later. A second review by the lender's own underwriter that lands materially lower than the seller's figure can also cost time in an already tight window, since the file may need to be revised or the candidate reconsidered altogether, and a substitute candidate prepared and reviewed with far less runway than the original plan allowed for.</p>"
+  },
+  {
+   "heading": "Normalizing the Trailing Twelve Months",
+   "html": "<p>Normalization means carefully removing anything that will not recur under new ownership and adding back anything that reasonably will, such as a property-tax reassessment triggered by the sale itself. It is a careful line-by-line process, never a rough percentage haircut applied blindly to the seller's reported bottom line. Two properties with an identical reported net operating income can end up with materially different normalized figures once each line is checked individually. That difference is usually the clearest signal of which candidate actually deserves the higher price in your package, rather than the reported figure the seller chose to lead with.</p>"
+  },
+  {
+   "heading": "Line Items Adjusted Before We Accept a T12",
+   "html": "<p>Every trailing-twelve-month statement is adjusted for the following before it is used in a package:</p><ul><li>One-time capital items removed from the operating-expense line</li><li>Vacancy and loss-to-lease reconciled directly to the rent roll</li><li>Utility reimbursement income recalculated against actual billing records</li><li>Management-fee expense normalized to a market rate rather than an owner-operator rate</li><li>Real-estate tax reset for the reassessment expected after a sale</li><li>Insurance premium reset to a current market quote rather than a legacy policy rate</li></ul>"
+  },
+  {
+   "heading": "Where Sellers' T12s Commonly Diverge From the Rent Roll",
+   "html": "<p>The most frequent divergence is a T12 showing income that no longer matches current occupancy, usually because a tenant vacated after the statement period closed. That gap is checked against the current rent roll before the two documents are reconciled into a single package. A second common divergence is a management fee booked at the seller's owner-operator rate rather than what a third-party manager would actually charge. A third is an insurance premium locked in years ago under a legacy policy that will not renew at the same rate for a new owner. Each of these is reset to a current, market-supportable figure before the statement is accepted into your file for review.</p>"
+  },
+  {
+   "heading": "Turning the Reviewed T12 Into an Underwriting Exhibit",
+   "html": "<p>The finished, normalized statement becomes an exhibit attached to your identification package, formatted so it can be handed directly to a lender or to your own underwriting model without further adjustment. Keeping the original seller figures alongside the normalized ones also gives your CPA a clear record of what changed and why. That side-by-side format is also useful if a lender's underwriter asks for a walk-through of any specific adjustment, since every change is traceable back to its original line rather than presented as a single unexplained total figure with no supporting detail attached.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Why can the seller's T12 not be used exactly as provided?",
+   "a": "Sellers' statements often include one-time items, legacy management or insurance rates, and a tax basis that has not been reset for the sale. Using it unadjusted overstates cash flow before you close."
+  },
+  {
+   "q": "What is loss-to-lease and why does it matter in a T12 review?",
+   "a": "Loss-to-lease is the gap between a unit's contract rent and current market rent. Reconciling it against the rent roll shows whether reported income reflects actual signed leases or an optimistic estimate."
+  },
+  {
+   "q": "How do you handle a property-tax reassessment that will happen after closing?",
+   "a": "We reset the tax line in the normalized statement to reflect the expected post-sale assessment, based on the jurisdiction's stated methodology, rather than leaving the seller's current, lower tax bill in place."
+  },
+  {
+   "q": "Does this review replace an appraisal or lender underwriting?",
+   "a": "No. It produces a normalized operating statement that supports your own review and your lender's underwriting, but it is not a substitute for either."
+  },
+  {
+   "q": "Can the normalized T12 be shared directly with my CPA?",
+   "a": "Yes. It is formatted as a standalone exhibit so it can be handed to your CPA or lender as supporting documentation without additional rework."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 850
+}

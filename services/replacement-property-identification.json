@@ -1,0 +1,58 @@
+{
+ "slug": "replacement-property-identification",
+ "taxonomy": "services",
+ "title": "Replacement Property Identification",
+ "name": "Replacement Property Identification",
+ "metaTitle": "Replacement Property Identification in Seattle, WA",
+ "metaDescription": "Identification notice drafting for Seattle 1031 exchanges, built to survive a challenge and delivered to your qualified intermediary on schedule.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>An identification notice is a legal document, not a checklist. It has to describe each candidate property unambiguously, name the rule the investor is using, and reach the qualified intermediary inside a window that does not extend. This office drafts that notice for Seattle exchange files the way a specification writer drafts a contract exhibit: precise, checked, and delivered on schedule. A defective notice does not always surface immediately; it can sit unnoticed until a later audit or a dispute forces a closer read of the exact wording that was filed. Getting the wording right the first time is far simpler than trying to explain it after the fact, once the deadline has already passed and no correction is possible, no matter how minor the original defect turns out to have been.</p>"
+  },
+  {
+   "heading": "Scope of the Identification Package",
+   "html": "<p>The package includes the draft notice itself, the legal description or street address for each candidate, and a delivery record showing when the notice reached the qualified intermediary. Every element is checked against IRS identification requirements before the notice leaves this office, not after a question comes back from the intermediary.</p><p>For Seattle candidates, the legal description is pulled from the King County parcel record directly rather than copied from a listing sheet, since listing addresses occasionally omit unit or parcel detail that matters for an unambiguous description. A condominiumized office suite is a common example, where a bare street address without a unit number would leave the notice open to challenge. The same care applies to a subdivided industrial parcel in the Kent Valley, where a single tax lot can sometimes cover more than one building.</p>"
+  },
+  {
+   "heading": "Drafting a Notice That Will Not Get Challenged",
+   "html": "<p>Ambiguity is the most common defect in a self-drafted notice: a street address without a suite number, a property described by nickname instead of legal description, or a rule reference left off entirely. Each of those defects is checked line by line before the notice is finalized. We compare the draft against the sourcing package for the same candidate to make sure the description in the notice matches the address on the purchase agreement exactly. A mismatch between those two documents, even a small one, is exactly the kind of detail that can be raised later if the exchange is ever reviewed.</p>"
+  },
+  {
+   "heading": "Elements Required in Every Identification Notice",
+   "html": "<p>Every notice drafted through this office includes the following before it is sent for signature:</p><ul><li>Unambiguous legal description or full street address for each candidate</li><li>The identification rule being used, stated explicitly</li><li>Taxpayer signature and the date of delivery to the intermediary</li><li>Delivery method documented, whether hand delivery, email, or courier</li><li>A revision date reserved in case a candidate needs to be replaced</li><li>Count of properties confirmed against the chosen rule's limit</li></ul>"
+  },
+  {
+   "heading": "Coordinating Revisions Inside the Window",
+   "html": "<p>If a candidate falls out of contention after the notice is filed, the investor still has the right to revise as long as the 45-day window has not closed. We track that window daily and prepare the revised notice in advance so a substitution does not become a last-minute scramble. That draft is held ready rather than started from a blank page the moment a candidate falls through. A revised notice still has to meet the same standard as the original: unambiguous description, explicit rule reference, and a documented delivery date.</p>"
+  },
+  {
+   "heading": "Where This Sits Relative to Your Replacement Search",
+   "html": "<p>Identification drafting is the final step after the sourcing and diligence work is finished on each candidate, not a parallel task. Once a Seattle candidate clears diligence, it is added to the draft notice immediately so the notice is always current with the state of your search.</p><p>This ordering also means a candidate never sits on the draft notice longer than the diligence supporting it, which keeps the final filing consistent with what your file can actually document. A candidate added to the draft before its diligence is finished is a common source of the ambiguity problems this process is built to avoid.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What makes an identification notice legally sufficient?",
+   "a": "It must name each candidate unambiguously, typically by legal description or full street address, state the identification rule being used, and be signed and delivered to the qualified intermediary before the 45-day window closes."
+  },
+  {
+   "q": "Can I still change my identified properties after the notice is filed?",
+   "a": "Yes, as long as the 45-day window has not closed. A revised notice can add or remove candidates up to that deadline, which is why we prepare revisions in advance rather than waiting for a problem."
+  },
+  {
+   "q": "Why use the King County parcel record instead of the listing address?",
+   "a": "Listing sheets sometimes omit unit numbers or parcel detail that make a description unambiguous. Pulling the legal description directly from the county record removes that risk from the notice."
+  },
+  {
+   "q": "Does the notice need to state which identification rule I am using?",
+   "a": "Yes. Every notice drafted through this office states the rule explicitly, whether the three-property rule, the 200 percent rule, or the 95 percent rule, so there is no ambiguity if the file is reviewed later."
+  },
+  {
+   "q": "Who delivers the finished notice to my qualified intermediary?",
+   "a": "We deliver it directly to the intermediary in the format and method the intermediary specifies, and we keep a delivery record showing the date and method for your file."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 852
+}

@@ -1,0 +1,58 @@
+{
+ "slug": "lender-preflight-coordination",
+ "taxonomy": "services",
+ "title": "Lender Preflight Coordination",
+ "name": "Lender Preflight Coordination",
+ "metaTitle": "Lender Preflight Coordination in Seattle, WA",
+ "metaDescription": "Preliminary underwriting submittals for Seattle exchange replacement loans, cleared before the 45-day window narrows financing options.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Lender preflight means getting a replacement property's basic underwriting profile in front of a lender before the formal loan application, so financing feasibility is confirmed while the identification list is still being finalized rather than after it's locked. For a Seattle exchange targeting a South Lake Union office suite or a Kent Valley industrial building, waiting until after day 45 to start this conversation removes the ability to swap out a candidate that turns out not to finance well. A quick preflight review costs a fraction of the time a full underwriting file takes, which is exactly why it belongs earlier in the process rather than later.</p>"
+  },
+  {
+   "heading": "What a Preflight Submittal Covers",
+   "html": "<p>A preflight package doesn't need the full underwriting file a formal application requires, but it should give the lender enough to flag obvious problems early: property type, in-place or projected income, requested loan amount, and the borrower's basic financial profile. For a Seattle multifamily candidate, the lender's preflight review increasingly includes a look at current rents against the statewide rent-cap ceiling, since that affects projected income growth assumptions built into the loan sizing. A lender that hasn't been told about a building's current rent-cap exposure may size the loan on assumptions the property simply can't support once the review catches up.</p>"
+  },
+  {
+   "heading": "Why Out-of-State Capital Changes the Preflight Conversation",
+   "html": "<p>Washington's lack of a state income tax draws a steady flow of out-of-state exchange capital into Seattle-area replacement property, and lenders underwriting these borrowers sometimes need additional documentation confirming the source and structure of exchange funds, particularly when the qualified intermediary and the borrowing entity are based in different states. Flagging this early in the preflight conversation avoids a documentation request surfacing for the first time during formal underwriting. Out-of-state investors moving into Seattle for exactly this reason should expect at least one extra layer of source-of-funds review compared to a locally based borrower, and building that expectation into the timeline early on avoids frustration later when the lender's underwriting desk circles back with a request that otherwise feels like it came completely out of nowhere.</p>"
+  },
+  {
+   "heading": "Preflight Package Contents",
+   "html": "<p>A complete preflight submittal for a Seattle replacement property generally includes:</p><ul><li>Property summary with type, size, and current or projected income</li><li>Requested loan amount and target loan-to-value ratio</li><li>Borrower entity structure and exchange fund source documentation</li><li>Timeline showing the 45-day and 180-day exchange deadlines</li><li>Any known property-specific issues, such as environmental history or rent-cap exposure</li></ul>"
+  },
+  {
+   "heading": "Sequencing Preflight Against the Identification Deadline",
+   "html": "<p>Ideally, preflight submittals go out to a lender for every serious candidate before the identification list is finalized, rather than only the one candidate that ends up chosen. That parallel approach costs a little more coordination effort up front but avoids discovering a financing obstacle on the one property actually identified, with no time left to pivot to an alternative. It also gives the investor a clearer sense of relative financing terms across candidates, which can factor into which one gets identified in the first place, since two similarly priced Seattle properties can carry meaningfully different financing costs once a lender actually reviews them.</p>"
+  },
+  {
+   "heading": "Moving From Preflight to Formal Application Without Losing Time",
+   "html": "<p>Once a lender has cleared a Seattle candidate at the preflight stage, the formal application should move quickly, reusing the documentation already submitted rather than starting the underwriting conversation over. Confirming with the lender in advance which preflight documents carry forward into the formal file, and which need to be refreshed, updated, or resubmitted entirely, keeps the transition from preflight to closing on schedule against the 180-day deadline. A short call with the lender's underwriting desk before the formal application is submitted usually resolves this question faster than emailing back and forth over several days, and it also surfaces any additional documentation the lender is likely to request later, before that request becomes an unexpected, unwelcome bottleneck sitting squarely in the middle of the closing calendar.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What's the difference between lender preflight and a formal loan application for a Seattle exchange?",
+   "a": "Preflight is a lighter-weight submittal meant to confirm basic financing feasibility before the identification list is locked, while the formal application is the full underwriting file submitted once a specific replacement property is under contract."
+  },
+  {
+   "q": "Why would a lender ask about exchange fund source documentation for a Seattle replacement loan?",
+   "a": "Washington draws significant out-of-state exchange capital given its lack of a state income tax, and lenders sometimes need extra documentation confirming fund source and entity structure when the qualified intermediary and borrower are based in different states."
+  },
+  {
+   "q": "Should preflight be run on more than one candidate property?",
+   "a": "Yes, ideally on every serious candidate under consideration before the identification deadline, since limiting it to the eventual first choice risks discovering a financing obstacle after the list is already locked."
+  },
+  {
+   "q": "Does the statewide rent-cap law affect lender underwriting for Seattle multifamily replacement property?",
+   "a": "It can, since lenders increasingly review current rents against the cap when sizing projected income growth for a multifamily loan, which is a detail worth surfacing during preflight rather than during formal underwriting."
+  },
+  {
+   "q": "How much lead time should lender preflight get before the 45-day identification deadline?",
+   "a": "As much as the property search itself allows; ideally preflight starts as soon as a candidate is seriously under consideration, well before the identification list needs to be finalized and delivered."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 852
+}

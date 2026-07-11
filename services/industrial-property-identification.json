@@ -1,0 +1,58 @@
+{
+ "slug": "industrial-property-identification",
+ "taxonomy": "services",
+ "title": "Industrial Property Identification",
+ "name": "Industrial Property Identification",
+ "metaTitle": "Industrial Property Identification in Seattle, WA",
+ "metaDescription": "Scope-specific diligence and candidate sourcing for Seattle industrial replacement property across Kent Valley, SODO, and port-adjacent submarkets.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Identifying industrial replacement property in Seattle means working across a few distinct submarkets that don't behave the same way: Kent Valley's larger distribution and manufacturing stock, SODO's smaller infill flex buildings close to downtown, and port-adjacent parcels near Harbor Island where prior use history carries its own diligence weight. Scoping the identification process by submarket, rather than applying one generic industrial checklist, is what keeps the 45-day window from being spent on the wrong questions for a given building. A candidate that looks straightforward on a rent comp sheet can still carry diligence requirements specific to its exact location and prior use.</p>"
+  },
+  {
+   "heading": "Kent Valley Versus SODO as Distinct Sourcing Pools",
+   "html": "<p>Kent Valley offers larger floor plates and clear-height specifications suited to distribution and light manufacturing tenants, with pricing generally more favorable per square foot than close-in submarkets. SODO trades on proximity to downtown and the port, commanding a premium for smaller flex buildings that serve last-mile logistics or trade-adjacent businesses. An investor's target tenant profile should drive which pool gets sourced first, since the two submarkets rarely compete for the same buyer. Confirming that profile before sourcing begins avoids spending diligence effort on candidates that would never suit the intended use anyway.</p>"
+  },
+  {
+   "heading": "Environmental Diligence Tied to Port-Adjacent History",
+   "html": "<p>Industrial parcels near the port or with a history of manufacturing, fuel storage, or heavy equipment use typically warrant a Phase I environmental site assessment before an offer is finalized, not after. Where a Phase I flags a recognized environmental condition, the timeline for a Phase II, if one is warranted, has to be weighed against the 45-day identification deadline, since that additional testing rarely finishes inside the standard window without advance scheduling. Ordering the Phase I the same week a candidate is added to the shortlist, rather than waiting until it becomes the leading choice, buys back that lead time.</p>"
+  },
+  {
+   "heading": "Candidate Scope Sheet Contents by Building Type",
+   "html": "<p>A scope sheet built before identification, rather than after a letter of intent is signed, should capture the details that actually differentiate industrial buildings from each other. That typically includes:</p><ul><li>Clear height, dock door count, and trailer parking capacity</li><li>Power service adequacy for the intended tenant use</li><li>Environmental history and any prior Phase I or Phase II findings</li><li>Rail or port access relevant to the intended tenant profile</li><li>Zoning confirmation for the specific industrial use planned</li></ul>"
+  },
+  {
+   "heading": "Lease Structure Differences That Affect Value",
+   "html": "<p>Industrial leases in Kent Valley and SODO commonly run triple net, but the specific allocation of roof, structure, and environmental remediation responsibility between landlord and tenant varies enough between buildings that it should be confirmed rather than assumed during diligence. A building with tenant-responsible structural maintenance carries different long-term risk than one where the landlord retains that obligation, and that distinction matters for valuing the identified candidate accurately, particularly for an older building where deferred maintenance may already be a factor.</p>"
+  },
+  {
+   "heading": "Coordinating Identification With Port and Logistics Tenant Demand",
+   "html": "<p>Demand for Seattle industrial space tracks port and logistics activity closely, and a building's proximity to Harbor Island or the primary freight corridors through the valley affects both current rent levels and the pool of prospective tenants if the space needs to be re-leased. Weighing that proximity carefully against the asking price, rather than simply treating location as a fixed, unquestioned premium, is part of confirming the identified candidate is priced appropriately before it's locked into the exchange. A building priced on last year's freight volumes may already be out of step with current demand by the time an offer is drafted, particularly if port throughput has shifted noticeably in the intervening months, which is why current tenant demand deserves its own fresh, independent check rather than relying on figures pulled at the very start of the search process months earlier.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What's the difference between Kent Valley and SODO for industrial replacement property in Seattle?",
+   "a": "Kent Valley generally offers larger buildings with more favorable per-square-foot pricing, suited to distribution and manufacturing tenants, while SODO trades at a premium for smaller flex buildings closer to downtown and the port, serving last-mile logistics and trade-adjacent tenants."
+  },
+  {
+   "q": "When is a Phase I environmental assessment needed for a Seattle industrial candidate?",
+   "a": "It's generally warranted for any parcel with a history of manufacturing, fuel storage, or heavy equipment use, particularly near the port, and should be ordered as early as possible since a resulting Phase II can take longer than the 45-day identification window allows if not scheduled in advance."
+  },
+  {
+   "q": "Does proximity to the port affect industrial property values in Seattle?",
+   "a": "Yes, proximity to Harbor Island and the primary freight corridors tends to support both current rent levels and future re-leasing demand, which is a factor worth weighing against asking price during identification rather than treating as a fixed premium."
+  },
+  {
+   "q": "What lease terms should be confirmed before identifying an industrial candidate?",
+   "a": "Beyond the base triple-net structure common to the market, the specific allocation of roof, structural, and environmental remediation responsibility between landlord and tenant varies by building and should be confirmed directly rather than assumed."
+  },
+  {
+   "q": "Can environmental diligence be completed within the 45-day identification window?",
+   "a": "A standard Phase I typically can, but a follow-up Phase II triggered by a recognized environmental condition often cannot without advance scheduling, which is why environmental history should be checked as early as possible in the sourcing process."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 850
+}

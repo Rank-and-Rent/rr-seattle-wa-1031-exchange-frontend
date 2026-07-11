@@ -1,0 +1,58 @@
+{
+ "slug": "nnn-and-stnl-property-sourcing",
+ "taxonomy": "services",
+ "title": "NNN and STNL Property Sourcing",
+ "name": "NNN and STNL Property Sourcing",
+ "metaTitle": "NNN and STNL Property Sourcing in Seattle, WA",
+ "metaDescription": "Single-tenant net-lease sourcing for Seattle-based 1031 investors, specification-checked on lease term, guarantee, and reimbursement before submittal.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Single-tenant net-lease sourcing is a specification exercise before it is a real estate search: lease term, guarantee, and reimbursement structure decide whether a candidate belongs in your package at all. For Seattle-based investors we run that specification first, then match it to pad sites and out-of-market corridors that fit. The goal is a shortlist an investor can act on quickly, not a broad survey of everything on the market that loosely resembles net-lease product, since a long, unranked list slows a decision down rather than speeding it up.</p>"
+  },
+  {
+   "heading": "Scope of the Net-Lease Search",
+   "html": "<p>The engagement opens with a written specification covering minimum remaining lease term, acceptable tenant credit tiers, and the reimbursement structure you require. That specification is what gets matched against inventory, whether the candidate sits along a Seattle arterial or in another state entirely, since single-tenant product is rarely concentrated in one metro. A Seattle-based investor typically ends up reviewing a mixed shortlist: one or two regional pad sites near home, and several out-of-state candidates that meet the credit bar more cheaply than anything available locally.</p><p>We do not circulate a property until it clears the specification on paper. A site visit or broker call only happens after the lease and guarantee have already been checked against your file.</p><p>This sequencing matters most for Seattle investors working a tight closing calendar, since a candidate that fails the paper specification would otherwise consume days of travel and coordination before anyone notices the disqualifying term.</p>"
+  },
+  {
+   "heading": "Local Pad Sites vs. Out-of-Market Corridors",
+   "html": "<p>Seattle itself has limited net-lease pad inventory inside the core, but the Aurora Avenue corridor and the retail nodes around Kent and Federal Way carry a steady supply of drive-thru and convenience-format pads. Many Seattle exchange investors also accept out-of-market candidates in lower-cost states once the lease specification is met, since the underlying tenant credit matters more than the zip code. The absence of a state income tax is often part of an investor's broader reasoning for staying based in Seattle while trading into lower-basis product elsewhere, though that decision is made with a tax advisor, not with this office.</p><p>We keep a running list of pad sites that have recently traded along these corridors, which helps set a realistic price expectation before a candidate is added to your package rather than after an offer is already submitted.</p>"
+  },
+  {
+   "heading": "Specification Sheet for a Qualifying STNL Package",
+   "html": "<p>Every candidate is checked against the following before it is added to your file:</p><ul><li>Remaining primary lease term and the number of renewal options</li><li>Corporate guarantee versus a franchisee-only obligation</li><li>Rent escalation schedule and the timing of the next step</li><li>Reimbursement structure, absolute net versus modified</li><li>Site plan, parking ratio, and access against current code</li><li>Tenant sales reporting, where the lease provides for it</li></ul>"
+  },
+  {
+   "heading": "Credit Review Before a Tenant Reaches Your Package",
+   "html": "<p>A corporate guarantee is checked against current financial disclosures before the candidate is labeled investment-grade in your file, rather than taking the offering memorandum's characterization at face value, since investment-grade is a specific rating threshold and not a marketing description a broker can assign on their own. Franchisee-backed leases are reviewed for unit count and store-level performance where the franchisor discloses it. Where disclosure is limited, that gap is noted directly in your package rather than smoothed over with a broker's summary characterization.</p>"
+  },
+  {
+   "heading": "Aligning the Package With Your Identification Rules",
+   "html": "<p>Whether you plan to identify under the three-property rule or the 200 percent rule, the net-lease candidates in your package are labeled against your chosen rule so the notice your qualified intermediary files is unambiguous. We hand off the finished package once you have signed off, and gain or basis questions stay with your tax advisor.</p><p>For Seattle investors managing more than one exchange in the same year, the same labeling convention is used across every package so the identification rule applied to each candidate is never in question when the notices are compared side by side, even months apart.</p><p>The finished file is stored in the same format regardless of asset type, which keeps a mixed portfolio of net-lease positions easy to compare during any later refinancing or resale decision.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Does net-lease sourcing for a Seattle investor stay limited to the Seattle metro?",
+   "a": "No. Local pad sites along corridors like Aurora Avenue are included, but most single-tenant net-lease inventory that meets a strict credit specification sits in other states, and we source from both pools."
+  },
+  {
+   "q": "What is the difference between a corporate guarantee and a franchisee guarantee?",
+   "a": "A corporate guarantee ties lease performance to the parent company's balance sheet. A franchisee guarantee ties it to a single operator, which is a materially different credit profile even under an identical lease form."
+  },
+  {
+   "q": "How do you verify tenant sales figures on a net-lease candidate?",
+   "a": "We request sales reporting directly where the lease requires disclosure and compare it against the franchisor's published unit-level benchmarks when available, rather than relying on the seller's summary."
+  },
+  {
+   "q": "Can this sourcing service include convenience-store or drive-thru pad sites near Kent and Federal Way?",
+   "a": "Yes, those corridors carry regular pad-site turnover and are included in the search whenever they meet your lease-term and reimbursement specification."
+  },
+  {
+   "q": "Will you tell me whether a net-lease purchase satisfies like-kind requirements for my exchange?",
+   "a": "We describe the process and documentation only. Like-kind qualification and gain treatment are questions for your qualified intermediary and tax advisor."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 857
+}

@@ -1,0 +1,58 @@
+{
+ "slug": "200-percent-rule-strategy",
+ "taxonomy": "services",
+ "title": "200% Rule Strategy",
+ "name": "200% Rule Strategy",
+ "metaTitle": "200% Rule Strategy in Seattle, WA",
+ "metaDescription": "Aggregate-value tracking and identification-list assembly for Seattle exchanges using the 200% rule across multiple replacement candidates.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>The 200% rule lets an investor identify any number of replacement properties, with no cap on the count, as long as their combined fair market value doesn't exceed 200% of what the relinquished property sold for. For a Seattle exchange splitting proceeds across a South Lake Union office suite, a Kent Valley flex building, and a small multifamily property, that rule is often the only path that fits the actual deal structure, since the three-property rule's headcount limit doesn't accommodate a portfolio approach. Structuring a list this way takes more coordination up front, since every candidate needs its own valuation support, but it gives an investor real optionality if one of the candidates falls out of contract late.</p>"
+  },
+  {
+   "heading": "Building the Aggregate Value Tracking Sheet",
+   "html": "<p>Every property placed on a 200%-rule identification list needs a documented fair market value estimate as of the identification date, and those figures have to be tracked against a running total rather than checked one at a time. A tracking sheet listing each candidate's address, legal description, and supporting valuation source keeps the aggregate visible as new candidates are added or dropped, which matters in Seattle submarkets where a broker opinion of value can shift meaningfully in the weeks between initial interest and the identification deadline. The sheet should be updated the same day any candidate's terms change, since a stale total is the most common way a 200%-rule list drifts past the ceiling without anyone noticing until it's too late to fix.</p>"
+  },
+  {
+   "heading": "Valuation Support for Each Identified Candidate",
+   "html": "<p>A broker price opinion, a recent comparable sale, or a preliminary appraisal each carry different weight if the aggregate value is later questioned, and pairing every candidate with a dated, sourced valuation document closes that gap before it becomes an issue. For Seattle industrial parcels in Kent Valley, where comparable sales can be thin, a written valuation memo referencing the closest available comps is usually the stronger record. Office and multifamily assets in denser submarkets typically have more recent comparables to draw from directly.</p>"
+  },
+  {
+   "heading": "Identification List Assembly and Delivery Requirements",
+   "html": "<p>The written identification still needs a signed, dated document delivered to the qualified intermediary before day 45, regardless of how many properties the 200% rule allows. The list itself should include:</p><ul><li>Full legal description or parcel number for each candidate</li><li>Fair market value estimate with valuation source noted</li><li>Property type and general location within the metro</li><li>Signature and delivery date to the qualified intermediary</li></ul>"
+  },
+  {
+   "heading": "Where the 200% Rule Outperforms the Three-Property Rule in Seattle",
+   "html": "<p>An investor trading into several smaller multifamily buildings, each subject to the statewide rent-cap statute and each individually modest in value, often needs more than three candidates on the list to have a realistic shot at closing on enough of them. The 200% rule accommodates that spread without forcing an artificial narrowing of the list down to three properties chosen too early. The tradeoff is that the aggregate value ceiling has to be watched closely, since adding one more high-value South Lake Union candidate can push the whole list over the 200% threshold and invalidate it. Investors weighing this choice for a Seattle multifamily portfolio generally find the added tracking effort worthwhile once the list runs past three properties.</p>"
+  },
+  {
+   "heading": "What Happens if the Aggregate Value Is Exceeded",
+   "html": "<p>If the combined fair market value of everything on the list exceeds 200% of the relinquished property's value at any point before day 45, the entire identification can be disqualified unless the investor falls back on the separate 95% rule, which requires acquiring 95% of the aggregate value of everything listed. Because that fallback is far less forgiving, the practical approach is to keep a buffer below the 200% ceiling rather than running the tracking sheet right up to the limit.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "How many properties can be identified under the 200% rule for a Seattle exchange?",
+   "a": "There's no limit on the number of properties, only a limit on their combined fair market value, which cannot exceed 200% of what the relinquished property sold for. That makes it useful for a portfolio spread across several smaller Seattle-area assets rather than one or two large ones."
+  },
+  {
+   "q": "Does the 200% rule require an appraisal for every identified property?",
+   "a": "A formal appraisal isn't strictly required, but each property needs a documented, dated value estimate from a credible source such as a broker opinion or recent comparable sale. That documentation is what supports the aggregate value calculation if it's ever questioned."
+  },
+  {
+   "q": "What happens if the combined value of identified properties goes over 200%?",
+   "a": "The identification can be disqualified unless the investor meets the separate 95% rule, which requires actually acquiring 95% of the total value of everything listed. Most investors avoid this by keeping the tracking sheet below the 200% ceiling with room to spare."
+  },
+  {
+   "q": "Is the 200% rule better than the three-property rule for a multifamily portfolio in Seattle?",
+   "a": "It often is when the strategy involves several smaller multifamily buildings rather than one or two larger assets, since the three-property rule caps the list at three candidates regardless of value. The 200% rule allows more candidates as long as the aggregate value stays under the cap."
+  },
+  {
+   "q": "Can properties be added to or removed from a 200%-rule identification list after it's delivered?",
+   "a": "Yes, as long as any revision is also in writing, signed, and delivered to the qualified intermediary before the 45-day deadline. Once day 45 passes, the list and its aggregate value are locked."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 867
+}

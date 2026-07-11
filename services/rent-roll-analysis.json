@@ -1,0 +1,58 @@
+{
+ "slug": "rent-roll-analysis",
+ "taxonomy": "services",
+ "title": "Rent Roll Analysis",
+ "name": "Rent Roll Analysis",
+ "metaTitle": "Rent Roll Analysis in Seattle, WA",
+ "metaDescription": "Line-by-line rent roll review for Seattle 1031 replacement candidates, cross-checked against leases and the state rent-cap schedule before approval.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>A rent roll is a claim, not a fact, until it has been checked against the underlying leases. Before a Seattle replacement candidate is added to an exchange package, this office runs that check line by line rather than accepting the seller's summary sheet. The review is delivered as a written exhibit, not a verbal assurance that the numbers look reasonable. Every discrepancy found is cited back to a specific lease page and clause number, not summarized as a general concern in a cover memo.</p>"
+  },
+  {
+   "heading": "Scope of the Rent-Roll Review",
+   "html": "<p>Every unit or suite on the roll is matched to a lease document, and every dollar figure is matched to actual collections rather than contract rent alone. That process is treated as a discrete deliverable, submitted as its own exhibit rather than folded quietly into a broader underwriting memo. Keeping it separate also means a lender reviewing your file for a Seattle acquisition loan can see exactly which figures were verified independently and which came directly from the seller.</p><p>For Seattle candidates, the review also checks whether the roll has already been adjusted for the statewide rent-cap schedule where the asset is residential, since sellers do not always update their forecast to reflect it. Commercial rolls in the same package are checked for a different set of issues, since the cap does not apply outside residential use.</p>"
+  },
+  {
+   "heading": "What We Cross-Check Line by Line",
+   "html": "<p>Tenant names and unit numbers are matched to the lease file first, since mismatches there usually signal a stale or hand-edited roll. Escalation dates are checked against the lease clause rather than the roll's own notation, and any month-to-month tenancy is flagged separately since it carries different renewal risk than a term lease. A pattern of frequent short-term renewals on the same unit is also flagged, since it often signals turnover the seller's summary has smoothed over. Security deposit ledgers are checked last, since a shortfall there is easier to correct at closing once it has been identified early. Prepaid rent entries are checked the same way, since they are easy to mistake for an early payment rather than a deposit against future months.</p>"
+  },
+  {
+   "heading": "Rent-Roll Line Items Verified Before Approval",
+   "html": "<p>Each candidate roll is checked against the following before it is accepted into your package:</p><ul><li>Tenant name and unit or suite number matched to the signed lease</li><li>Lease commencement and expiration dates against the roll's stated term</li><li>Current rent compared to trailing collections, not contract rent alone</li><li>Escalation schedule verified against the lease clause</li><li>Security deposit ledger reconciled to the amount held</li><li>Delinquency and collections history for the trailing twelve months</li></ul>"
+  },
+  {
+   "heading": "Rent-Cap and Escalation Conflicts We Flag",
+   "html": "<p>Where a residential roll shows an increase larger than the statewide cap permits for the relevant lease anniversary, that line is flagged and reconciled before the roll is used for underwriting. The same review checks whether a unit qualifies for any new-construction exemption window, since that changes what growth assumption applies going forward. In practice, most flagged Seattle rolls turn out to be a stale template the seller never updated after the law took effect, rather than an attempt to overstate income. Even where the discrepancy is unintentional, it still has to be corrected before the roll can support an accurate underwriting figure for your file. We note the correction and its source in the exhibit so the reasoning behind the adjusted number is never in question later.</p>"
+  },
+  {
+   "heading": "Turning the Review Into an Exhibit for Your File",
+   "html": "<p>The finished review becomes a standalone exhibit attached to the candidate package: a reconciled roll, a list of flagged discrepancies, and the underlying lease citations for each correction. That exhibit is what moves forward to your identification file and, later, to your closing team.</p><p>The same exhibit format is used regardless of asset type, so an investor comparing a Seattle multifamily candidate against a retail or office candidate is looking at a consistent structure rather than three different spreadsheets. That consistency also makes it easier to build a single tracking file if the investor is running more than one candidate through diligence at the same time, without reformatting a new exhibit for every property.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Why does a rent roll need to be checked against the actual leases instead of just reviewed?",
+   "a": "Rolls are frequently updated by hand and can drift from the underlying lease terms over time. Checking each line against the signed lease catches errors before they become part of your exchange file."
+  },
+  {
+   "q": "How does the Washington rent-cap law affect a rent-roll review?",
+   "a": "Any increase that exceeds the statewide cap for a residential lease anniversary is flagged and reconciled, and the review notes whether the unit falls under a new-construction exemption."
+  },
+  {
+   "q": "What happens if the rent roll does not match the seller's collections report?",
+   "a": "The discrepancy is documented and sent back to the seller's broker for explanation before the property is added to your identification package."
+  },
+  {
+   "q": "Does this review apply to commercial rolls as well as residential?",
+   "a": "Yes. Commercial rolls are checked the same way for lease-term accuracy and escalation timing, though the rent-cap check applies only to residential assets."
+  },
+  {
+   "q": "Can the reviewed rent roll be used directly by my lender or CPA?",
+   "a": "Yes. The finished exhibit is formatted so it can be handed to a lender for underwriting or to your CPA as supporting documentation, without additional rework."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 855
+}

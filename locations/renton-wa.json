@@ -1,0 +1,58 @@
+{
+ "slug": "renton-wa",
+ "taxonomy": "locations",
+ "title": "Renton",
+ "name": "Renton",
+ "metaTitle": "Renton in Seattle, WA",
+ "metaDescription": "1031 exchange coordination for Renton's Boeing 737 plant, PACCAR footprint, and Lake Washington office and retail near Seattle.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Renton carries two distinct commercial identities that rarely mix on the same identification list: the Boeing-anchored industrial corridor tied to the company's 737 assembly plant, and the Lake Washington office, retail, and multifamily development clustered around The Landing and Southport. A buyer building a Renton submittal should treat these as separate underwriting exercises, and a qualified intermediary coordinating the closing should confirm which product a target property belongs to before the 45-day identification window closes.</p>"
+  },
+  {
+   "heading": "The Boeing 737 Plant and Its Industrial Corridor",
+   "html": "<p>Boeing's Renton plant assembles the company's narrowbody aircraft, and the supplier and logistics buildings around it lease to a tenant base whose fortunes track that single production line more than the broader regional economy. A buyer identifying industrial space in this corridor should confirm how directly a tenant's lease depends on Boeing's narrowbody order book, since a production-rate change can move re-leasing risk on the building faster than a diversified industrial comparable would suggest.</p><p>PACCAR also maintains a significant footprint in Renton alongside its Bellevue headquarters, and truck-manufacturing-support tenants add a second layer to this corridor's industrial demand beyond aerospace alone. A buyer should confirm which of these two employers a target industrial building's rent roll leans on, since aerospace and truck-manufacturing tenants can respond differently to a shift in either company's production schedule.</p>"
+  },
+  {
+   "heading": "The Landing and Southport on Lake Washington",
+   "html": "<p>The Landing has built out Renton's lifestyle-retail base with national tenants that draw shoppers from across the Eastside, while Southport has added Class A office and multifamily directly on Lake Washington aimed at tenants who want lake access without a downtown Bellevue or Seattle price tag. A buyer identifying Southport office or multifamily should confirm current lake-view premium assumptions against actual signed leases rather than asking rent, since that premium can be inconsistent across floors and unit lines.</p><p>Retail at The Landing trades at rents closer to a regional Eastside center than to a neighborhood strip, and a buyer should pull comparables from similar lifestyle centers rather than from Renton's older, smaller retail stock closer to the Boeing plant. A qualified intermediary coordinating a Southport closing should also confirm that any lake-related easements or shoreline permitting conditions on the parcel are documented before the 45-day identification window closes, since those conditions are more common on Lake Washington waterfront parcels than on a typical Eastside office site.</p>"
+  },
+  {
+   "heading": "Southcenter Spillover Industrial",
+   "html": "<p>Renton's northern edge also picks up industrial and flex demand spilling over from the Southcenter retail and logistics area straddling the Renton-Tukwila line, and this stock trades closer to conventional regional-distribution pricing than the aerospace-dependent buildings nearer the Boeing plant. A buyer should keep this spillover inventory in a separate comparable set from both the Boeing corridor and the Lake Washington office and retail cluster, since blending all three into one Renton average would understate the value gap between an aerospace-dependent building and a conventional distribution property. Access to both I-405 and State Route 167 makes this pocket attractive to regional distribution tenants who need quick reach into both the Eastside and the Kent Valley without committing to either submarket's higher land costs.</p>"
+  },
+  {
+   "heading": "Building the Renton Identification List",
+   "html": "<p>A realistic Renton submittal typically draws from:</p><ul><li>Boeing-adjacent aerospace and logistics-support industrial</li><li>Class A office or multifamily on Lake Washington near Southport</li><li>lifestyle retail at The Landing</li><li>regional-distribution industrial near the Southcenter spillover area</li></ul>"
+  },
+  {
+   "heading": "Sequencing Renton's Three Submarkets",
+   "html": "<p>Because Renton's submarkets carry such different tenant profiles, a buyer should confirm early which one a target property's lender and insurer will underwrite fastest, since a Boeing-dependent industrial building may need additional lease-covenant review that a Lake Washington office building would not. A qualified intermediary should also confirm that any purchase-price allocation across land, building, and equipment on an industrial candidate matches lender expectations, since a mismatched allocation can slow closing even after the identification itself is settled.</p><p>Buyers often pair a Renton Lake Washington identification with a Bellevue or Kirkland alternative on the same three-property list, keeping a less concentrated submarket available inside the 180-day exchange period if aerospace-related lease review runs long.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Does all of Renton's commercial real estate depend on Boeing?",
+   "a": "No, the city splits between Boeing-adjacent aerospace industrial near the 737 plant and a separate Lake Washington office, retail, and multifamily cluster around The Landing and Southport that trades on its own fundamentals."
+  },
+  {
+   "q": "What should a buyer confirm before identifying industrial near Boeing's Renton plant?",
+   "a": "How directly a current tenant's lease depends on the 737 production line, since a rate change on that program can move re-leasing risk faster than a typical diversified industrial building."
+  },
+  {
+   "q": "Is PACCAR relevant to Renton's industrial market?",
+   "a": "Yes, truck-manufacturing-support tenants tied to PACCAR add a second demand driver in Renton's industrial corridor alongside aerospace."
+  },
+  {
+   "q": "How should a buyer underwrite Southport's lake-view premium?",
+   "a": "Against actual signed leases rather than asking rents, since the premium can vary meaningfully across floors and unit lines within the same building, and a buyer should also confirm any shoreline or easement conditions on the parcel before treating a Southport identification as routine."
+  },
+  {
+   "q": "Why pair a Renton identification with Bellevue or Kirkland?",
+   "a": "Both carry less single-employer concentration than the Boeing-adjacent corridor, giving a buyer a workable fallback if aerospace-related lease review delays the Renton candidate, and both also spread the identification list across a different lender-underwriting profile."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 851
+}

@@ -1,0 +1,58 @@
+{
+ "slug": "reverse-exchange-coordination",
+ "taxonomy": "services",
+ "title": "Reverse Exchange Coordination",
+ "name": "Reverse Exchange Coordination",
+ "metaTitle": "Reverse Exchange Coordination in Seattle, WA",
+ "metaDescription": "Reverse exchange document coordination for Seattle investors who need to acquire replacement property before their relinquished property sells.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>A reverse exchange lets an investor acquire replacement property before the relinquished property sells, which solves a timing problem that comes up often in a competitive Seattle market, particularly for asset classes where a strong candidate does not stay on the market for long. It also creates a parking structure with its own document set, and this office coordinates that set the way a project team coordinates a phased submittal. Each phase depends on the last one closing correctly, so a missed step early in the file tends to surface as a bigger problem later.</p>"
+  },
+  {
+   "heading": "Scope of the Reverse Structure",
+   "html": "<p>In a reverse exchange, an exchange accommodation titleholder takes and holds title to the replacement property while the investor arranges the sale of the relinquished property. This office does not act as the titleholder; it coordinates the documents between the investor, the titleholder entity, the lender, and the qualified intermediary so each party has what it needs on schedule. The parking structure exists in the tax code precisely because timing does not always cooperate with a sale-then-purchase sequence, and the paperwork has to keep up with that reality rather than fight it. Investors sometimes assume a reverse exchange is more complicated than a forward exchange; the underlying rules are similar, the difference is mainly in sequence and in which party is holding title while the sale of the relinquished property is arranged.</p>"
+  },
+  {
+   "heading": "How the Parking Arrangement Is Sequenced",
+   "html": "<p>The titleholder entity is formed and funded first, then the replacement property closes into that entity's name. From that closing date, the investor has 45 days to identify the relinquished property being sold and 180 days to complete the transfer of the parked property into the investor's name once the relinquished property sells. Both clocks run from the replacement-property closing date, not from the date the investor first started looking, which surprises some Seattle investors who assume the timeline starts earlier. Marking that start date clearly in the file, in writing, is one of the simplest ways to avoid a dispute over the deadline later, and it is confirmed with all parties, in writing, before any other step in the sequence is allowed to begin its own countdown.</p>"
+  },
+  {
+   "heading": "Documents Assembled for a Reverse Exchange File",
+   "html": "<p>Every reverse exchange file assembled through this office includes the following:</p><ul><li>Qualified exchange accommodation agreement between the investor and the titleholder</li><li>Formation documents for the titleholder entity</li><li>Financing documents naming the titleholder entity as borrower, where a loan is involved</li><li>Identification notice for the relinquished property, filed within 45 days of the parking closing</li><li>Exchange agreement with the qualified intermediary covering the eventual transfer</li><li>Closing instructions for the final transfer once the relinquished property sells</li></ul>"
+  },
+  {
+   "heading": "Why Reverse Structures Come Up in a Fast-Moving Market",
+   "html": "<p>Industrial product in the Kent Valley and around the port corridor has moved quickly enough in recent cycles that investors sometimes need to lock in a replacement building before their existing property has a buyer under contract. A reverse structure is the mechanism that lets that happen without breaking exchange eligibility. The same pressure shows up occasionally in tight multifamily bidding closer to the urban core, where a hesitation of even a few days can cost an investor the property entirely. Retail and self-storage candidates come up less often in this context, since their pricing tends to move more slowly than industrial or multifamily product.</p>"
+  },
+  {
+   "heading": "Handoff at Completion of the Reverse Exchange",
+   "html": "<p>Once the relinquished property sells and the parked property transfers to the investor, the complete file, including the accommodation agreement, financing documents, and both closing statements, is handed to the investor's tax advisor for the final accounting.</p><p>We keep the titleholder entity's formation records in the file even after the transfer completes, since some lenders and title companies ask for them again during a later refinancing. That retained file also gives the investor's tax advisor a single source to reference if a question comes up in a future filing year.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What is an exchange accommodation titleholder and who acts as one?",
+   "a": "It is an entity that holds title to either the replacement or relinquished property during a reverse exchange. This office does not act as the titleholder; that role is filled by an entity set up specifically for the parking arrangement, typically in coordination with the qualified intermediary."
+  },
+  {
+   "q": "How much time do I have to sell my relinquished property in a reverse exchange?",
+   "a": "The transfer of the parked property must complete within 180 days of the replacement property closing, with the relinquished property identified within the first 45 days of that period."
+  },
+  {
+   "q": "Why would a Seattle investor use a reverse exchange instead of a standard exchange?",
+   "a": "It is most common when a desirable replacement property, such as industrial space in the Kent Valley, needs to be locked in before the investor has a signed contract to sell their existing property."
+  },
+  {
+   "q": "Can a reverse exchange involve financing on the replacement property?",
+   "a": "Yes, though the loan is typically made to the titleholder entity rather than the investor directly, which requires additional coordination with the lender's documentation."
+  },
+  {
+   "q": "Does this service determine whether a reverse structure is the right choice for my situation?",
+   "a": "No. We coordinate the documents and schedule once the structure is chosen. Whether a reverse exchange fits your situation is a decision to make with your qualified intermediary and tax advisor."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 855
+}

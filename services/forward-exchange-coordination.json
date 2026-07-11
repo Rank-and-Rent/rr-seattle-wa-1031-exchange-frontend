@@ -1,0 +1,58 @@
+{
+ "slug": "forward-exchange-coordination",
+ "taxonomy": "services",
+ "title": "Forward Exchange Coordination",
+ "name": "Forward Exchange Coordination",
+ "metaTitle": "Forward Exchange Coordination in Seattle, WA",
+ "metaDescription": "Standard sell-then-buy exchange coordination for Seattle investors, sequencing QI setup, identification, and replacement closing in order.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>A forward exchange, the standard structure where the relinquished property sells first and the replacement is acquired afterward, is the sequence most Seattle investors default to, but the coordination between the relinquished sale closing, the qualified intermediary's fund transfer, and the replacement search still has to run on a defined schedule. Sequencing those steps in order, rather than letting the replacement search lag behind the relinquished sale, is what keeps the 45-day and 180-day clocks from becoming adversarial. Most exchanges that run smoothly do so because this sequencing was decided before the relinquished sale ever went to market, not after.</p>"
+  },
+  {
+   "heading": "Setting Up the Qualified Intermediary Before the Relinquished Sale Closes",
+   "html": "<p>The exchange agreement and assignment of the relinquished property's purchase and sale agreement to the qualified intermediary need to be in place before that sale closes, not after, since the exchange structure has to exist at the moment of transfer for the proceeds to bypass the taxpayer's direct control. For a Seattle relinquished sale, whether it's a South Lake Union office building or a multifamily property, this setup step is typically handled in the weeks leading up to closing, in parallel with the replacement search. Skipping this step, or treating it as something that can wait until after the sale closes, is one of the more common ways an otherwise well-planned exchange gets disqualified before it even begins.</p>"
+  },
+  {
+   "heading": "Running the Replacement Search Alongside the Relinquished Closing",
+   "html": "<p>Waiting until the relinquished sale closes to start the replacement search is the single most common way forward exchanges run short on time. Pre-scouting Kent Valley industrial candidates or South Lake Union office space while the relinquished sale is still in escrow means the 45-day identification window opens with real candidates already vetted, rather than a search starting from nothing. This overlap requires coordinating two workstreams at once, which is exactly the kind of scheduling discipline that separates a smooth Seattle forward exchange from one that runs into avoidable delays near the deadline.</p>"
+  },
+  {
+   "heading": "Sequencing the Core Forward Exchange Milestones",
+   "html": "<p>A forward exchange for a Seattle transaction generally follows a fixed sequence of milestones, each with its own document requirements:</p><ul><li>Exchange agreement executed and QI assigned before relinquished closing</li><li>Relinquished property closes and proceeds transfer to the QI</li><li>Written identification delivered by day 45</li><li>Replacement purchase agreement executed and financing finalized</li><li>Replacement property closes by day 180 with QI fund release</li></ul>"
+  },
+  {
+   "heading": "Where Seattle Submarket Timing Adds Friction",
+   "html": "<p>A relinquished sale that closes quickly, common for a well-positioned South Lake Union asset with strong tenant demand, can actually create timing pressure of its own, since it starts the 45-day clock earlier than the replacement search may be ready for. Conversely, a Kent Valley industrial replacement requiring a Phase I environmental review can eat into the 180-day window faster than an office or multifamily closing would. Recognizing which side of the exchange is likely to move faster helps decide where to focus coordination effort early, rather than splitting attention evenly across both sides of the transaction by default without a clear reason to do so.</p>"
+  },
+  {
+   "heading": "Keeping the Qualified Intermediary Informed at Each Milestone",
+   "html": "<p>The qualified intermediary needs advance notice of the identification list, the replacement purchase agreement terms, and the anticipated closing date well before each deadline, not as a same-week notification. Sharing the full coordination schedule with the QI at the very outset, rather than only contacting them as each deadline approaches, keeps fund transfers and closing instructions moving without last-minute scrambling. A brief status update to the QI at each milestone, even when nothing has changed, keeps them ready to move the moment a signature or a wire instruction is actually needed, rather than scrambling to catch up once the closing date is only days away and every remaining task on the list has suddenly become urgent at once.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What is a forward exchange and how does it differ from a reverse exchange?",
+   "a": "A forward exchange sells the relinquished property first and acquires the replacement afterward, which is the standard sequence most exchanges follow. A reverse exchange flips that order, acquiring the replacement before the relinquished property sells, and requires a different holding structure."
+  },
+  {
+   "q": "When does the qualified intermediary need to be set up for a Seattle forward exchange?",
+   "a": "The exchange agreement and assignment need to be in place before the relinquished property closes, since the exchange structure has to exist at the moment of transfer for the sale proceeds to bypass the taxpayer's direct control."
+  },
+  {
+   "q": "Can the replacement search start before the relinquished property closes?",
+   "a": "Yes, and starting early is one of the most effective ways to avoid running short on the 45-day identification window. Touring properties and negotiating terms before closing doesn't affect the exchange timeline, since the clock starts at the relinquished closing regardless."
+  },
+  {
+   "q": "Does a fast-closing relinquished sale create any risk for the exchange timeline?",
+   "a": "It can, since a quick relinquished closing starts the 45-day identification clock earlier than a replacement search might be ready for. Pre-scouting candidates in advance reduces that risk regardless of how quickly the relinquished sale moves."
+  },
+  {
+   "q": "How much advance notice does the qualified intermediary need before each deadline?",
+   "a": "Sharing the identification list and replacement purchase terms as soon as they're finalized, rather than waiting until the week of the deadline, gives the QI time to prepare fund transfers and closing instructions without a last-minute rush."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 851
+}

@@ -1,0 +1,58 @@
+{
+ "slug": "qualified-intermediary-coordination",
+ "taxonomy": "services",
+ "title": "Qualified Intermediary Coordination",
+ "name": "Qualified Intermediary Coordination",
+ "metaTitle": "Qualified Intermediary Coordination in Seattle, WA",
+ "metaDescription": "Document and timeline coordination between Seattle exchange investors and their qualified intermediary, checked before funds or notices move.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>A qualified intermediary holds the exchange funds and paperwork, but nothing moves cleanly unless the surrounding documents are assembled and sequenced before they reach the intermediary's desk. In Seattle, where title and escrow practice can add its own timing quirks, that coordination work is treated as its own scope of work rather than an afterthought. Investors who have completed an exchange before often assume the intermediary handles this coordination automatically, when in practice most intermediaries expect the surrounding documents to arrive already organized.</p>"
+  },
+  {
+   "heading": "Scope of QI Coordination",
+   "html": "<p>This service does not replace your qualified intermediary. It assembles and sequences the documents the intermediary needs, on the schedule the intermediary needs them, so the exchange agreement, escrow instructions, and identification notice arrive as a matched set rather than three separate emails from three separate parties. That matched-set approach is what most often prevents a rejected wire or a mismatched instruction from surfacing at the worst possible moment, on the day of closing.</p><p>We work from the intermediary's own checklist first, then build a delivery schedule against it, the same way a project manager builds a submittal schedule against a spec book. A Seattle investor working with an out-of-state intermediary benefits most from this, since time zone and courier lag can otherwise eat into an already tight window.</p>"
+  },
+  {
+   "heading": "Document Package Handed to the Intermediary",
+   "html": "<p>Before the relinquished property closes, the intermediary receives the executed exchange agreement, escrow instructions naming the intermediary as the qualifying party, and wiring authorization language matched to the title company's format. That package is proofed against the intermediary's own template before it is sent, not after a rejection comes back. Small formatting mismatches, such as an intermediary requiring a specific reference number on wiring language, are exactly the kind of defect this proofing step is meant to catch before it costs a day.</p><p>A second copy of every document sent to the intermediary is retained in your file, so if a question comes back weeks later, the answer is a lookup rather than a reconstruction.</p>"
+  },
+  {
+   "heading": "Checklist Before Funds Transfer",
+   "html": "<p>Before any wire is authorized, the following is confirmed against the file:</p><ul><li>Exchange agreement executed and matched to the correct relinquished-property closing</li><li>Escrow instructions naming the intermediary consistent across both closings</li><li>Identification notice delivered in the format the intermediary requires</li><li>Replacement-property purchase agreement reviewed for exchange cooperation language</li><li>Wire instructions verified by a live callback, never by email alone</li><li>Constructive receipt safeguards confirmed with the intermediary directly</li></ul>"
+  },
+  {
+   "heading": "Sequencing Around the 45-Day and 180-Day Clocks",
+   "html": "<p>The delivery schedule for every document is built backward from the 180-day exchange period and the 45-day identification deadline inside it, so nothing arrives at the intermediary's office on the last possible day. If a Seattle closing slips, the schedule is rebuilt immediately rather than absorbed silently, and the intermediary is told the same day so the identification notice timing is never a surprise on either side. That rebuilt schedule also gets shared with the title company and lender in the same message, so every party is working from the same revised dates.</p>"
+  },
+  {
+   "heading": "Where Seattle Closings Complicate the Handoff",
+   "html": "<p>King County recording timelines and local title practice can shift a closing by a day or two in ways that matter when a 45-day window is already tight. We track those local variables directly with the escrow and title teams handling the transaction, so the intermediary is never the last to know about a delay, and revised documents follow within the same day rather than after the closing actually shifts.</p><p>We keep a standing contact at the title and escrow companies most active in Seattle exchange closings, which shortens the time it takes to get a straight answer when a recording delay looks likely. Those relationships tend to matter more than any general knowledge of local practice, since the specific processor handling a file on a given day is what actually determines the answer. That direct line is often the difference between a one-day delay and a delay that eats into the identification window itself.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Does this service replace the need for a qualified intermediary?",
+   "a": "No. A qualified intermediary is required to hold exchange funds and cannot be an agent of the taxpayer. This service coordinates the surrounding documents and schedule; it does not hold funds or act as the intermediary."
+  },
+  {
+   "q": "What happens if a Seattle closing slips close to the 45-day identification deadline?",
+   "a": "The delivery schedule is rebuilt immediately and the intermediary is notified the same day so the identification notice can still be filed correctly and on time."
+  },
+  {
+   "q": "How do you verify wire instructions before a fund transfer?",
+   "a": "Every wire instruction is confirmed by a live phone callback to a verified contact, never accepted from an email alone, regardless of how routine the transfer appears."
+  },
+  {
+   "q": "Can this coordination work with any qualified intermediary, or only specific ones?",
+   "a": "It works with the intermediary the investor has already selected. We build the delivery schedule around that intermediary's own checklist and format requirements."
+  },
+  {
+   "q": "Who confirms whether my exchange structure avoids constructive receipt?",
+   "a": "That determination is made by the qualified intermediary and your tax advisor. We help assemble the documentation that supports the structure they set. Every document carries a version marker so a question raised weeks later can be answered by checking the file rather than reconstructing an email thread."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 856
+}

@@ -1,0 +1,58 @@
+{
+ "slug": "form-8824-preparation-support",
+ "taxonomy": "services",
+ "title": "Form 8824 Preparation Support",
+ "name": "Form 8824 Preparation Support",
+ "metaTitle": "Form 8824 Preparation Support in Seattle, WA",
+ "metaDescription": "Closing-figure schedules and exchange data packages assembled for CPA review ahead of Form 8824 filing on Seattle exchanges.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Form 8824 is filed by the taxpayer's CPA, not the qualified intermediary, but the figures it requires, relinquished and replacement property values, adjusted basis, exchange expenses, and any boot received, come directly out of the closing statements and exchange file generated during a Seattle transaction. Assembling those figures into a clean data package before the return is prepared, rather than leaving the CPA to reconstruct them from raw closing documents, is where this support fits. A well-organized package shortens the review cycle considerably compared to a CPA starting from a stack of unmarked closing statements.</p>"
+  },
+  {
+   "heading": "What Data the CPA Actually Needs",
+   "html": "<p>Beyond the basic sale and purchase prices, the return needs adjusted basis in the relinquished property, capitalized exchange costs such as qualified intermediary fees and title charges, and a clear statement of any cash or debt boot identified during the transaction. For a Seattle exchange involving a South Lake Union office sale and a Kent Valley industrial purchase, that means pulling figures from two separate closing statements and reconciling them against the exchange agreement's fund transfers. Each closing statement uses its own line-item labels, so matching them to the categories a return actually needs takes a deliberate pass rather than a quick skim, and skipping that step is a common source of small but avoidable errors on the eventual filing that a CPA later has to track down and correct.</p>"
+  },
+  {
+   "heading": "Building the Closing Figure Schedule",
+   "html": "<p>A single schedule lining up both transactions side by side, rather than two disconnected closing statements, is what turns raw numbers into something a CPA can drop directly into the return. The schedule typically includes:</p><ul><li>Relinquished property sale price and selling expenses</li><li>Adjusted basis and accumulated depreciation on the relinquished property</li><li>Replacement property purchase price and acquisition costs</li><li>Qualified intermediary and exchange administration fees</li><li>Any boot received, cash or debt-related, identified before closing</li></ul>"
+  },
+  {
+   "heading": "Timing the Handoff Around the Exchange's Tax Year",
+   "html": "<p>Because the 180-day exchange period can span two calendar years, particularly for a Seattle exchange closing on the relinquished side late in the year, the taxpayer needs to know before the filing deadline whether the exchange will be complete in time to report it cleanly or whether an extension is the better path. That determination has to happen well before the return is due, not discovered while the CPA is already preparing the filing. Flagging this timing question to the tax advisor as soon as the closing calendar is set, rather than after the fiscal year has already turned over, gives them room to plan the reporting approach properly.</p>"
+  },
+  {
+   "heading": "Coordinating With the Qualified Intermediary's Final Accounting",
+   "html": "<p>The qualified intermediary typically issues a final accounting once the exchange closes, showing funds received, funds disbursed, and any remaining balance, and that accounting should be reconciled against the closing figure schedule before it goes to the CPA. Discrepancies between the QI's accounting and the closing statements are far easier to resolve while the transaction is fresh than months later during tax preparation. A short reconciliation call between the taxpayer, the QI, and the CPA shortly after closing typically resolves any mismatch faster than an email chain spread out over weeks, especially once several months have passed and the closing details have faded from memory for everyone involved in the original transaction.</p>"
+  },
+  {
+   "heading": "This Support Does Not Replace Tax Advice",
+   "html": "<p>Organizing figures and building a closing schedule is a documentation and coordination function, not tax guidance, and the actual filing position, including how gain is recognized and how basis carries forward into the Seattle replacement property, is a determination for the taxpayer's CPA or tax advisor. Every investor working through this process should confirm the final return treatment directly with their own advisor before filing, rather than relying on how a similar Seattle exchange was reported in a prior year by a different taxpayer under different facts.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "Who actually files Form 8824 for a Seattle 1031 exchange?",
+   "a": "The taxpayer's CPA or tax preparer files the form as part of the annual return; the qualified intermediary doesn't file anything on the taxpayer's behalf. Data assembly support is aimed at giving the CPA an organized, reconciled set of figures ahead of that filing."
+  },
+  {
+   "q": "What figures does a CPA need from the closing statements to prepare Form 8824?",
+   "a": "Sale and purchase prices, adjusted basis in the relinquished property, capitalized exchange expenses, and any identified boot are the core inputs, typically pulled from both closing statements and the qualified intermediary's final accounting."
+  },
+  {
+   "q": "What happens if the 180-day exchange period spans two tax years?",
+   "a": "This is common when a relinquished property closes late in the year, and it needs to be flagged to the tax advisor well before the filing deadline so the correct reporting approach, including any extension, can be planned rather than discovered late."
+  },
+  {
+   "q": "Does the qualified intermediary provide the figures needed for Form 8824?",
+   "a": "The QI's final accounting shows funds received and disbursed, which is a key input, but it isn't formatted as tax return data and needs to be reconciled against the closing statements before it's useful to the CPA."
+  },
+  {
+   "q": "Is this documentation support the same as tax advice?",
+   "a": "No. Organizing closing figures and building a reconciliation schedule is a coordination function; the actual gain recognition and basis calculation on the return is a determination the taxpayer's CPA or tax advisor makes directly."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 851
+}

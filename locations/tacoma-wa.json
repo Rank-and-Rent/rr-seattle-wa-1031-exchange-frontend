@@ -1,0 +1,58 @@
+{
+ "slug": "tacoma-wa",
+ "taxonomy": "locations",
+ "title": "Tacoma",
+ "name": "Tacoma",
+ "metaTitle": "Tacoma in Seattle, WA",
+ "metaDescription": "1031 exchange coordination for Port of Tacoma industrial, Foss Waterway mixed-use, and Tacoma Dome District multifamily near Seattle.",
+ "sections": [
+  {
+   "heading": null,
+   "html": "<p>Tacoma's commercial base runs on the port more than any other city in the Seattle metro, and an exchange buyer building a Tacoma identification package is usually choosing among port-serving industrial, Foss Waterway mixed-use redevelopment, or multifamily inside the Tacoma Dome District. Each of the three trades on a different cycle, and a qualified intermediary coordinating the closing should confirm which cycle a target property is tied to before the 45-day identification window runs out.</p>"
+  },
+  {
+   "heading": "Port of Tacoma Industrial and Warehouse Stock",
+   "html": "<p>The Port of Tacoma anchors one of the larger container and breakbulk complexes on the West Coast, and the warehouse and distribution buildings surrounding it lease to import, export, and regional distribution tenants whose demand tracks trade volume more directly than local population growth. A buyer identifying port-area industrial should confirm rail access, container yard proximity, and clear height separately, since a building built for bulk storage will not suit a container-adjacent transload tenant without modification.</p><p>Older Tacoma industrial stock near the tideflats tends to carry lower clear heights and older dock configurations than newer Kent Valley product, so a buyer should treat Tacoma industrial as its own submarket with its own comparable set rather than borrowing cap rates from Kent or Auburn.</p><p>BNSF's mainline runs directly through the tideflats, giving a subset of Tacoma's port-area buildings direct rail service that a truck-only building in the same corridor cannot offer, and a buyer should confirm active service rather than assume rail access simply because a spur is visible on a site plan.</p>"
+  },
+  {
+   "heading": "Foss Waterway and Downtown Mixed-Use Redevelopment",
+   "html": "<p>The Foss Waterway corridor has converted former industrial and rail land into mixed-use office, retail, and multifamily development, and this redevelopment inventory behaves differently than either the port industrial to its west or the older downtown Tacoma office stock further inland. A replacement buyer should confirm whether a Foss Waterway building sits on land with any residual environmental conditions tied to its industrial past, since that history can affect financing and insurance underwriting even after a full redevelopment.</p><p>Retail along the Waterway leases mostly to restaurants and service tenants drawing on foot traffic from the adjacent university and residential population, and rents here run below downtown Seattle but above much of the rest of Tacoma.</p>"
+  },
+  {
+   "heading": "Tacoma Dome District Multifamily",
+   "html": "<p>The area around the Tacoma Dome has become the city's primary multifamily development zone, driven by light rail and commuter rail access that shortens the commute into Seattle for renters priced out of the core metro. A buyer replacing into this submarket should confirm current concession levels and how the statewide rent-cap law applies to a target building's vintage, since newly delivered product and older Tacoma stock are not treated identically under the rule.</p><p>Multifamily here generally trades at a meaningfully lower basis than comparable Seattle or Bellevue product, which makes Tacoma a common landing spot for an exchange buyer managing boot exposure on a downsizing trade rather than a basis-matched replacement. Because real property qualifies as like-kind across asset classes, a buyer can move from a relinquished office or retail property directly into Tacoma Dome District multifamily without losing exchange eligibility, provided a qualified intermediary holds the proceeds through closing.</p>"
+  },
+  {
+   "heading": "Building the Tacoma Identification List",
+   "html": "<p>A realistic Tacoma submittal typically draws from:</p><ul><li>port-serving industrial and distribution space near the tideflats</li><li>mixed-use office or retail along the Foss Waterway</li><li>multifamily inside the Tacoma Dome District</li><li>neighborhood retail serving the university and surrounding residential population</li></ul>"
+  },
+  {
+   "heading": "Coordinating Environmental and Rail Diligence",
+   "html": "<p>Because so much of Tacoma's inventory sits on land with an industrial or rail history, a qualified intermediary coordinating a Tacoma closing should confirm early whether a target property needs a phase-one environmental review beyond what a typical suburban replacement property would require, since that report can take longer than standard title and survey work.</p><p>Buyers often pair a Tacoma industrial identification with a Kent Valley alternative on the same three-property list, keeping both port-adjacent submarkets represented so that a delayed environmental report on one candidate does not strand the exchange inside the 180-day exchange period.</p>"
+  }
+ ],
+ "faqs": [
+  {
+   "q": "What drives demand for Port of Tacoma industrial space?",
+   "a": "Import, export, and regional distribution tenants whose leasing activity tracks trade volume through the port more directly than local population growth, which makes this submarket behave differently than a typical suburban warehouse market."
+  },
+  {
+   "q": "Is environmental diligence a bigger issue in Tacoma than elsewhere in the metro?",
+   "a": "Often yes, since much of the city's industrial and Foss Waterway inventory sits on land with a rail or industrial past, and a buyer should budget extra time for a phase-one review before closing."
+  },
+  {
+   "q": "How does Tacoma multifamily pricing compare to Seattle or Bellevue?",
+   "a": "Tacoma multifamily generally trades at a lower basis than comparable Seattle or Bellevue product, which makes it a common destination for a buyer managing boot exposure on a downsizing exchange."
+  },
+  {
+   "q": "Does the statewide rent-cap law apply the same way to older and newer Tacoma buildings?",
+   "a": "No, newly delivered product and older Tacoma stock are not treated identically under the rule, so a buyer should confirm how it applies to a target building's specific vintage before finalizing an identification."
+  },
+  {
+   "q": "Why would a buyer pair Tacoma with Kent Valley on the same identification list?",
+   "a": "Both are port-and-industrial-driven submarkets, and pairing the two keeps a workable backup available if an environmental report or other diligence item delays one candidate past a comfortable closing timeline."
+  }
+ ],
+ "internalLinks": [],
+ "wordCount": 867
+}

@@ -268,7 +268,7 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
       <div className="grid gap-5 md:grid-cols-2">
         <div>
           <label htmlFor={`${formId}-phone`} className={`${labelBase} ${styles.label}`}>
-            Phone <span className="text-[#b8a074]">*</span>
+            Phone Number <span className="text-[#b8a074]">*</span>
           </label>
           <input
             id={`${formId}-phone`}
@@ -286,7 +286,7 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
       {/* Service */}
       <div>
         <label htmlFor={`${formId}-service`} className={`${labelBase} ${styles.label}`}>
-          Have You Used a 1031 Exchange Before? <span className="text-[#b8a074]">*</span>
+          Have you completed a 1031 exchange before? <span className="text-[#b8a074]">*</span>
         </label>
         <select id={`${formId}-service`}
           className={styles.select} name="hasCompleted1031" required><option value="">Select yes or no</option><option value="Yes">Yes</option><option value="No">No</option></select>
@@ -308,7 +308,7 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
       {/* Message */}
       <div>
         <label htmlFor={`${formId}-message`} className={`${labelBase} ${styles.label}`}>
-          Additional Context
+          Notes
         </label>
         <textarea id={`${formId}-message`}
           className={`${styles.input} resize-none`} name="notes" rows={4} placeholder="Share any exchange questions or context"></textarea>

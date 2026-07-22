@@ -249,24 +249,6 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
           {errors.name && <span className={`text-xs mt-1 block ${styles.error}`}>{errors.name}</span>}
         </div>
         <div>
-          <label htmlFor={`${formId}-email`} className={`${labelBase} ${styles.label}`}>
-            Email <span className="text-[#b8a074]">*</span>
-          </label>
-          <input
-            id={`${formId}-email`}
-            type="email"
-            value={formState.email}
-            onChange={(e) => onChange("email")(e.target.value)}
-            placeholder="We send a confirmation and checklist"
-            className={styles.input}
-            required name="email"/>
-          {errors.email && <span className={`text-xs mt-1 block ${styles.error}`}>{errors.email}</span>}
-        </div>
-      </div>
-
-      {/* Row 2: Phone + Company */}
-      <div className="grid gap-5 md:grid-cols-2">
-        <div>
           <label htmlFor={`${formId}-phone`} className={`${labelBase} ${styles.label}`}>
             Phone Number <span className="text-[#b8a074]">*</span>
           </label>
@@ -279,6 +261,24 @@ export const ContactForm = ({ source = "Contact form", defaultProjectType = "", 
             className={styles.input}
             required name="phone"/>
           {errors.phone && <span className={`text-xs mt-1 block ${styles.error}`}>{errors.phone}</span>}
+        </div>
+      </div>
+
+      {/* Row 2: Phone + Company */}
+      <div className="grid gap-5 md:grid-cols-2">
+        <div>
+          <label htmlFor={`${formId}-email`} className={`${labelBase} ${styles.label}`}>
+            Email <span className="text-[#b8a074]">*</span>
+          </label>
+          <input
+            id={`${formId}-email`}
+            type="email"
+            value={formState.email}
+            onChange={(e) => onChange("email")(e.target.value)}
+            placeholder="We send a confirmation and checklist"
+            className={styles.input}
+            required name="email"/>
+          {errors.email && <span className={`text-xs mt-1 block ${styles.error}`}>{errors.email}</span>}
         </div>
 
       </div>

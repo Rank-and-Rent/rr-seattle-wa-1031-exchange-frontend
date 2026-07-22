@@ -119,9 +119,6 @@ export default function ContactFormPage() {
                     {site.email}
                   </a>
                 </InfoRow>
-                <InfoRow label="Address">
-                  <span className="text-[#2c3e50] text-lg">{site.address}</span>
-                </InfoRow>
                 <InfoRow label="Hours">
                   <span className="text-[#2c3e50] text-lg">{BUSINESS_HOURS}</span>
                 </InfoRow>
@@ -171,7 +168,7 @@ export default function ContactFormPage() {
       {/* Map Section */}
       <section className="h-[400px]">
         <iframe
-          title={`Map of ${site.address}`}
+          title="Office location map"
           src={mapSrc}
           width="100%"
           height="100%"

@@ -24,7 +24,6 @@ export const SiteFooter = () => {
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-[#b8a074] mb-6">Address</p>
             <div className="text-sm text-white/80">
-              <p>{site.address}</p>
               <p>{site.mainCity}, {site.state}</p>
             </div>
           </div>

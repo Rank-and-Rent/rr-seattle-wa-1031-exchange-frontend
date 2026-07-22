@@ -13,7 +13,6 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-ink dark:text-zinc-50 mb-4">
               {site.company}
             </h3>
-            <p className="text-sm text-ink/70 dark:text-zinc-400 mb-2">{site.address}</p>
             <p className="text-sm text-ink/70 dark:text-zinc-400 mb-2">
               <a href={`tel:${site.phoneDigits}`} className="hover:text-primary">
                 {site.phone}

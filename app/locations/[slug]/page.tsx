@@ -128,6 +128,27 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
+      {/* Rich Location Detail Section — additive per-location market texture; overview/highlights above are unchanged */}
+      {detail.richSections && detail.richSections.length > 0 && (
+        <section className="bg-white pb-20">
+          <div className="max-w-7xl mx-auto px-6 md:px-10">
+            <div className="max-w-4xl space-y-12">
+              {detail.richSections.map((section) => (
+                <div key={section.heading}>
+                  <h2 className="font-heading text-2xl md:text-3xl tracking-[0.08em] text-[#2c3e50] mb-4">
+                    {section.heading}
+                  </h2>
+                  <div
+                    className="prose prose-lg max-w-none text-[#4a5a68] leading-relaxed [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-2"
+                    dangerouslySetInnerHTML={{ __html: section.body }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Services Section */}
       <section className="bg-[#f7f6f4] py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-10">

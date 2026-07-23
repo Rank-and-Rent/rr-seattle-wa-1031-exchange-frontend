@@ -1,33 +1,19 @@
 'use client';
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 import site from "@/content/site.json";
 import { ContactForm } from "@/components/forms/contact-form";
 import { BUSINESS_HOURS } from "@/lib/config";
 
 export default function ContactFormPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const searchParams = useSearchParams();
   const phoneHref = `tel:${site.phoneDigits}`;
   const emailHref = `mailto:${site.email}`;
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
     site.address
   )}&output=embed`;
-
-  const defaultProjectType = useMemo(() => {
-    const direct = searchParams?.get("projectType")?.trim();
-    if (direct) return direct;
-    const serviceParam = searchParams?.get("service")?.trim();
-    if (serviceParam) return serviceParam;
-    const projectParam = searchParams?.get("project")?.trim();
-    if (projectParam) return projectParam;
-    const locationParam = searchParams?.get("location")?.trim();
-    if (locationParam) return `${locationParam} replacement property`;
-    return "";
-  }, [searchParams]);
 
   if (isSubmitted) {
     return (
@@ -155,7 +141,6 @@ export default function ContactFormPage() {
               </h3>
               <ContactForm
                 source="Contact page form"
-                defaultProjectType={defaultProjectType}
                 id="contact-page-form"
                 onSuccess={() => setIsSubmitted(true)}
                 variant="light"

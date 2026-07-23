@@ -36,10 +36,17 @@ export interface LocationItem {
   image?: string;
 }
 
+export interface LocationRichSection {
+  heading: string;
+  body: string;
+}
+
 export interface LocationDetail {
   slug: Slug;
   overview: string;
   highlights: string[];
+  /** Additive per-location enrichment. Optional — locations without it fall back to overview/highlights only. */
+  richSections?: LocationRichSection[];
   faqs: FAQItem[];
   seo: {
     title: string;
